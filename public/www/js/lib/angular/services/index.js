@@ -15,7 +15,8 @@ define([
     ,'./sendMessageService'
     ,'./msgContentPrevService'
     ,'./signatureVerifyService'
-], function (loginService,basicDetService,dashboardService,signupService,SchemaGeneratorService,keyBoardService,sendMessageService,msgContentPrevService,signatureVerifyService) {
+    ,'./resultService'
+], function (loginService,basicDetService,dashboardService,signupService,SchemaGeneratorService,keyBoardService,sendMessageService,msgContentPrevService,signatureVerifyService,resultService) {
     'use strict';
 
     console.log(angular);
@@ -30,6 +31,7 @@ define([
         services.factory("sendMessageService",sendMessageService);
         services.factory("msgContentPrevService",msgContentPrevService);
         services.factory("signatureVerifyService",signatureVerifyService);
+        services.factory("resultService",resultService);
   
 
     return services;

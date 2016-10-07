@@ -5,13 +5,57 @@ function()
 	return [ '$scope' , 'toaster','signatureVerifyService','$state','$window',function($scope,toaster,signatureVerifyService,$state, $window){
 
 
+$scope.getInSessionSignature=function( tirack)
+{
 
+
+var array=[];
+
+
+
+var arrayStr=$window.sessionStorage.getItem("SIGNATURE");
+
+alert(arrayStr);
+if(arrayStr !=  null)
+{
+  array= eval(arrayStr);
+}
+
+// array.push(obj);
+//$window.sessionStorage.setItem("SIGNATURE", JSON.stringify(obj));
+
+for(var i =0; i< array.length; i++)
+{
+  if(array[i].TIRACK == tirack)
+  {
+      return array[i].SIGN;
+
+  }
+}
+
+
+
+return "";
+
+}
 
 
 $scope.Submit=function()
 {
 
+$scope.$signatureVerify= $scope.$signatureVerify||{}
   toaster.pop('success', "title", "text");
+
+var  prevSignature=$scope.getInSessionSignature( $scope.$signatureVerify.tirack||"");
+
+ $scope.$result={
+
+ TIRACK: $scope.$signatureVerify.tirack||"",
+    signature    : prevSignature
+
+ };
+
+ $state.go("result", {$result: $scope.$result});
 }
 
 $scope.uploadFile=function()

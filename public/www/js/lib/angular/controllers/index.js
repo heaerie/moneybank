@@ -15,7 +15,8 @@ define([
     ,'./sendMessageController'
     ,'./msgContentPrevController'
     ,'./signatureVerifyController'
-], function (loginController,basicDetController,dashboardController,SchemaGeneratorController,naviController,signupController,keyBoardController,sendMessageController,msgContentPrevController,signatureVerifyController) {
+    ,'./resultController'
+], function (loginController,basicDetController,dashboardController,SchemaGeneratorController,naviController,signupController,keyBoardController,sendMessageController,msgContentPrevController,signatureVerifyController,resultController) {
     'use strict';
 
     //console.log(angular);
@@ -31,6 +32,7 @@ define([
         controllers.controller("sendMessageController",sendMessageController);
         controllers.controller("msgContentPrevController",msgContentPrevController);
         controllers.controller("signatureVerifyController",signatureVerifyController);
+        controllers.controller("resultController",resultController);
   
 
     return controllers;
