@@ -1,0 +1,21 @@
+USS.prototype.USSAppendAccordionHeader=function(obj,title)
+{
+this.ussTableAccordion=obj; 
+this.ussTableAccordionH= document.createElement("div");
+this.ussTableAccordionH.className ="panel-heading" ;
+this.ussTableAccordionH4= document.createElement("H4");
+this.ussTableAccordionH4.className ="panel-title" ;
+this.ussTableAccordionH4.border=1;
+this.ussTableAccordionA= document.createElement("a");
+this.ussTableAccordionA.setAttribute("data-toggle", "collapse" );
+this.ussTableAccordionA.setAttribute("href", "#collapse1" );
+this.newContent = document.createTextNode(title);
+this.ussTableAccordionA.appendChild(this.newContent);
+this.ussTableAccordionA.setAttribute("data-toggle","collapse");
+this.ussTableAccordionA.setAttribute("data-parent","container1");
+this.ussTableAccordionH4.appendChild(this.ussTableAccordionA);
+this.ussTableAccordionH.appendChild(this.ussTableAccordionH4);
+this.ussTableAccordion.appendChild(this.ussTableAccordionH);
+return this.ussTableAccordion;
+}
+

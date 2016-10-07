@@ -1,0 +1,1265 @@
+style@charset 'UTF-8';
+/*	all hyperlink rules are in content-hyperlinks.css
+	rules that vary by locale are in localeSpecific.css
+	padding, margin, list  ... are in content.css
+	font treatment are in content-fonts.css
+		
+	History:
+	Last Updated: Carlos Miqueo on August 27, 2008
+	Last Updated: Erich Champion on August 5th, 208
+	Last Updated: John Francis on August 1st, 2008
+	Last Updated: Carlos Miqueo on July 29, 2008
+	Last Updated: Erich Champion on July 24th, 2008
+	Last Updated: Carlos Miqueo on July 21, 2008
+	Last Updated: Carlos Miqueo on July 3, 2008
+	Last Updated: Carlos Miqueo on July 2, 2008
+	Last Updated: Carlos Miqueo on June 24, 2008
+	Last Updated: Carlos Miqueo on June 12, 2008
+	Last Updated: Carlos Miqueo on June 11, 2008
+	Last Updated: Carlos Miqueo on June 9, 2008
+	Last Updated: Erich Champion on June 9, 2008
+	Last Updated: Erich Champion on June 8, 2008
+	Last Updated: Carlos Miqueo on May27, 2008
+	Last Updated: Carlos Miqueo on May23, 2008 
+	Last Updated: Carlos Miqueo on May 16, 2008 
+	Last Updated: Carlos Miqueo on May 15, 2008 
+	Last Updated: Erich Champion on May 11, 2008
+*/
+
+#page_content_wrapper{
+width:100%;
+}
+
+/* ************************************** */
+/* *****           COLOR           ***** */
+/* ************************************** */
+/* h5, */ /* Changed for May 08  */
+div.breadcrumb,
+#nav_body,
+div#breadcrumb span.links,
+div#content_wrapper div table tr th {	background-color: #fff;}
+pre	{ 	background-color: #f0f7fe;}
+
+/* ************************************** */
+/* *****           spacing           ***** */
+/* ************************************** */
+html { overflow-y: scroll; min-width: 400px }
+
+html,body,form,dt,dd,img,table,div,h1,h2,h3,h4,a,
+#selectBox,
+ul#tabsRow,
+div#nav_content table,
+div.fignone div.figdesc,
+div.fignone dl,
+div.relinfo,
+.mainTable,
+p.Level1IX,
+p.Level2IX,
+.listImage,
+div#content_wrapper div,
+div#content_wrapper div div,
+div#content_wrapper div div.section,
+div#content_wrapper li,
+div#content_wrapper li p,
+div#content_wrapper ol,
+div#content_wrapper ul,
+div#content_wrapper ul ul,
+div#content_wrapper li li p,
+div#content_wrapper ul ul ul,
+div#content_wrapper li li li p,
+div#content_wrapper ul ul ul ul,
+div#content_wrapper li li li li p,
+div#content_wrapper ul.navlinklist,
+div#homepage_wrapper,
+div.bottom-breadcrumb {
+	padding: 0;
+	margin: 0;
+}
+
+
+div#content_wrapper li p,
+div#content_wrapper li li p{
+  margin-top: 4px; /* bugfix: 1738250 */
+}
+
+img {	border: none;}
+
+img.image	{
+	padding-left: 2pt;
+	padding-right: 2pt;
+}
+
+img.topicView {
+	padding-right: 4px;
+	margin-bottom: -2px;
+}
+
+dl {  
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+dl dl	{ margin: 5px 20px; }
+
+div#content_wrapper dl p.dlseparator { 
+display: block;
+margin-bottom: 3px;
+margin-top: 0px;
+padding-bottom: 3px;
+padding-top: 0px;
+}
+
+div#content_wrapper dl dd p { 
+display: block;
+margin-top: 2px;
+padding-top: 2px;
+}
+
+div#content_wrapper div.fignone dl p.dlseparator { 
+	display: inline;
+	margin-left:-4px; /* changed for Dean */
+}
+
+div.fignone dl dd 	{ 
+margin-left: 0px;
+margin-right: 4px;
+padding-right: 4px;
+}
+
+div.nav dl.page dd { padding: 0 6px 0 0;}
+
+
+/* HEADING  */
+#page_content_wrapper h1 {
+	margin:10px 0 25px 0;  /* bugfix: 1739873 */
+	font-weight: bold;     /* bugfix: 1603424 */
+} 
+
+h2{ padding-top: .5em; }
+
+table  { border-collapse: collapse; }
+#content_wrapper table  { border-width: 1px; border-style: solid;  border-collapse: collapse; }
+td, th { padding: 0; }
+#homepage_body {   
+  margin: 0px;
+  padding: 0px;
+  background-color: white; 
+  height: 100%;
+ }
+div#homepage_wrapper {
+	height: 100px;
+	background: url(images/homepage.png) no-repeat top left #fff;
+  background-color: white; 
+}
+div#homepage_content {	
+padding: 130px 0 0 21px;
+}
+div#homepage_content div a 		{ display: block }
+
+/* body tag for content body */
+/* Add bottom padding to work around a Safari bug and codeblock scrollbars */
+#content_body 	{ 
+padding: 0 0 25px 30px; margin: 0 0 25px 0px; background-color: white; 
+
+}
+
+
+#mnemonic .Spry { 
+	color: #999;
+}
+
+
+
+div#content_wrapper div { margin:0 0 20px 0px;}
+div#content_wrapper div table tr th,
+div#content_wrapper div table tr td  {
+	padding-right: 5px;
+}
+
+div#content_wrapper div div.relinfo {
+	margin: 20px 0 0 0;
+	padding:0;
+}
+div#content_wrapper div.fignone div.figdesc {
+	margin-top:8px; 
+	margin-bottom:12px; /* changed for Dean */
+}
+
+div#content_wrapper div.fignone dl {
+	margin-top: -8px;
+	margin-bottom: 20px;
+}
+div#content_wrapper div table {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+/*
+div#content_wrapper div table tr th { padding: 5px 10px 5px 10px; }
+div#content_wrapper div table tr td { padding:5px 10px 5px 10px;}
+*/
+
+div#content_wrapper div table tr th { 
+padding: 0px 10px 0px 8px; 
+}
+
+div#content_wrapper div table tr th { 
+	background:#eee; /* Changed for Dean */
+}
+
+div#content_wrapper div table tr td { padding:0px 10px 0px 8px;}
+div#content_wrapper div table tr td p{ /* Changed for Dean */
+	margin-top:6px; 
+	margin-bottom:8px;
+}
+
+
+div#breadcrumb { padding-bottom: 10px; padding-top: 0px; }
+
+div#content_wrapper div.note { 
+display: block;
+padding-top: 3px;
+margin-top: 3px;
+margin-bottom: 5px;
+padding-bottom: 5px;
+}
+
+div#content_wrapper div.important { 
+display: block;
+padding-top: 3px;
+margin-top: 3px;
+margin-bottom: 5px;
+padding-bottom: 5px;
+}
+
+div#content_wrapper div div.section div.note,
+div#content_wrapper div div.numbered ul,
+div#content_wrapper div div.numbered div.note,
+div#content_wrapper div div.numbered div.fignone { margin-bottom: 15px; }
+
+div#breadcrumb div.bottom-breadcrumb { border-top: 1px solid #999; }
+div#breadcrumb div.bottom-breadcrumb { padding-top: 5px; }
+div#breadcrumb div.bottom-breadcrumb div.nav	 { border-bottom: none; }
+div#breadcrumb div.hierarchy	 {	 
+	padding:0 50px 0 0px;
+}
+
+div#breadcrumb span.links {	 
+	padding:5px 15px 9px 15px;
+	white-space: nowrap; 
+}
+div#tocrule {
+	border-top:1px solid #999; 
+	margin: 10px 0 10px 0;
+}
+#nav_body {
+	padding: 20px 10px 50px 25px;
+	background: #fff url(images/bkg-line.gif) repeat-y 100%;
+}
+
+ul#tabsRow  {margin-bottom:10px; }
+
+div.fignone {
+	padding-left: 20px;
+}
+
+div.fignone img 	{	margin: 10px 0 5px 0;}
+div.p div.tip	{
+	padding: 200px 0;
+	margin: 200px 0;
+}
+
+div.tip{
+   margin-bottom: 10px !important;  /* fix for bug 1527987 */
+}
+
+/* ************************************** */
+/* *****           TABLES           ***** */
+/* ************************************** */
+table  	{	padding: 12px 15px;}
+
+#content_body td, 
+#content_body th {
+	padding-left:2px;
+	margin-left:2px;	
+	vertical-align: top;
+}
+
+#nav_content td, 
+#nav_content th {
+	padding-left:2px;
+	margin-left:2px;	
+  padding-bottom:4px; /* changed  for Dean */
+	vertical-align: middle;
+}
+
+/*
+#nav_content table{
+ border:solid 1px #ccc; 
+ margin-left:10px !important; 
+}
+*/
+
+form		{	
+	padding: 10px 5px 5px 0;
+}
+
+form label {	padding-bottom:5px;}
+
+/* first alpha list on index pages */
+div#nav_content div.letterList	{
+	border-bottom: 1px solid #999;
+	border-top: 1px solid #999;
+	padding: 10px 0 10px 0;
+}
+
+div.important 	{ padding: 10px 0 20px;}
+
+.loadSearch 	{
+	margin: 20px;
+	padding: 10px;
+	border: 1px  solid;
+}
+
+
+
+
+p.Level1IX {
+	padding-left: 5px;
+	padding-top: 2px;
+}
+
+p.Level2IX {
+	padding-left: 15px;
+	padding-top: 1px;
+}
+
+div#content_wrapper ul li {  list-style-type: square; }
+
+div#content_wrapper li li,
+div#content_wrapper li li li,
+div#content_wrapper li li li li {
+	padding: 0px 0;
+	margin: .25em 6px;
+}
+
+div#content_wrapper ol { margin: 0 34px; }
+
+div#content_wrapper ol ul { margin: 0 10px; }
+
+div#content_wrapper ul { margin: 0 15px; }
+
+div#content_wrapper li { margin: 2px 0px; }
+
+div#content_wrapper ul ol li { 
+	margin: 0 4px; /* bugfix:   */
+	list-style-type: decimal; /* bugfix:  	1818075 */
+} 
+div#content_wrapper ol ol { 
+	margin: 0 15px; /* bugfix:   */
+	list-style-type: lower-alpha ; /* bugfix:  	1865836*/
+} 
+
+div#content_wrapper ul ul { 
+	margin: 0 15px; /* bugfix:   */
+}
+
+div#content_wrapper ul.navlinklist {
+  margin-top:25px;   /* bugfix: 1738210*/
+
+}
+
+div#content_wrapper ul.navlinklist li {
+	margin: 0 0 5px 0;
+	list-style-image: none;
+	list-style-type: none;
+}
+
+.topic {
+	padding: 4px;
+	border-right: 1px  solid;
+	border-bottom: 1px  solid;
+}
+
+.listImage {
+	margin-bottom: -3px;
+	padding-right: 4px;
+}
+
+#indexLettersTop 		{
+	border-bottom: 1px  solid;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+}
+
+#indexLettersBottom 	{
+	border-top: 1px  solid;
+	padding-top: 5px;
+	margin-top: 5px;
+}
+
+.optgroup { text-align: center; }
+
+.optgroup option 	{ text-align: left; }
+
+h1.contentHead	{ padding: 0 10px 5px 0; }
+
+div.choption{ margin-right: 3px; }
+
+div.dt{ margin-right: 3px; }
+
+/* nested definition lists */
+.dlentry	{ padding-left: 16px; }
+
+.dlentry .dlentry	{
+	margin-left: 36px;
+	list-style-type: disc;
+	display: list-item;
+}
+ 
+/* choption */
+.chdesc		{ padding-left: 16px; }
+
+/*See Also indents */
+.related-links 		{ padding-left: 16px; }
+
+/* ****** Adds scrollbars to code samples */
+pre	{ 
+	display:block;  /*bugfix: 	1787569 */
+	overflow-x: auto; 
+	padding: 15px 10px 25px 10px;
+	border: 1px solid #ccc;
+	margin-right:10px;
+}
+
+/* ************************************** */
+/* *****  display characteristics   ***** */
+/* ************************************** */
+div.fignone img,
+dl br,
+dl,
+.show,
+.showIt,
+.toggleImageLink ,
+form label,
+.fig img	{	display: block;}
+
+
+/* INLINE CLASSES */
+dt,
+dd,
+dd p,
+div.fignone dt,
+div.fignone dd,
+.keyword,
+.dt, 
+.fig .dd, 
+.fig .dlentry, 
+.fig .dt, 
+.keyword,
+.ph, 
+.ph, 
+.sup, 
+.term, 
+.tm,
+#tabsRow li 	{ display: inline; }
+
+
+
+/* ****** This hides content when CSS is available */
+.hide,
+.hideIt,
+div.fignone br { display: none; }
+
+/* ************************************** */
+/* *****  content addition   ***** */
+/* ************************************** */
+
+/* NON-BREAKING SPACE CLASSES */
+.choption:after,
+.fig .dlentry:after,
+.fig .dt:after { content: "&nbsp;"; }
+
+
+
+#content_body .sharedproducts {
+	padding-top: 0px;
+	padding-right: 10px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	text-align: right !important;  /* bugfix: 1832722 */
+}
+
+#content_body .sharedproductindicators { 
+  padding-top: 0px;
+  padding-bottom: 0px;
+  text-align: right !important;   /* bugfix: 1832722 */
+  margin: 5px 10px 10px 5px;
+}
+
+#content_body .sharedproductindicators img {
+  margin: 0 0 0 0;
+  margin-left: 2px;
+}
+
+dl.side-menu dt {
+display: list-item;
+list-style-type: none;
+list-style-position: outside;
+}
+
+dl.side-menu.dd {
+display: list-item;
+list-style-type: none;
+list-style-position: outside;
+}
+
+
+/*---Page Menu---*/
+.page
+{
+	float: right;
+	text-align: right;
+	margin: 0 0 0 0;
+	padding: 0;
+}
+
+.page ul { 
+	list-style-type: none;
+	margin: 0 0 0 0;
+	padding: 0;
+}
+
+.page ul li a
+{
+	padding: .1em 0.7ex;
+}
+
+.page dt,
+.page dd
+{
+	float: left;
+	margin-right: -6px;	
+}
+
+.page dd.next
+{
+	background-image: url("images/next_null.gif");
+	margin-left: -2px;
+}
+.page dd.prev
+{
+	margin-left: 0px;
+	background-image: url("images/prev_null.gif");
+}
+.page dd.next a
+{
+  font-size: 1px;
+	background-image: url("images/next.gif");
+	display: block;
+	word-break: keep-all;
+}
+.page dd.prev a
+{
+  font-size: 1px;
+	background-image: url("images/prev.gif");
+	display: block;
+	word-break: keep-all;
+}
+
+.page .prev a,
+.page .prev,
+.page .next a,
+.page .next
+{
+	width: 17px;
+	height: 17px;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	overflow: hidden;
+}
+.page dd.prev a,
+.page dd.next a
+{
+	display: block;
+	text-indent: 9999px;
+	/*\*/
+	overflow: hidden;
+	/**/
+}
+.page dd.prev a:hover,
+.page dd.prev a:focus
+{
+	background-color: transparent;
+	background-image: url("images/prev_hover.gif");
+}
+.page dd.next a:hover,
+.page dd.next a:focus
+{
+	background-color: transparent;
+	background-image: url("images/next_hover.gif");
+}
+
+
+#minitoc {
+	display: block;
+	min-width: 400px;
+	width:400px;      /* for IE  */
+	font-family: Arial, Helvetica, sans-serif; 
+	background-color: #e6e7e8;
+}
+
+/* #minitoc * { font-size:100% } // MOVED TO content-fonts.css */
+
+#minitoc div div div div div div div div div {
+	padding: 9px 10px 6px 12px;
+}
+
+div#minitoc ul#minitoc-links li {
+	list-style-image: none;
+	list-style-type: none;
+	margin-top:6px;
+	margin-bottom:6px;
+}
+
+#minitoc_in {
+	padding: 5px 2px 0px 2px;
+        margin-bottom: 0px;
+}
+
+
+
+/* Sets the border around the related items */
+.t  {
+	width: 100%;
+}
+
+.b  {
+	width: 100%;
+}
+
+.l  {
+	background-color: #e6e7e8;
+}
+
+.r  {
+	background-color: #e6e7e8;
+}
+
+.bl {
+	background: url(images/sw.gif) 0 100% no-repeat; 
+}
+
+.br {
+	background: url(images/se.gif) 100% 100% no-repeat; 
+}
+
+.tl {
+	background: url(images/p1headernw.gif) 0 0 no-repeat; 
+}
+
+.tr {
+	background: url(images/p1headerne.gif) 100% 0 no-repeat;
+} 
+
+img.adobeLogoSplashScreen {
+  position: absolute;
+  float: left;
+  bottom: 17px;
+  left: 21px;
+  z-index: -1000;
+}
+
+/* for each product add the style here */
+#mnemonic .AdobeMediaEncoder {
+	background: url(images/AdobeMediaEncoderLinkIndicatorTopBar.png) no-repeat top left #ccc;
+}
+#mnemonic .AdsForAdobePDF { /* bug fix 1819154 */
+	background: url(images/AdsForAdobePDFLinkIndicatorTopBar.png) no-repeat top left #ccc;
+}
+#mnemonic .Acrobat {
+	background: url(images/AcrobatLinkIndicatorTopBar.png) no-repeat top left #ccc;
+}
+#mnemonic .Acrobatcom {
+	background: url(images/AcrobatcomLinkIndicatorTopBar.png) no-repeat top left #ccc;
+}
+#mnemonic .AcrobatConnectPro {
+	background: url(images/AcrobatConnectProLinkIndicatorTopBar.png) no-repeat top left #467461;
+}
+#mnemonic .ActionScript {
+	background: url(images/ActionScriptLinkIndicatorTopBar.png) no-repeat top left #ccc;
+}
+#mnemonic .AIR {
+	background: url(images/AIRLinkIndicatorTopBar.png) no-repeat top left #ccc; 
+}
+#mnemonic .AS2LCR {
+	background: url(images/AS2LCRLinkIndicatorTopBar.png) no-repeat top left #AF2E22;
+}
+#mnemonic .AfterEffects {
+	background: url(images/AfterEffectsLinkIndicatorTopBar.png) no-repeat top left #669999;
+}
+#mnemonic .Audition {
+	background: url(images/AuditionLinkIndicatorTopBar.png) no-repeat top left #ccc;
+}
+#mnemonic .Buzzword {
+	background: url(images/BuzzwordLinkIndicatorTopBar.png) no-repeat top left #DC5516;
+}
+#mnemonic .Breeze {
+	background: url(images/BreezeLinkIndicatorTopBar.png) no-repeat top left #ccc;
+}
+#mnemonic .Bridge {
+	background: url(images/BridgeLinkIndicatorTopBar.png) no-repeat top left #DC5516;
+}
+#mnemonic .ConnectNow {
+	background: url(images/ConnectNowLinkIndicatorTopBar.png) no-repeat top left #DC5516;
+}
+#mnemonic .Contribute {
+	background: url(images/ContributeLinkIndicatorTopBar.png) no-repeat top left #ccc;
+}
+#mnemonic .Captivate {
+	background: url(images/CaptivateLinkIndicatorTopBar.png) no-repeat top left #ccc;
+}
+#mnemonic .DeviceCentral {
+	background: url(images/DeviceCentralLinkIndicatorTopBar.png) no-repeat top left #ccc;
+}
+#mnemonic .Dreamweaver {
+	background: url(images/DreamweaverLinkIndicatorTopBar.png) no-repeat top left #A5BF24;
+}
+#mnemonic .EncoreDVD {
+	background: url(images/EncoreDVDLinkIndicatorTopBar.png) no-repeat top left #8CA9D1;
+}
+#mnemonic .ExtensionManager {
+	background: url(images/ExtensionManagerLinkIndicatorTopBar.png) no-repeat top left #ccc;
+}
+#mnemonic .FLIP {
+	background: url(images/FLIPLinkIndicatorTopBar.png) no-repeat top left #ccc;
+}
+#mnemonic .Flash {
+	background: url(images/FlashLinkIndicatorTopBar.png) no-repeat top left #AF2E22;
+}
+#mnemonic .FlashLite {
+	background: url(images/FlashLiteLinkIndicatorTopBar.png) no-repeat top left #AF2E22;
+}
+#mnemonic .FlashMediaServer {
+	background: url(images/FlashMediaServerLinkIndicatorTopBar.png) no-repeat top left #AF2E22;
+}
+#mnemonic .Fireworks {
+	background: url(images/FireworksLinkIndicatorTopBar.png) no-repeat top left #ccc;
+}
+#mnemonic .GaijiSING {
+	background: url(images/GaijiSINGLinkIndicatorTopBar.png) no-repeat top left #ccc;
+}
+#mnemonic .GoLive {
+	background: url(images/GoLiveLinkIndicatorTopBar.png) no-repeat top left #8077AD;
+}
+#mnemonic .Illustrator {
+	background: url(images/IllustratorLinkIndicatorTopBar.png) no-repeat top left #F6A80E;
+}
+#mnemonic .InCopy {
+	background: url(images/InCopyLinkIndicatorTopBar.png) no-repeat top left #7A5897;
+}
+#mnemonic .InDesign {
+	background: url(images/InDesignLinkIndicatorTopBar.png) no-repeat top left #99217C;
+}
+#mnemonic .Lightroom {
+	background: url(images/LightroomLinkIndicatorTopBar.png) no-repeat top left #547990;
+}
+#mnemonic .OnLocation {
+	background: url(images/OnLocationLinkIndicatorTopBar.png) no-repeat top left #ccc;
+}
+#mnemonic .PhotoshopElements {
+	background: url(images/PhotoshopElementsLinkIndicatorTopBar.png) no-repeat top left #ccc;
+}
+#mnemonic .Photoshop {
+	background: url(images/PhotoshopLinkIndicatorTopBar.png) no-repeat top left #0373B2;
+}
+#mnemonic .PremiereElements {
+	background: url(images/PremiereElementsLinkIndicatorTopBar.png) no-repeat top left #ccc;
+}
+#mnemonic .PremierePro {
+	background: url(images/PremiereProLinkIndicatorTopBar.png) no-repeat top left #9B87B7;
+}
+#mnemonic .Presenter {
+	background: url(images/PresenterLinkIndicatorTopBar.png) no-repeat top left #467461;
+}
+#mnemonic .Reader {
+	background: url(images/ReaderLinkIndicatorTopBar.png) no-repeat top left #ccc;
+}
+#mnemonic .RoboHelp {
+	background: url(images/RoboHelpLinkIndicatorTopBar.png) no-repeat top left #ccc;
+}
+#mnemonic .Scene7 {
+	background: url(images/Scene7LinkIndicatorTopBar.png) no-repeat top left #ccc;
+}	
+#mnemonic .Soundbooth {
+	background: url(images/SoundboothLinkIndicatorTopBar.png) no-repeat top left #D9D297;
+}
+#mnemonic .Spry {
+	background: url(images/SpryLinkIndicatorTopBar.png) no-repeat top left #D9D297;
+}
+#mnemonic .StockPhoto {
+	background: url(images/StockphotoLinkIndicatorTopBar.png) no-repeat top left #ccc;
+}
+#mnemonic .Validator {
+	background: url(images/ValidatorLinkIndicatorTopBar.png) no-repeat top left #ccc;
+}
+#mnemonic .VersionCue {
+	background: url(images/VersionCueLinkIndicatorTopBar.png) no-repeat top left #5CBCB4;
+}
+.pdf-file {
+	background: url("images/pdf_fileicon.png") no-repeat;
+}
+.swf-file {
+	background: url("images/swf_fileicon.png") no-repeat;
+}
+
+
+/*
+  * added or changed for CS4 one pane design 
+*/
+body{
+padding:0 0 0 0 !important;
+}
+
+
+/* mnemonic at the top of the page */
+#mnemonic	 { 
+	top:0px; 
+	left:0px; 
+	height:24px; 
+	width: 100%;
+  margin:0;
+  padding:0;
+}
+
+#mnemonic table {             /* Modified for CS4 */
+  width:100%;
+	height: 24px;
+	margin:0;
+	padding:0;
+	color:#fff;
+  font-size:100%;
+}
+
+#mnemonic  .banner{
+	padding: 5px 0 0 36px;
+	font-weight:bold;
+	color: #fff;
+}
+
+#mnemonic  .notyourversion{
+	padding-left:10px;
+	font-weight:normal;
+	color: #fff;
+}
+
+#mnemonic  .beta{
+	color: #fff;
+	padding-left:40px;
+}
+
+#mnemonic  img{
+  vertical-align: middle;
+}
+
+#mnemonic  .pod{
+  padding-top:5px;
+	padding-right:60px;
+	text-align:right;
+	font-weight:normal;
+	color: #fff;
+}
+
+/* dark color text for banners */
+#mnemonic .Acrobat .banner,
+#mnemonic .Acrobat .notyourversion,
+#mnemonic .Acrobat .beta,
+#mnemonic .Acrobat a,
+#mnemonic .Scene7 .banner,
+#mnemonic .Scene7 .notyourversion,
+#mnemonic .Scene7 .beta,
+#mnemonic .Scene7 a,
+#mnemonic .FlashMediaServer .banner,
+#mnemonic .FlashMediaServer .notyourversion,
+#mnemonic .FlashMediaServer .beta,
+#mnemonic .FlashMediaServer a
+{
+	color: #505050; /* bug fix 1788752 &  1854940 */
+}
+
+
+
+
+#mnemonic .AdsForAdobePDF .banner{
+   display: none; /* bug fix 1819154 */
+}
+
+/* search bar */
+div#searchbar	 {
+	display: block;
+	top:24px; 
+	left:0px; 
+	height:24px; 
+	width: 100%;
+	margin-bottom:20px; 
+	background:#303030;
+	border-top: solid 1px #202020;
+}
+
+/* search form */
+#search { 
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	margin: 0;
+	padding: 2px 2px 2px 25px;
+	text-align: left;
+	vertical-align: bottom;
+}
+#search input{
+	color: #dedede;
+	background: #404040;
+	border: 1px solid #666666;
+	margin-left: 2px;
+	padding-left:4px;
+}
+/* Fixing a bug that made the content larger than the window, 
+   forcing scrollbars */
+#ionComCount, #group_toc, #nav_content {
+  padding-left:12px;
+}
+/* Content outer table */
+#page_content_table { 
+	width:99%; 
+}
+#col1 { 
+	padding:6px 0 0 0;
+}
+.TOCLevel1 { width:225px; min-width:225px; }
+.TOCLevel2 { width:250px; min-width:250px; }
+.TOCLevel3 { width:300px; min-width:300px; }
+.TOCLevel4 { width:350px; min-width:350px; }
+#col2 { 
+	padding:2px 0px 0 18px !important;
+}
+
+/* Left column */
+#group_toc {
+	font-size:63%;
+	font-weight:bold;
+	color: #000;
+	width:250px; 
+	margin-top:0; 
+	margin-bottom:10px; 
+	background:#fff;
+}
+
+#group_toc p{
+	padding-left:12px; 
+	margin: 0 0 4px 0;
+}
+
+
+/* Left Column List*/
+#group_toc ul{
+	margin: 9px 20px 0 0;
+	padding: 0 0 10px 0;
+	line-height:150%;
+	color: #999;
+}
+#group_toc ul li{
+	list-style:none;
+  margin-bottom: 9px;
+	margin-left:10px;
+}
+
+#sectiontitle{
+	font-size:70%;
+	list-style:none;
+	margin: 0 20px 0 20px;
+	padding: 0 0 0px 0;
+	line-height:100%;
+	color: #000;
+}
+
+
+/* Right column */
+#product_list { 
+	border: solid 0px;
+	margin-top: 80px;
+	border: solid 0px;
+	font-size: 100%;
+}
+
+#product_list h1 { 
+	font-family: Verdana, Arial, Helvetica;
+	margin: 25px 20px 25px 20px; 
+	font-weight: bold;
+	font-size: 24px;
+	color: #000;
+}
+
+#product_list p {
+	margin-left: 20px;
+	color: #333;
+}
+
+/* Right Column List*/
+#product_list ul {
+	list-style:none;
+	margin: 0 20px 0 20px;
+	padding: 0 0 10px 0;
+	line-height:130%;
+	color: #000;
+}
+#product_list li {
+	margin-bottom: 6px;
+}
+#product_list li.weblink {
+	list-style:disc;
+	list-style-image: url("images/bullet-weblink.png");
+}
+
+
+/* splash div */
+#splash {
+	margin-top: 40px;
+	line-height:180%;
+	width:400px; /* changed for Dean */
+}
+
+#splash b{
+  display: block;
+  font-size:120%;
+	font-weight: bold;
+	color:#900;
+}
+
+#splash img{
+  vertical-align: middle;
+  margin: 0 5px 4px 0;
+}
+
+
+
+
+/* Styles for the search results page */
+#resultsTop {
+  padding:20px 0 0 0;
+}
+#results {
+	font-size:100%;
+}
+.searchresults {
+	padding: 0;
+}
+
+/* Styles for related icons */
+#related p,
+#footer p {
+  margin:4px 0 0 0;
+}
+img.linkIndicator {
+  margin-left:8px;
+	vertical-align: -2px;
+	
+}
+
+div.separator {
+	width: 100%;
+	background: url(images/Dash.png) bottom left repeat-x #fff;
+}
+
+div.separator a {
+	float: right;
+	text-align:right;
+	margin-right: 20px;
+	margin-bottom: 3px;
+}
+
+
+/* Start New Navigation */
+.navigation {
+	float: right;
+	text-align:right;
+	padding-top:2px;
+	background:#fff;
+	margin-top: 0px;
+	margin-right: 10px;
+        width: 50px;
+}
+
+.navigation li {
+  display:inline; 
+}
+.navigation li.next{
+	margin-left: -1px;
+}
+
+a.prev img{
+	background: url(images/prev.gif) top left no-repeat;;
+}
+a.next img{
+	background: url(images/next.gif) top left no-repeat;;
+}
+
+a.prev:hover img{
+	background: url(images/prev_hover.gif) top left no-repeat;;
+}
+a.next:hover img{
+	background: url(images/next_hover.gif) top left no-repeat;;
+}
+/* End New Navigation */
+
+
+
+h4.sectiontitle  { 
+  margin-bottom: -2px;  /* changed for Dean */
+  margin-top:6px;
+	
+}
+h3.topictitle3  { 
+  margin-bottom: 4px;  /*  bugfix  1804727*/
+}
+
+#minitoc .topictitle1 {
+  margin: 10px 10px 0 0;
+}
+#minitoc .topictitle2 {
+  margin: 10px 10px 0 0;
+}
+#minitoc .topictitle3 {
+  margin: 10px 10px 0 0;   /* changed for Dean */
+}
+
+#minitoc .topictitle4 {
+	margin: 10px 10px 0 12px;
+  /* margin-bottom: -5px; /* changed for Dean */
+}
+
+#minitoc .topictitle5 {
+	margin: 10px 10px 0 16px;
+ /*  margin-bottom: -5px; /* changed for May */
+}
+
+#minitoc .topictitle6 {
+	margin: 10px 10px 0 20px;
+ margin-bottom: -5px; /* changed for May */
+}
+
+#minitoc {
+  margin-top:  -20px;
+  margin-bottom:-80px;
+}
+
+#minitoc #minitoc-links ul{ /* changed for Dean */
+ margin-top:-4px;
+ margin-bottom:16px;
+}
+
+.right{
+ text-align:right;
+}
+
+#content_wrapper .p,
+#content_wrapper .para{
+ margin-top: 9px;
+}
+
+
+#content_wrapper .section ul,
+#content_wrapper .section ol { /* bugfix: 1818079 */
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+#content_wrapper .nochunk ul ul{ 	/* bugfix 1804732 */
+  margin-left:8px;
+}
+
+#content_wrapper .nochunk h3{ 	/* fix for Premiere */
+  margin-top:14px; 
+  margin-bottom:10px;
+}
+
+// Bug fix for 1527777: Please add a new CSS style for the writers to use to mark revisions.
+.edit {color: #FF0000}
+
+/* start bugfix 1831184 */
+p#creativecommons{
+  margin-top:15px;
+}
+#ionCom{
+  margin-bottom:30px;
+}
+
+#ionComHere #ionCom h3{ /* Comments heading */
+  font-family:Verdana,Arial,Helvetica,sans-serif;
+  font-size:100%;
+  color:#000;
+  padding-bottom:5px;
+}
+
+#ionComList {
+  margin: 0 !important;
+}
+
+#ionComList li{
+  list-style-type:none !important;
+  font-family:Verdana,Arial,Helvetica,sans-serif;
+  font-size:98% !important;
+  padding: 4px 0 4px 0 !important;
+}
+
+#ionComList li.ionComMessage{  /* message in yellow background */
+  background: #FFFFCC;
+  font-family:Verdana,Arial,Helvetica,sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color:#000;
+  list-style-position:inside;
+  list-style-type:none;
+  margin: 0 !important;
+  padding: 4px 0 4px 4px !important;
+}
+
+#ionComButAdd{
+  margin-left:0 !important;
+}
+
+.defaultTextArea{
+  font-size: 160% !important;
+}
+
+#ionCom fieldset .button{
+  font-size:150%;
+}
+
+.ionComMessage{
+  font-size:150%;
+}
+
+#ionComPreview h4,
+#ionComPreview #ionComPreviewTextArea{
+  font-family:Verdana,Arial,Helvetica,sans-serif;
+  font-size: 150% !important;;
+}
+
+#ionCom a {
+ color: #047 !important;
+}
+#ionCom a:visited {
+ color: #047 !important;
+}
+#ionCom a:hover {
+  color:#c00 !important;
+  text-decoration:none !important;
+}
+/* end bugfix 1831184 */
+
+/* bugfix 1527777 */
+.edit {color: #FF0000}
+
+
+#mnemonic .Acrobatcom .banner { 
+    display:none;
+}

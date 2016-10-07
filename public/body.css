@@ -1,0 +1,71 @@
+.bcontainer {
+	FONT-WEIGHT: bold; 
+	FONT-SIZE: 14pt; 
+	COLOR: #caff70; 
+	FONT-STYLE: normal; 
+	FONT-FAMILY: arial, helvetica, sans-serif;
+	 BACKGROUND-COLOR: #4D7F17; 
+	 TEXT-ALIGN: center;
+	 
+	 padding: 4px 1px 1px 1px;
+	font-weight: bold;
+	 
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	border: 2px solid #b8b8b8;
+}
+
+
+.bsession{
+	FONT-WEIGHT: bold; 
+	FONT-SIZE: 14pt; 
+	COLOR: #104e8b; 
+	FONT-STYLE: normal; 
+	FONT-FAMILY: arial, helvetica, sans-serif;
+	 BACKGROUND-COLOR: #f4f4f4; 
+	 TEXT-ALIGN: left;
+	padding: 4px 1px 1px 1px; 
+	
+}
+
+.bcontainer: hover {
+	COLOR: #000000; 
+	background-color: yellow;
+} 
+
+.bcontainer a{
+	FONT-WEIGHT: bold;
+	COLOR: #caff70;
+}
+
+.bcontainer a:link {
+	FONT-WEIGHT: bold;
+	COLOR: #104e8b;
+}
+.bcontainer a:visited {
+	FONT-WEIGHT: bold; COLOR: #caff70;
+}
+.bcontainer a:active {
+	COLOR: #104e8b;
+}
+
+.bmargin
+{
+
+	padding: 4px 4px 4px 4px;
+}
+
+.bmandatory{
+	COLOR: #104e8b;
+	
+	border-style: solid;
+    border-color: #33aa77;
+
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+
+}

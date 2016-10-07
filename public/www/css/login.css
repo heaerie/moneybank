@@ -1,0 +1,300 @@
+body {
+      font: 400 15px Lato, sans-serif;
+      line-height: 1.8;
+      color: #414141;
+  }
+  h2 {
+      font-size: 20px;
+      text-transform: uppercase;
+      color: #31708F;
+      font-weight: 600;
+      margin-bottom: 30px;
+  }
+  h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      color: #31708F;
+      font-weight: 400;
+      margin-bottom: 30px;
+  }  
+  .jumbotron {
+      background-color: #31708F;
+      color: #fff;
+      padding: 10px 25px;
+      font-family: Montserrat, sans-serif;
+  }
+  .container-fluid {
+      padding: 60px 50px;
+  }
+  .bg-grey {
+      background-color: #818181;
+  }
+  .logo-small {
+      color: #31708F;
+      font-size: 50px;
+  }
+  .logo {
+      color: #31708F;
+      font-size: 200px;
+  }
+  .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+  }
+  .thumbnail img {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+      background-image: none;
+      color: #31708F;
+  }
+  .carousel-indicators li {
+      border-color: #31708F;
+  }
+  .carousel-indicators li.active {
+      background-color: #31708F;
+  }
+  .item h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      font-weight: 400;
+      font-style: italic;
+      margin: 70px 0;
+  }
+  .item span {
+      font-style: normal;
+  }
+  .panel {
+      border: 1px solid #31708F; 
+      border-radius:0 !important;
+      transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+      box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+      border: 1px solid #31708F;
+      background-color: #fff !important;
+      color: #31708F;
+  }
+  .panel-heading {
+      color: #fff !important;
+      background-color: #31708F !important;
+      padding: 25px;
+      border-bottom: 1px solid transparent;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+      background-color: white !important;
+  }
+  .panel-footer h3 {
+      font-size: 32px;
+  }
+  .panel-footer h4 {
+      color: #aaa;
+      font-size: 14px;
+  }
+  .panel-footer .btn {
+      margin: 15px 0;
+      background-color: #31708F;
+      color: #fff;
+  }
+
+  
+
+   .btnAction {
+      margin: 15px 0;
+      background-color: #31708F;
+      color: #fff;
+  }
+
+  .navbar {
+      margin-bottom: 0;
+      background-color: #31708F;
+      z-index: 9999;
+      border: 0;
+      font-size: 12px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 4px;
+      border-radius: 0;
+      font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+      color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: #31708F !important;
+      background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+      color: #fff !important;
+  }
+  footer .glyphicon {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #31708F;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+      animation-name: slide;
+      -webkit-animation-name: slide;	
+      animation-duration: 1s;	
+      -webkit-animation-duration: 1s;
+      visibility: visible;			
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }	
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+        font-size: 150px;
+    }
+  }
+
+
+  .moveInside
+  {
+    display: block;
+    color: #31708F;
+    /*background-color: white;*/ 
+        margin-left: 10px;
+
+  
+  }
+  .moveLeft
+  {
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+     display: block;
+      margin-top: -25px; 
+      margin-left:0px;
+     padding-left: 25px;
+
+
+  }
+  .loginRow
+  {
+    margin: 15px;
+    /*margin-left: 70px;*/
+    display:inline-block;
+  }
+
+  .loginButton
+  {
+    margin: 15px;
+    }
+
+  .login_background
+  {
+    background-image: url("../img/expense-claims.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: auto 100%;
+    background-attachment: fixed;
+    opacity: 0.9;
+    filter: alpha(opacity=90);
+    -webkit-box-shadow: inset -3px 2px 132px 51px rgba(255,255,255,1);
+-moz-box-shadow: inset -3px 2px 132px 51px rgba(255,255,255,1);
+box-shadow: inset -3px 2px 132px 51px rgba(255,255,255,1); 
+  /*overflow-x: hidden;
+  overflow-y: hidden;
+  */
+}
+  .cssTitle
+  {
+
+    color: white;
+
+  }
+
+  .loginPanel
+  {
+    margin: auto 48px;
+    padding-top:50px;
+    padding-bottom: 80px;
+    padding-left: auto;
+    padding-right: auto;
+
+  }
+  #loginFormId
+  {
+    max-height: 520px;
+    max-width: 320px;
+    border: 1px solid red;
+    margin-left: auto;
+    margin-right: auto;
+
+
+  }
+
+
+#loginFormId .title
+{
+
+       font-size: 15px;
+      text-transform: uppercase;
+      color: #31708F;
+      font-weight: 600;
+      margin-bottom: 30px;
+}
+  .loginPage
+  {
+
+
+    margin-top: 150px;
+    margin-bottom: 180px;
+
+    padding-top:40px;
+    padding-bottom:80px;
+  }
+
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}

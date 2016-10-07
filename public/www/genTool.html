@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>UFI Required JS </title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <script data-main="js/appGenTool" src="js/lib/require.js"></script>
+        <link rel="stylesheet"       href="js/lib/body.css"     type="text/css"/>
+        <link rel="stylesheet"       href="js/lib/menu.css"     type="text/css"/>
+        <link rel="stylesheet"       href="js/lib/services.css" type="text/css"/>
+        
+    </head>
+
+    <body class="cbody">
+    <!-- common javascript end -->
+<div class="header_outer">
+
+
+      <div class="header_bg">
+        <div class="header_left">
+        </div>
+<div class="Logo">
+</div>
+        </div>
+
+</div>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#MainNavBar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">HOMESPACE GLOBAL ADMIN</a>
+    </div>
+
+<!--nav>
+
+        </nav-->
+
+
+    <div class="collapse navbar-collapse" id="MainNavBar">
+      <ul class="nav navbar-nav">
+                    
+                        <li
+				
+				class="active"
+				 
+
+				>
+			       <a href='dashboard'
+				> Dashboard  </a>
+                        </li>
+		    
+                        <li
+				 
+
+				>
+			       <a href='pagegroupmaster'
+				> PageGroupMaster  </a>
+                        </li>
+		    
+        <!--li class="active"><a href="#">Home</a></li-->
+        <!--li class="dropdown"-->
+          <!--a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a-->
+          <!--ul class="dropdown-menu"-->
+            <!--li><a href="#">Page 1-1</a></li-->
+            <!--li><a href="#">Page 1-2</a></li-->
+            <!--li><a href="#">Page 1-3</a></li-->
+          <!--/ul -->
+        </li>
+        <!--li><a href="#">Page 2</a></li-->
+        <!--li><a href="#">Page 3</a></li-->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a "/dashboard"><span class="glyphicon glyphicon-user"></span> GOVINDARAJ DURAIMURUGAN</a></li>
+        <!--li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li-->
+        <!--li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li-->
+        <li><a href="/logout" id="logout"><span class="glyphicon glyphicon-log-out"></span> Login Out</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<table>
+	<tr>
+		<td>
+			<textarea id="SchemaJsonTextId" placeholder="SchemaJsonText">
+				[
+	{	
+	group:'ussms',name:'basicDet',label:'Basic Details',task:'ES',desc:'N',htmlType:'CONTAINER',entitle:'N',enttlname:'',mndf:'N',dataType:'CONTAINER',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs: 
+	[
+	 {	group:'ussms',name:'name',label:'Name ',task:'NONE',desc:'N',htmlType:'TEXT',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'name1',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	}
+	,{	group:'ussms',name:'bodyType',label:'Body Type',task:'NONE',desc:'N',htmlType:'OPTION',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'NONE',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'NONE|None|SLIM|Slim|AVERAGE|Average|ATHLETIC|Athletic|HEAVY|Heavy ',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	}
+	,{	group:'ussms',name:'complexion',label:'complexion',task:'NONE',desc:'N',htmlType:'OPTION',entitle:'N',enttlname:'',mndf:'N',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'NONE|None|VFAIR|Very Fair|FAIR|Fair |WHEATISH|Wheatish|BWHEATISH|Wheatish |BROWN|brown|DARK|Dark',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	}
+	,{	group:'ussms',name:'age',label:'Age ',task:'NONE',desc:'N',htmlType:'TEXT',entitle:'N',enttlname:'',mndf:'N',dataType:'NUMBER',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	}
+	,{	group:'ussms',name:'dob',label:'Date of Birth',task:'NONE',desc:'N',htmlType:'DATE',entitle:'N',enttlname:'',mndf:'Y',dataType:'DATE',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'DD/MM/YYYY or DD/MON/YYYY',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	}
+	,{	group:'ussms',name:'phyStaus',label:'Physical Status ',task:'NONE',desc:'N',htmlType:'OPTION',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'NONE',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'NONE|None|NORMAL|Normal|PHYSICALLYCHALLENGED|Physically challenged',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	}
+	,{	group:'ussms',name:'height',label:'Height ',task:'NONE',desc:'N',htmlType:'TEXT',entitle:'N',enttlname:'',mndf:'Y',dataType:'WIGHT',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	}
+	,{	group:'ussms',name:'weight ',label:'Weight ',task:'NONE',desc:'N',htmlType:'TEXT',entitle:'N',enttlname:'',mndf:'N',dataType:'HIGHT',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	}
+	,{	group:'ussms',name:'motherTongue',label:'Mother Tongue ',task:'NONE',desc:'N',htmlType:'DIV',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	}
+	,{	group:'ussms',name:'maritalStaus',label:'Marital Status ',task:'NONE',desc:'N',htmlType:'OPTION',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'NONE|None|U|Unmaried|NM|Never married',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	}
+	,{	group:'ussms',name:'eatingHabits',label:'Eating Habits ',task:'NONE',desc:'N',htmlType:'OPTION',entitle:'N',enttlname:'',mndf:'N',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'NONE|None|NV|Non Vegetarian|V|Vegetarian',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	}
+	,{	group:'ussms',name:'drinkingHabits',label:'Drinking Habits ',task:'NONE',desc:'N',htmlType:'OPTION',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'NONE',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'NONE|None|ND|Non-drinker|D|Drinker',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	}
+	,{	group:'ussms',name:'smokingHabits',label:'Smoking Habits ',task:'NONE',desc:'N',htmlType:'OPTION',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'NONE',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'NONE|None|NS|Non-smoker|S|Smoker',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	}
+	]
+	}
+	,{
+	group:'ussms',name:'religiousInfo',label:'Religious Information ',task:'NONE',desc:'N',htmlType:'CONTAINER',entitle:'N',enttlname:'',mndf:'N',dataType:'CONTAINER',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs: 
+	[
+	 {	group:'ussms',name:'religionId',label:'Religion',task:'NONE',desc:'N',htmlType:'DIV',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	}
+	,{	group:'ussms',name:'caste'   ,label:'Caste',   task:'NONE',desc:'N',htmlType:'DIV',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'||FC|Forward|OC|Other Caste|BC|Backword Caste|MBC|Most Backward Caste|SC|Scheduled Caste|ST|Scheduled Tribe',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	}
+	,{	group:'ussms',name:'subcaste',label:'Sub Caste ',task:'NONE',desc:'N',htmlType:'DIV',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	}
+	,{	group:'ussms',name:'gothram',label:'Gothram ',task:'NONE',desc:'N',htmlType:'INPUT',entitle:'N',enttlname:'',mndf:'N',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	}
+	,{	group:'ussms',name:'star',label:'Star / Raasi ',task:'NONE',desc:'N',htmlType:'DIV',entitle:'N',enttlname:'',mndf:'N',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	}
+	,{	group:'ussms',name:'chevvaiDosham',label:'Chevvai Dosham ',task:'NONE',desc:'N',htmlType:'OPTION',entitle:'N',enttlname:'',mndf:'N',dataType:'CHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'||Y|Yes|N|No',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	}
+	]
+	}
+	,{	
+    group:'ussms',name:'location'      ,label:'Location'             ,task:'NONE',desc:'N',htmlType:'CONTAINER',entitle:'N',enttlname:'',mndf:'N',dataType:'CONTAINER',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:
+	[
+	 {	group:'ussms',name:'country'       ,label:'Country ',task:'NONE',desc:'N',htmlType:'DIV',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	}
+	,{	group:'ussms',name:'city'          ,label:'city',task:'NONE',desc:'N',htmlType:'DIV',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	}
+	,{	group:'ussms',name:'state'         ,label:'State ',task:'NONE',desc:'N',htmlType:'DIV',entitle:'N',enttlname:'',mndf:'N',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	}
+	,{	group:'ussms',name:'residentStatus',label:'Resident Status ',task:'NONE',desc:'N',htmlType:'DIV',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	}
+	,{	group:'ussms',name:'citizenship',label:'Citizenship ',task:'NONE',desc:'N',htmlType:'DIV',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	}
+		]
+	},	
+	{	
+	group:'ussms',name:'profInfo'      ,label:'Professional Information ',task:'NONE',desc:'N',htmlType:'CONTAINER',entitle:'N',enttlname:'',mndf:'N',dataType:'CONTAINER',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:
+	[
+	 {	group:'ussms',name:'education',label:'Education ',task:'NONE',desc:'N',htmlType:'TEXT',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'}
+	,{	group:'ussms',name:'educationInDet',label:'Education in Detail ',task:'NONE',desc:'N',htmlType:'TEXT',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	}
+	,{	group:'ussms',name:'occupation',label:'Occupation ',task:'NONE',desc:'N',htmlType:'TEXT',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	}
+	,{	group:'ussms',name:'occupationInDet',label:'Occupation in Detail ',task:'NONE',desc:'N',htmlType:'TEXT',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	}
+	,{	group:'ussms',name:'employedIn',label:'Employed in ',task:'NONE',desc:'N',htmlType:'TEXT',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	}
+	,{	group:'ussms',name:'annualIncon',label:'Annual Income ',task:'NONE',desc:'N',htmlType:'TEXT',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	}
+	]
+	}
+]
+			</textarea>
+		</td>
+		<td>
+			<textarea id="parentId" placeholder="parent"></textarea>
+		</td>
+	<tr>
+	<tr>
+		<td>
+			<textarea id="OutJsonTextId" placeholder="OutJsonText"></textarea>
+		</td>
+		<td>
+			<textarea id="LangResoureId" placeholder="LangResoure"></textarea>
+		</td>
+	<tr>
+	<tr>
+		<td>
+			<textarea id="XMLTextId" placeholder="XMLText"></textarea>
+		</td>
+		<td>
+			<textarea id="XMLJsonId" placeholder="XMLJson"></textarea>
+		
+		</td>
+	<tr>
+		<td>
+			<textarea id="ListValId" placeholder="ListVal"></textarea>
+		</td>
+	<tr>
+	<tr>
+		<tr>
+		<td>
+			Readonly:
+			<select id="readOnlyFlgId" placeholder="readOnlyFlgId">
+				<option value="Y">Y</option>
+				<option value="N">N</option>
+			</select>
+		</td>
+		<td>
+		Multi Lang:
+			<select id="MultiLangId" placeholder="MultiLang">
+				<option value="Y">Y</option>
+				<option value="N">N</option>
+			</select>
+		</td>
+	<td>
+</table>
+
+
+
+<center>
+
+<input type="text"   id="PageNameId"  task="GENRESOURCE" value="PageName"  title="No">
+<input type="text"   id="PageNameIdLabel"  task="GENRESOURCE" value="Page Name" >
+
+
+<!--input type="button" class="button"  parent="hometran" task="EXPAND" value="Expand" onclick="javascript:onClick(this)"-->
+<!--input type="button" class="button" parent="hometran" task="BACK" value="Dashboard" onclick="javascript:onClick(this)"-->
+<input type="button"  id="genResourceB" parent="hometran" task="GENRESOURCE" value="generate Resource" onclick="javascript:GenResource(this)">
+<input type="button"  id="GenJsonB" parent="hometran" task="Gen JSON" value="Generate Json" onclick="javascript:GenJson(this)">
+<input type="button"  id="GenFrameB"   parent="hometran" task="Gen Frame" value="Generate Frame" onclick="javascript:GenFrame(this)">
+<input type="button"  id="GenXmlB"   parent="hometran" task="Gen Frame" value="Xml" onclick="javascript:GenXml(this)">
+<input type="button"  id="GenXmlJsonB"   parent="hometran" task="Gen Frame" value="XmlJson" onclick="javascript:GenXmlJson(this)">
+<input type="button"  id="GenListValJsonB"   parent="hometran" task="GGenListValJson" value="Gen List Val" onclick="javascript:GenListValJson(this)">
+</center>
+
+<br>
+
+<form name="form1" xmlname="Dashboard" class="cform" width="100">
+<div id="FrameId">
+Frame id
+</div>
+<center>
+ <input type="button" task="SUBMIT" value="SUBMIT" onclick="onClick(this);">
+ <input type="button" task="VALIDATE" value="VALIDATE" onclick="onClick(this);">
+<input type="button" id="genxmlJson" parent="hometran" task="Gen Frame" value="XmlJson" onclick="javascript:GenXmlJson(this)">
+</center>
+</form>
+    </body>
+</html>

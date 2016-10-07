@@ -1,0 +1,136 @@
+<!--
+
+alert('import fields');
+/*
+
+NEWFRAM
+NEWROW
+LABEL      - Fields desc
+NAME       - name of the fields
+DATATYPE   - LIST,
+             OPTION,
+             DATE,
+             NUMBER,
+             VARCHAR, 
+             AMOUNT,
+             CCY
+             XMLCONTAINER -> hidden xml=y and parent tags are important
+CLASS      - css class
+DFLT       - default value
+
+DESC       - Requireds Description fields
+
+MNDF       -  Mandatory Field or not
+width      -    
+hight      -
+TYPE       -  
+ONBLUR     -
+ONCHANGE   -
+ONCLICK    -
+ONKEYUP    -
+ONKEYDOUWN -
+help       - window Required
+helpLink   - 
+TAB        - it is usefull in multitab 
+xml        - Y  ->need to populate in xml
+parent     - parent tag of xml
+container  - This flag for the group the field by the child tag in xml
+
+*/
+alert("F:001:in fields..");
+var field= {
+group     : 'heaerie',
+name      : '',
+label     : '',
+desc      : '',
+type      : '',
+mndf      : 'N',
+dataType  : 'VARCHAR',
+cclass    : 'ctable',
+dflt      : '',
+onchange  : 'onChange(this);',
+onkeydown : 'onKeyDown(this);',
+onkeypress: 'onKeyPress(this);',
+onkeyup   : 'onKeyUp(this);',
+listVal   : '||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY',
+help      : '',
+helpLink  : ''
+};
+
+alert("F:003:in fields..");
+function createField(field)
+{
+
+
+	with(document)
+	{
+			
+		write('<td>');
+		write('<label>');
+		write(field.label);
+		write('</label>');
+		write('</td>');
+		write('<td>');
+		if (field.dataType == 'LIST') 
+		{
+			var inpStrArr= field.listVal.split('|');
+			write('<SELECT dataType="'+field.dataType+'" name="'+field.group+'.'+field.name+'" id="'+field.name+'"  class="ctext"  value="'+field.dflt+'" mndf="'+field.mndf+'"  label="'+field.label+'"   >');
+			for(var i=0 ; i< inpStrArr.length;i+=2)
+			{
+				if( field.dflt == inpStrArr[i])
+				{
+					write('<OPTION  selected value="'+inpStrArr[i]+'"> '+ inpStrArr[i+1] +'</OPTION>');
+				}
+				else
+				{
+					write('<OPTION  value="'+inpStrArr[i]+'"> '+ inpStrArr[i+1] +'</OPTION>');
+				}
+			}
+			write('</SELECT>');
+		}
+		else if (field.dataType == 'OPTION') 
+		{
+			//alert('dataType is list');
+			var inpStrArr= field.listVal.split('|');
+			for(var i=0 ; i< inpStrArr.length;i+=2)
+			{
+				write('<input  type="radio" mndf="'+field.mndf+'"  name="'+field.group+'.'+field.name+'" id="'+field.name+'"  value="'+inpStrArr[i]+'"> '+ inpStrArr[i+1] +'</OPTION>');
+				
+			}
+		}
+		else if (field.dataType == 'XMLCONTAINER') 
+		{
+			write('<input type="hidden"    name="'+field.name+'"  dataType="'+field.dataType+'"  parent="'+field.parent+'"  xml="Y" >');
+		
+		}
+		else
+		{
+			write('<input type="text"  class="ctext"  name="'+field.group+'.'+field.name+'" id="'+field.name+'" mndf="'+field.mndf+'" dataType="'+field.dataType+'"   value="'+field.dflt+'"  label="'+field.label+'"  onchange="javascript:'+ field.onchange+'" >');
+			if(field.desc=='Y')
+			write('<input type="text"  readonly class="label" name="'+field.group+'.'+field.name+'Desc" id="'+field.name+'Desc" dataType="LABEL" value=""  label="'+field.label+'"  onchange="javascript:'+ field.onchange+'" >');
+			
+		}
+		
+
+		write('</td>');
+
+	}
+
+}
+
+function createRow()
+{
+	with(document)
+	{
+		write('<tr class="ctable" >');	
+		write('</tr>');	
+	}
+	
+}
+
+function creatNewTbl()
+{
+	document.write('<table border=0 class="ctable"> <tr>');
+}
+alert('import fields done');
+-->

@@ -1,0 +1,19 @@
+rtStr+='<option value=""></option>';
+rtStr+='<option value="-5">G</option>';
+rtStr+='<option value="-4">G#</option>';
+rtStr+='<option value="-3">A</option>';
+rtStr+='<option value="-2">A#</option>';
+rtStr+='<option value="-1">B</option>';
+rtStr+='<option value="0" selected>C</option>';
+rtStr+='<option value="1">C#</option>';
+rtStr+='<option value="2">D</option>';
+rtStr+='<option value="3">C#</option>';
+rtStr+='<option value="4">E</option>';
+rtStr+='<option value="5">F#</option>';
+rtStr+='<option value="6">F</option>';
+rtStr+='<option value="7">G</option>';
+rtStr+='<option value="8">G#</option>';
+rtStr+='<option value="9">A</option>';
+rtStr+='<option value="10">A#</option>';
+rtStr+='<option value="11">B</option>';
+

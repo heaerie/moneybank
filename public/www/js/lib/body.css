@@ -1,0 +1,173 @@
+.bcontainer {
+
+
+	FONT-WEIGHT: bold; 
+	FONT-SIZE: 14pt; 
+	COLOR: #caff70; 
+	FONT-STYLE: normal; 
+	FONT-FAMILY: arial, helvetica, sans-serif;
+	 BACKGROUND-COLOR: #4D7F17; 
+	 TEXT-ALIGN: center;
+	 
+	 padding: 4px 1px 1px 1px;
+	font-weight: bold;
+	 
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+	border-top-right-radius: 0px;
+	border-top-left-radius: 0px;
+	border: 1px solid #b8b8b8;
+
+
+	margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+
+
+-webkit-box-shadow: 2px 2px 17px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px 2px 17px 0px rgba(0,0,0,0.75);
+box-shadow: 2px 2px 17px 0px rgba(0,0,0,0.75);
+}
+
+
+.bsession{
+	FONT-WEIGHT: bold; 
+	FONT-SIZE: 14pt; 
+	COLOR: #104e8b; 
+	FONT-STYLE: normal; 
+	FONT-FAMILY: arial, helvetica, sans-serif;
+	 BACKGROUND-COLOR: #f4f4f4; 
+	 TEXT-ALIGN: left;
+	padding: 1px 1px 1px 1px; 
+	opacity: 1;
+	
+}
+
+.bheaderButton
+{
+	float: right;
+	BACKGROUND-COLOR: blue; 
+	
+}
+
+
+.bheaderButton {
+	float: right;
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  text-shadow: 0px 3px 3px #666666;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 17px;
+  
+
+  padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 2.5px;
+	padding-bottom: 2.5px;
+
+	margin-left: 10px;
+	margin-right: 10px;
+
+  text-decoration: none;
+}
+
+.bheaderButton:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
+
+.bcontainer: hover {
+	COLOR: #000000; 
+	opacity: 0.3;
+
+	background-color: yellow;
+} 
+
+.bcontainer a{
+	FONT-WEIGHT: bold;
+	COLOR: #caff70;
+	opacity:0.8;
+}
+
+.bcontainer a:link {
+	FONT-WEIGHT: bold;
+	COLOR: #104e8b;
+}
+.bcontainer a:visited {
+	FONT-WEIGHT: bold; COLOR: #caff70;
+}
+.bcontainer a:active {
+	COLOR: #104e8b;
+}
+
+.bmargin
+{
+   border-radius: 25px;
+    border: 2px solid #8AC007;
+    padding: 20px; 
+   
+}
+.bheader
+{
+
+    padding-top: 8px;
+    padding-bottom: 5px;
+     padding-left: 10px;
+    
+
+    margin-top: 5px;
+	margin-bottom: 5px;
+
+    text-align: left;
+
+}
+
+
+.bfield
+{
+   border-radius: 25px;
+    border: 2px solid #8AC007;
+    padding: 20px; 
+   
+}
+
+.bcont
+{
+   border-radius: 25px;
+    border: 2px solid #0066FF;
+    padding: 20px; 
+   
+}
+
+.ContainerShow
+{
+	color: blue;
+}
+.ContainerHide
+{
+	color: red;
+}
+
+.bmandatory{
+	COLOR: #104e8b;
+	
+	border-style: solid;
+    border-color: #33aa77;
+
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+
+}
+
+.ui-state-highlight
+{
+	border-color: #33aa77;
+}

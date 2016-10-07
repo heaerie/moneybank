@@ -1,0 +1,15 @@
+USS.prototype.USSAppendAccordionSection=function(obj ,table)
+{
+
+this.ussTableAccordion= obj; //document.createElement("div");
+this.ussTableAccordionDiv=document.createElement("div");
+this.ussTableAccordionDiv.className ="panel-collapse collapse" ;
+this.ussTableAccordionDiv.id="collapse1";
+this.ussTableAccordionBody=document.createElement("div");
+this.ussTableAccordionBody.className ="panel-body" ;
+this.ussTableAccordionBody.innerHTML=table.outerHTML;
+this.ussTableAccordionDiv.appendChild(this.ussTableAccordionBody);
+this.ussTableAccordion.appendChild(this.ussTableAccordionDiv);
+
+return this.ussTableAccordion;
+}

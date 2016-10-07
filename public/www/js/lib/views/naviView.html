@@ -1,0 +1,73 @@
+<div class="header_outer">
+
+
+      <div class="header_bg">
+        <div class="header_left ProductVersion">
+       {{prtlName}} Version {{prodVersion}}
+        </div>
+<div class="Logo">
+</div>
+        </div>
+
+</div>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid" style="padding-top :0px; padding-bottom: 0px;">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#treeBase1">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#/dashboard/">{{prodName}} {{prtlName}}</a>
+    </div>
+
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#/dashboard/"><i class="fa fa-user fa-2x" aria-hidden="true"></i> {{firstName}}  {{lastName}} </a></li>
+        <li><a ng-click="goUrl('logout')" id="logout"><i class="fa fa-sign-out fa-2x"></i> LOGOUT</a></li>
+      </ul>
+    <!--/div-->
+  </div>
+</nav>
+
+  <div class="row"> 
+  <div class="col-md-3">
+<div id="treeBase1"  class=" collapse navbar-collapse treeBase" >
+ <!--div  class="TreeBase"  class="nav navbar-nav" ng-repeat="group in entitlement track by $index" >
+<div id="treeContainer1" class="TreeContainer" ng-class="{{( $state.is(group.grpName)) ? 'active' : 'sss'}}"  >
+                      <a href='{{group.grpLink}}'>
+
+                          <span class="TreeContainerText"> <i class="fa fa-plus" aria-hidden="true"></i>
+ {{group.grpName}}</span>
+
+                         </a> {{$state.current }}
+                    </div>
+</div-->
+</div>
+ <!--div id="treeContainer1" class="TreeContainer">
+          <i class="fa fa-folder TreeContainerIcon" aria-hidden="true"></i>
+           <span class="TreeContainerText"> Container</span>
+  </div>         
+
+  <div  id="treeNode1" class="TreeNode" parent="treeContainer1">
+      <i class="fa fa-file-o TreeNodeIcon" aria-hidden="true"></i>
+      <span class="TreeNodeText"> Node1
+      </span>
+  </div>
+
+  <div  id="treeNode2" class="TreeNode" parent="treeContainer1">
+      <i class="fa fa-file-o" aria-hidden="true"></i>
+      <span class="TreeNodeText"> Node2
+      </span>
+  </div>
+
+  </div-->
+  </div>
+<div class="col-md-9">
+<!--div class="container"-->
+<div id="subPageId" ui-view="pageSubContext">
+  Page Sub Context Navi
+  </div>
+</div>
+<!--/div>

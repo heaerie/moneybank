@@ -1,0 +1,133 @@
+
+<div class="row">
+<div class="col-sm-6">
+<!--form name="dynForm" xmlname="Dashboard" class="cform" width="100"!-->
+<div name="middleid" id="middleid" > 
+
+
+  
+
+<center>
+
+<table>
+	<tr>
+		<td>
+				<textarea id="SchemaJsonDfltId" placeholder="SchemaJsonText">
+				[
+	{	
+	group:'ussms',name:'basicDet',label:'Basic Details',task:'ES',desc:'N',htmlType:'PAGE',entitle:'N',enttlname:'',mndf:'N',dataType:'PAGE',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N',maxCol:1, childs: []}
+
+]
+			</textarea>
+		</td>
+		<td>
+				<textarea id="SchemaJsonOutputId" placeholder="SchemaJsonOuput">
+		</textarea>
+		</td>
+		
+	</tr>
+	<tr>
+		<td>
+			<textarea id="SchemaJsonInputId" placeholder="SchemaJsonInput">
+						</textarea>
+		</td>
+		<td>
+			<textarea id="parentId" placeholder="parent"></textarea>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<textarea id="OutJsonTextId" placeholder="OutJsonText"></textarea>
+		</td>
+		<td>
+			<textarea id="LangResoureId" placeholder="LangResoure"></textarea>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<textarea id="XMLTextId" placeholder="XMLText"></textarea>
+		</td>
+		<td>
+			<textarea id="XMLJsonId" placeholder="XMLJson"></textarea>
+		
+		</td>
+	</tr>
+  <tr>
+		<td>
+			<textarea id="ListValId" placeholder="ListVal"></textarea>
+		</td>
+<td>
+			<textarea id="TvlId" placeholder="Tvl"></textarea>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Readonly:
+			<select id="readOnlyFlgId" placeholder="readOnlyFlgId">
+				<option value="Y">Y</option>
+				<option value="N">N</option>
+			</select>
+		</td>
+		<td>
+		Multi Lang:
+			<select id="MultiLangId" placeholder="MultiLang">
+				<option value="Y">Y</option>
+				<option value="N">N</option>
+			</select>
+		</td>
+	</tr>
+</table>
+
+
+
+<!--input type="button" class="button"  parent="hometran" task="EXPAND" value="Expand" onclick="javascript:onClick(this)"-->
+<!--input type="button" class="button" parent="hometran" task="BACK" value="Dashboard" onclick="javascript:onClick(this)"-->
+
+<input type="button"  id="GenListValJson"   parent="hometran" task="GENSJSON" value="Process" onclick="ProcessSJson(this)">
+<input type="button"  id="GenListValJson"   parent="hometran" task="GENSJSON" value="Generate Schema" onclick="GenSJson(this)">
+</center>
+
+<br>
+
+
+
+
+
+
+<!--div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-default">Left</button>
+  <button type="button" class="btn btn-default">Middle</button>
+  <button type="button" class="btn btn-default">Right</button>
+</div-->
+
+<!--button parentid="container0" type="button" mndf="Y"  onclick="AddContainer(this)"childcount="0" value="onclick" type="container">Add Container</button-->
+
+
+<div id="container0" class="bmargin"> </div>
+
+<center>
+
+<input type="text"   id="PageNameId"  task="GENRESOURCE" value="PageName"  title="No">
+<input type="text"   id="PageNameIdLabel"  task="GENRESOURCE" value="Page Name" >
+
+
+<input type="button"  class"button" id="genResourceId" parent="hometran" task="GENRESOURCE" value="generate Resource"  ng-click="genResourceB(this)" >
+<input type="button"  id="validate" parent="hometran" task="Gen JSON" value="Generate Json"  ng-click="GenJsonB(this)">
+<input type="button"  id="verify"   parent="hometran" task="Gen Frame" value="Generate Frame"   ng-click="GenFrameB(this)">
+<input type="button"  id="genxml"   parent="hometran" task="Gen Frame" value="Xml" ng-click="GenXmlB(this)">
+<input type="button"  id="genxmlJson"   parent="hometran" task="Gen Frame" value="XmlJson"  ng-click="GenXmlJsonB(this)">
+<input type="button"  id="GenListValJson"   parent="hometran" task="GGenListValJson" value="Gen List Val" onclick="javascript:GenListValJson(this)" ng-click="GenListValJsonB(this)">
+</center>
+
+</div>
+<!--/form-->
+
+</div>
+
+<div class="col-sm-6">
+<div id="properityWindow">
+Properity window
+</div>
+</div>
+
+</div>

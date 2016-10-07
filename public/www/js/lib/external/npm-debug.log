@@ -1,0 +1,171 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'jquery',
+1 verbose cli   'jquery-ui',
+1 verbose cli   'jqurry-flot',
+1 verbose cli   'jquery-resize',
+1 verbose cli   'jquery-stack' ]
+2 info using npm@1.4.21
+3 info using node@v0.10.25
+4 warn package.json jquery-ui@1.8.21 No README data
+5 verbose readDependencies using package.json deps
+6 verbose cache add [ 'jquery', null ]
+7 verbose cache add name=undefined spec="jquery" args=["jquery",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: 'jquery',
+8 verbose parsed url   path: 'jquery',
+8 verbose parsed url   href: 'jquery' }
+9 warn install Refusing to install jquery-ui as a dependency of itself
+10 verbose cache add [ 'jqurry-flot', null ]
+11 verbose cache add name=undefined spec="jqurry-flot" args=["jqurry-flot",null]
+12 verbose parsed url { protocol: null,
+12 verbose parsed url   slashes: null,
+12 verbose parsed url   auth: null,
+12 verbose parsed url   host: null,
+12 verbose parsed url   port: null,
+12 verbose parsed url   hostname: null,
+12 verbose parsed url   hash: null,
+12 verbose parsed url   search: null,
+12 verbose parsed url   query: null,
+12 verbose parsed url   pathname: 'jqurry-flot',
+12 verbose parsed url   path: 'jqurry-flot',
+12 verbose parsed url   href: 'jqurry-flot' }
+13 verbose cache add [ 'jquery-resize', null ]
+14 verbose cache add name=undefined spec="jquery-resize" args=["jquery-resize",null]
+15 verbose parsed url { protocol: null,
+15 verbose parsed url   slashes: null,
+15 verbose parsed url   auth: null,
+15 verbose parsed url   host: null,
+15 verbose parsed url   port: null,
+15 verbose parsed url   hostname: null,
+15 verbose parsed url   hash: null,
+15 verbose parsed url   search: null,
+15 verbose parsed url   query: null,
+15 verbose parsed url   pathname: 'jquery-resize',
+15 verbose parsed url   path: 'jquery-resize',
+15 verbose parsed url   href: 'jquery-resize' }
+16 verbose cache add [ 'jquery-stack', null ]
+17 verbose cache add name=undefined spec="jquery-stack" args=["jquery-stack",null]
+18 verbose parsed url { protocol: null,
+18 verbose parsed url   slashes: null,
+18 verbose parsed url   auth: null,
+18 verbose parsed url   host: null,
+18 verbose parsed url   port: null,
+18 verbose parsed url   hostname: null,
+18 verbose parsed url   hash: null,
+18 verbose parsed url   search: null,
+18 verbose parsed url   query: null,
+18 verbose parsed url   pathname: 'jquery-stack',
+18 verbose parsed url   path: 'jquery-stack',
+18 verbose parsed url   href: 'jquery-stack' }
+19 silly lockFile 6f2ab963-jquery jquery
+20 verbose lock jquery /home/durai/.npm/6f2ab963-jquery.lock
+21 silly lockFile 4fb184e1-jqurry-flot jqurry-flot
+22 verbose lock jqurry-flot /home/durai/.npm/4fb184e1-jqurry-flot.lock
+23 silly lockFile c75cb291-jquery-resize jquery-resize
+24 verbose lock jquery-resize /home/durai/.npm/c75cb291-jquery-resize.lock
+25 silly lockFile d8cac668-jquery-stack jquery-stack
+26 verbose lock jquery-stack /home/durai/.npm/d8cac668-jquery-stack.lock
+27 silly lockFile 6f2ab963-jquery jquery
+28 silly lockFile 6f2ab963-jquery jquery
+29 silly lockFile 4fb184e1-jqurry-flot jqurry-flot
+30 silly lockFile 4fb184e1-jqurry-flot jqurry-flot
+31 silly lockFile c75cb291-jquery-resize jquery-resize
+32 silly lockFile c75cb291-jquery-resize jquery-resize
+33 silly lockFile d8cac668-jquery-stack jquery-stack
+34 silly lockFile d8cac668-jquery-stack jquery-stack
+35 verbose addNamed [ 'jquery', '' ]
+36 verbose addNamed [ null, '*' ]
+37 silly lockFile 039e748d-jquery jquery@
+38 verbose lock jquery@ /home/durai/.npm/039e748d-jquery.lock
+39 verbose addNamed [ 'jqurry-flot', '' ]
+40 verbose addNamed [ null, '*' ]
+41 silly lockFile 8c0a81b7-jqurry-flot jqurry-flot@
+42 verbose lock jqurry-flot@ /home/durai/.npm/8c0a81b7-jqurry-flot.lock
+43 verbose addNamed [ 'jquery-resize', '' ]
+44 verbose addNamed [ null, '*' ]
+45 silly lockFile 31011638-jquery-resize jquery-resize@
+46 verbose lock jquery-resize@ /home/durai/.npm/31011638-jquery-resize.lock
+47 verbose addNamed [ 'jquery-stack', '' ]
+48 verbose addNamed [ null, '*' ]
+49 silly lockFile e8b64527-jquery-stack jquery-stack@
+50 verbose lock jquery-stack@ /home/durai/.npm/e8b64527-jquery-stack.lock
+51 silly addNameRange { name: 'jquery', range: '*', hasData: false }
+52 silly addNameRange { name: 'jqurry-flot', range: '*', hasData: false }
+53 silly addNameRange { name: 'jquery-resize', range: '*', hasData: false }
+54 silly addNameRange { name: 'jquery-stack', range: '*', hasData: false }
+55 verbose request where is /jquery
+56 verbose request registry https://registry.npmjs.org/
+57 verbose request id d3ed560437220f0e
+58 verbose url raw /jquery
+59 verbose url resolving [ 'https://registry.npmjs.org/', './jquery' ]
+60 verbose url resolved https://registry.npmjs.org/jquery
+61 verbose request where is https://registry.npmjs.org/jquery
+62 info trying registry request attempt 1 at 16:49:54
+63 verbose etag "6B2NCD48FIT0WEZB5RG9E0PDW"
+64 http GET https://registry.npmjs.org/jquery
+65 verbose request where is /jqurry-flot
+66 verbose request registry https://registry.npmjs.org/
+67 verbose url raw /jqurry-flot
+68 verbose url resolving [ 'https://registry.npmjs.org/', './jqurry-flot' ]
+69 verbose url resolved https://registry.npmjs.org/jqurry-flot
+70 verbose request where is https://registry.npmjs.org/jqurry-flot
+71 info trying registry request attempt 1 at 16:49:54
+72 http GET https://registry.npmjs.org/jqurry-flot
+73 verbose request where is /jquery-resize
+74 verbose request registry https://registry.npmjs.org/
+75 verbose url raw /jquery-resize
+76 verbose url resolving [ 'https://registry.npmjs.org/', './jquery-resize' ]
+77 verbose url resolved https://registry.npmjs.org/jquery-resize
+78 verbose request where is https://registry.npmjs.org/jquery-resize
+79 info trying registry request attempt 1 at 16:49:54
+80 http GET https://registry.npmjs.org/jquery-resize
+81 verbose request where is /jquery-stack
+82 verbose request registry https://registry.npmjs.org/
+83 verbose url raw /jquery-stack
+84 verbose url resolving [ 'https://registry.npmjs.org/', './jquery-stack' ]
+85 verbose url resolved https://registry.npmjs.org/jquery-stack
+86 verbose request where is https://registry.npmjs.org/jquery-stack
+87 info trying registry request attempt 1 at 16:49:54
+88 http GET https://registry.npmjs.org/jquery-stack
+89 http 404 https://registry.npmjs.org/jquery-stack
+90 silly registry.get cb [ 404,
+90 silly registry.get   { 'content-type': 'application/json',
+90 silly registry.get     'cache-control': 'max-age=0',
+90 silly registry.get     'content-length': '2',
+90 silly registry.get     'accept-ranges': 'bytes',
+90 silly registry.get     date: 'Wed, 25 Nov 2015 21:49:54 GMT',
+90 silly registry.get     via: '1.1 varnish',
+90 silly registry.get     age: '0',
+90 silly registry.get     connection: 'keep-alive',
+90 silly registry.get     'x-served-by': 'cache-jfk1023-JFK',
+90 silly registry.get     'x-cache': 'MISS',
+90 silly registry.get     'x-cache-hits': '0',
+90 silly registry.get     'x-timer': 'S1448488194.321218,VS0,VE22' } ]
+91 silly lockFile e8b64527-jquery-stack jquery-stack@
+92 silly lockFile e8b64527-jquery-stack jquery-stack@
+93 error 404 Not Found
+93 error 404
+93 error 404 'jquery-stack' is not in the npm registry.
+93 error 404 You should bug the author to publish it
+93 error 404 It was specified as a dependency of 'jquery-ui'
+93 error 404
+93 error 404 Note that you can also install from a
+93 error 404 tarball, folder, or http url, or git url.
+94 error System Linux 3.19.0-15-generic
+95 error command "/usr/bin/nodejs" "/usr/bin/npm" "install" "jquery" "jquery-ui" "jqurry-flot" "jquery-resize" "jquery-stack"
+96 error cwd /home/durai/node/uss13/clientsp/public/www/js/lib/external
+97 error node -v v0.10.25
+98 error npm -v 1.4.21
+99 error code E404
+100 verbose exit [ 1, true ]

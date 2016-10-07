@@ -1,0 +1,30 @@
+SQL :[ 
+ 		{DML:
+ 			[
+			{
+				SELECT:[]
+			}
+			,{
+				INSERT :[]
+}
+,{
+	UPDATE 
+}
+,
+{ 
+	DELETE
+}
+,
+{ 
+	MERGE
+}
+]
+}
+,
+{
+	DDL :[{
+
+		}]
+}
+
+

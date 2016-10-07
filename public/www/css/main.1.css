@@ -1,0 +1,28 @@
+HTML {
+	MARGIN: 0px; FONT-FAMILY: "Trebuchet MS", tahoma, Arial; COLOR: #19405d; FONT-SIZE: 12px
+}
+BODY {
+	MARGIN: 0px; FONT-FAMILY: "Trebuchet MS", tahoma, Arial; COLOR: #19405d; FONT-SIZE: 12px
+}
+TD {
+	MARGIN: 0px
+}
+BODY {
+	BACKGROUND-COLOR: #154b87; MARGIN: 0px auto; VERTICAL-ALIGN: top
+}
+.rightimg {
+	TEXT-ALIGN: right; BACKGROUND: url(../img/nightingale.png) no-repeat left top; HEIGHT: 127px; FONT-SIZE: 20px; FONT-WEIGHT: bold
+}
+.heaerielogo {
+	TEXT-ALIGN: right; BACKGROUND: url(../img/heaerie_header_right.png) no-repeat left top; HEIGHT: 100%; FONT-SIZE: 100%; FONT-WEIGHT: bold
+}
+.header {
+	TEXT-ALIGN: right; BACKGROUND: url(../img/logo.gif) no-repeat left top; HEIGHT: 127px; FONT-SIZE: 20px; FONT-WEIGHT: bold
+}
+.heaerieheader {
+	TEXT-ALIGN: right; BACKGROUND: url(../img/logo.png) no-repeat left top; HEIGHT: 127px; FONT-SIZE: 20px; FONT-WEIGHT: bold
+}
+.sectionheading {
+	BORDER-BOTTOM: #b8cedb 1px solid; LINE-HEIGHT: 26px; FONT-FAMILY: "Trebuchet MS", Arial, Helvetica, sans-serif; HEIGHT: 26px; COLOR: #183f5c; FONT-SIZE: 16px; FONT-WEIGHT: bold
+}
+
