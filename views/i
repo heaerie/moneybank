@@ -1,0 +1,1645 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex" />
+<script language="javascript" src="field_09.js"> </script>
+<script language="javascript" src="validate.js"> </script>
+<script language="javascript" src="xml.js"> </script>
+<!--script language="javascript" src="field_08.js"> </script-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet"       href="services.css" type="text/css"/>
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  
+
+<link rel="stylesheet"       href="body.css" type="text/css"/>
+<base href="http://myroomexpense.com:50145/glbladmin/page/" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+<!-- common css start  -->	
+<!--link rel="stylesheet" href="../css/services.css" type="text/css"-->
+<link rel="stylesheet" href="../css/menu.css" type="text/css"/>
+<!--link rel="stylesheet" href="./css/jquery-ui.min.css" type="text/css"-->
+<!--link rel="stylesheet" href="css/4_2.css" type="text/css"-->
+<!--link rel="stylesheet" href="./css/apex.min.css" type="text/css"-->
+<!--link rel="stylesheet" href="../css/services.css" type="text/css"-->
+<!--link rel="stylesheet" href="./css/jquery-ui.min.css" type="text/css"-->
+<!--link rel="stylesheet" href="css/4_2.css" type="text/css"-->
+<!--link rel="stylesheet" href="css/responsive_grid.css" type="text/css"-->
+<!--link rel="stylesheet" href="css/ussmenu.css" type="text/css"-->
+<!--link href="../external/jquery/1.10.4/css/heaerie/jquery.ui.all.css" rel="stylesheet"-->
+<!--link rel="stylesheet" href="../external/jquery/1.10.4/css/themes/base/jquery.ui.all.css"-->
+<!--link rel="stylesheet" type="text/css" href="../css/jquery.jqplot.min.css" /-->
+<!--link rel="stylesheet" type="text/css" href="../css/examples.min.css" /-->
+<!--link type="text/css" rel="stylesheet" href="../css/shCoreDefault.min.css" /-->
+<!--link type="text/css" rel="stylesheet" href="../css/shThemejqPlot.min.css" /-->
+<!--link rel="stylesheet" href="external/jquery/1.10.4/css/themes/base/jquery.ui.all.css"/--> 
+<!--link rel="stylesheet" href="../css/services.css" type="text/css"-->
+<!-- common css end  -->
+<!--link rel="stylesheet" href="../external/jquery/1.10.4/css/themes/base/jquery.ui.all.css"> </link-->
+<!--link rel="stylesheet" href="../external/jquery/1.10.4/css/themes/base/jquery.ui.all.css"> </link-->
+<link rel="stylesheet" href="../external/jquery/1.10.4/css/heaerie/jquery-ui-1.10.4.custom.css"/>
+
+<style>
+ 
+.cdiv
+{
+width:100%
+}
+  </style>
+<!-- common javascript start -->
+
+<!--script src="js/jquery-1.10.2.js"></script-->
+<!--script src="../external/jquery/1.10.4//js/jquery-1.10.2.js"></script-->
+<!--script src="../external/jquery/1.10.4//js/jquery-ui-1.10.4.custom.js"></script-->
+<!--
+<script src="../external/jquery/1.10.4//ui/jquery.ui.core.js"></script>
+<script src="../external/jquery/1.10.4//ui/jquery.ui.widget.js"></script>
+<script src="../external/jquery/1.10.4//ui/jquery.ui.mouse.js"></script>
+<script src="../external/jquery/1.10.4//ui/jquery.ui.sortable.js"></script>
+<script src="../external/jquery/1.10.4//ui/jquery.ui.button.js"></script>
+<script src="../external/jquery/1.10.4//ui/jquery.ui.draggable.js"></script>
+<script src="../external/jquery/1.10.4//ui/jquery.ui.position.js"></script>
+<script src="../external/jquery/1.10.4//ui/jquery.ui.resizable.js"></script>
+<script src="../external/jquery/1.10.4//ui/jquery.ui.dialog.js"></script>
+<script src="../external/jquery/1.10.4//ui/jquery.effects.core.js"></script>
+-->
+	<!--script src="../external/jquery/1.10.4/js/jquery-ui-1.10.4.custom.js"></script-->
+
+<!--script src="http://code.jquery.com/jquery-1.9.1.js"></script-->
+
+<!--script language="javascript" src="../javascript/field_08.js"> </script-->
+<!--script language="javascript" src="../javascript/field_03.js"> </script-->
+<!--script language="javascript" src="../javascript/field_04.js"> </script-->
+<!--script language="javascript" src="../javascript/field_05.js"> </script-->
+<!--script language="javascript" src="../javascript/field_07.js"> </script-->
+<script language="javascript" src="../javascript/dates.js"> </script>
+<script language="javascript" src="../javascript/Resource.js"> </script>
+
+<script>
+//	alert("Ft02");
+	var us=new USS();
+//	USS.USSIncludeLinks_("../javascript/dates.js");
+//	alert("Ft03");
+
+function  onLoad()
+{
+//	alert("on Load");
+}
+</script>
+<!--script language="javascript" src="../javascript/xml.js"> </script-->
+<!--script language="javascript" src="../javascript/validate.js"> </script-->
+<!--script language="javascript" src="../javascript/validate_04.js"> </script>
+<script language="javascript" src="javascript/map.js"> </script-->
+
+	<!--script src="../javascript/ui/jquery.ui.autocomplete.js"></script-->
+	<!--script src="../javascript/ui/jquery.ui.tabs.js"></script-->
+	<!--script src="../javascript/ui/jquery.ui.progressbar.js"></script-->
+
+<!-- common javascript end -->
+<div class="header_outer">
+
+
+      <div class="header_bg">
+        <div class="header_left">
+        </div>
+<div class="Logo">
+</div>
+        </div>
+
+</div>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#MainNavBar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">HOMESPACE GLOBAL ADMIN</a>
+    </div>
+
+<!--nav>
+
+        </nav-->
+
+
+    <div class="collapse navbar-collapse" id="MainNavBar">
+      <ul class="nav navbar-nav">
+                    
+                        <li
+				
+				class="active"
+				 
+
+				>
+			       <a href='dashboard'
+				> Dashboard  </a>
+                        </li>
+		    
+                        <li
+				 
+
+				>
+			       <a href='pagegroupmaster'
+				> PageGroupMaster  </a>
+                        </li>
+		    
+        <!--li class="active"><a href="#">Home</a></li-->
+        <!--li class="dropdown"-->
+          <!--a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a-->
+          <!--ul class="dropdown-menu"-->
+            <!--li><a href="#">Page 1-1</a></li-->
+            <!--li><a href="#">Page 1-2</a></li-->
+            <!--li><a href="#">Page 1-3</a></li-->
+          <!--/ul -->
+        </li>
+        <!--li><a href="#">Page 2</a></li-->
+        <!--li><a href="#">Page 3</a></li-->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a "/dashboard"><span class="glyphicon glyphicon-user"></span> GOVINDARAJ DURAIMURUGAN</a></li>
+        <!--li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li-->
+        <!--li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li-->
+        <li><a href="/logout" id="logout"><span class="glyphicon glyphicon-log-out"></span> Login Out</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<body class="cbody">
+<script>
+<!-- PersonalInfo.json start -->
+<!-- PersonalInfo -->
+<!-- PersonalInfo.json end -->
+		
+
+</script>
+
+<script>
+var glGroupId    ="1"; 
+var glUserId     ="1"; 
+
+//var glGroupId    ="1"; 
+//var glUserId     ="1";
+</script>
+<!--link rel="stylesheet" href="../javascript/ft04_cust.css" type="text/css">
+
+<script language="javascript" src="../javascript/ft04_cust.js"> </script-->
+<script language="javascript" src="../javascript/Resource.js"> </script>
+<!-- home cust start -->
+<!-- home cust end-->
+<style>
+.outerlayer
+{
+	visibility: visible;
+	left: 850px;
+	//top: ;
+	bottom:1px;
+	min-width: 10px;
+	min-height: 40px;
+	position: absolute;
+}
+</style>
+
+	
+
+<script>
+
+	function onPostReq(url,json,id,type)
+	{
+	//	alert("onPostReq");
+	     var rtVal="";
+	   //  sleep(10);
+
+
+//alert("Call Post");
+
+
+
+             $.post( 
+             url,
+             json,
+             function(data) 
+		{
+
+	//	alert(data);
+		try
+		{
+		if(type == 'DIV')
+		{
+
+		$("#"+id).html(data);
+		
+		
+		}
+		else if( type == 'OBJ')
+		{
+		document.getElementById(id).value= data;
+
+		}
+}	
+catch(e)
+{
+	alert("PostReqExp:<"+ id+">" +e);
+}
+
+		}
+          );
+
+	}
+
+$(function() {
+  //  $( "#accordion" ).accordion({
+     // event: "click hoverintent",
+//heightStyle: "content",active:  1
+ //   });
+
+//$( "#container" ).accordion( "disable" );
+
+//$('#accordion').multiAccordion({active: [1, 2, 3] }
+  });
+ 
+  /*
+   * hoverIntent | Copyright 2011 Brian Cherne
+   * http://cherne.net/brian/resources/jquery.hoverIntent.html
+   * modified by the jQuery UI team
+   */
+
+tips = $( "#validateTips" );
+ 
+   /*[ function errormsg( t ) {
+      tips
+        .text( t )
+        .addClass( "ui-state-highlight" );
+      setTimeout(function() {
+        tips.removeClass( "ui-state-highlight", 1500 );
+      }, 500 );
+    }*/
+
+
+	</script>
+<style>
+.test1
+{
+visibility: visible;
+left:10%;
+//text-align:center;
+vertical-align: middle;
+top: 350px;
+margin-left:auto;
+margin-right:auto;
+min-width: 80%;
+min-height: 400px;
+position: absolute;
+}
+
+
+</style>
+<!--div id="validateTips">All * fields are required.</div>
+<div id="container"> 
+        <div class="headline">Headline 1</div>
+ 
+        <div class="section"> 
+                content 1 
+        </div> 
+        <div class="headline">Headline 2</div> 
+        <div class="section"> 
+                content 2 
+        </div> 
+        <div class="headline">Headline 3</div> 
+        <div class="section"> 
+                content 3 
+        </div> 
+        <div id="expand">Expand All</div> 
+</div--> 
+
+
+
+<uss11>
+<!--div name="middleid" id="middleid" class="test1"--> 
+<div name="middleid" id="middleid" > 
+
+<script>
+
+
+var USSAccordion0=new us.USSCreateAccordion(0);
+var scriptElmnt= document.createElement("script");
+scriptElmnt.appendChild(document.createTextNode( us.USSScript));
+
+document.getElementById('middleid').appendChild(USSAccordion0).appendChild(scriptElmnt);
+//USSAccordion2=new us.USSAppendAccordion(USSAccordion1,"Actions", USSTable);
+
+/**/
+	
+//document.getElementsByTagName('middleid').appendChild(USSAccordion2);
+//document.getElementById('middleid').appendChild(USSAccordion2);
+//document.getElementsByTagName('form').item(1).appendChild(USSAccordion2);
+//*/
+</script>
+
+<!--div id="container"> 
+        <div class="headline">Headline 1</div> 
+        <div class="section"> 
+                content 1 
+        </div> 
+        <div class="headline">Headline 2</div> 
+        <div class="section"> 
+                content 2 
+        </div> 
+        <div class="headline">Headline 3</div> 
+        <div class="section"> 
+                content 3 
+        </div> 
+        <div id="expand">Expand All</div> 
+</div--> 
+
+
+
+
+<script>
+
+
+
+function hasChild(fieldObj)
+{
+	//console.log(fieldObj);
+
+	if( Array.isArray(fieldObj.childs))
+	{
+
+		if( fieldObj.childs.length == 0 )
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
+	else
+	{
+		return false;
+	}
+
+	
+}
+
+	var data={};
+
+
+	
+	function commFrameGen(rec,recSch,func)
+	{
+		var commonHeader="var us = new USS(); var USSContainer0 =    us.USSCreateContainer(); var USSHeader    = ''";
+		
+
+		
+		var vcommonFrameGen =frameGenerationJson(recSch,
+	{
+ name       : 'Dashboard'
+,label      : 'Dashboard'
+,task       : 'NONE'
+,desc       : ''
+,htmlType   : 'PARENT' 
+,entitle    : 'READONLY' 
+,enttlname  : ''
+,mndf       : 'N'
+,dataType   : 'CONTAINER'
+,cclass     : 'ctable'
+,validate   : ''
+,parent     : 'Dashboard_0_0'
+,dflt       : ''
+,min        : '0'
+,max        : '20'
+,tips       : ''
+,onkeyup    : 'onKeyUp(this);'
+,onchange   : 'onChange(this);'
+,onkeydown  : 'onKeyDown(this);'
+,onkeypress : 'onKeyPress(this);'
+,onclick    : 'onClick(this);'
+,listVal    : '||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY'
+,help       : 'N'
+,helpLink   : 'helpload'
+,xml        : 'Y'
+,Xpath      : '/'
+,childs     : recSch
+} 
+);
+		
+
+		
+		
+var commonTailer=""
+commonTailer+="\n document.getElementById('middleid').appendChild(USSContainer0); ";
+
+//USSAccordion2=new us.USSAppendAccordion(USSAccordion1,"Actions", USSTable);
+		
+		
+		return commonHeader + vcommonFrameGen + commonTailer;
+		
+		
+	}
+	
+	
+	function print(str)
+	{
+		console.log(" " + str + " ");
+		return "\n " + str + " ";
+	}
+	
+	
+	function debug(str)
+	{
+		//document.write("\n <!--### " + str + "-->");
+		console.log("<!--### " + str + "--> ");
+	}
+	
+
+function frameGenerationJson(
+ recSch
+,parent
+)
+{   var lv_str ="";	
+	var lv_rtStr="";
+ 	var objEvalStr ="";
+	var ReturnArray = ""
+	
+	ReturnArray += parent.name +":[  {"
+	try
+	{
+
+		
+
+	if( parent.dataType == "CONTAINER" )
+	{
+	
+		
+		
+		for (var recSchCnt=0;recSchCnt < recSch.length ; recSchCnt++)
+
+		{
+			
+			
+		
+			if( hasChild(recSch[recSchCnt]))
+			{
+
+
+
+			var ArrayRetn  = frameGenerationJson(recSch[recSchCnt].childs,recSch[recSchCnt]);
+				
+					//ReturnArray.push( eval( "{" + parent.name +":" + ArrayRetn +"}") );
+			if(recSchCnt == 0)
+			{
+				ReturnArray += ""
+			}
+			else
+			{
+				ReturnArray += "},{"
+			}
+				ReturnArray +=  ArrayRetn ;
+			
+//				ReturnArray
+				
+			
+			}
+			else 
+			{	
+			if(recSchCnt != 0)
+			{
+				ReturnArray += ","
+			}
+					//console.log("col");
+				//	console.log(eval( "{" + recSch[recSchCnt].name +":" + recSch[recSchCnt].name+ recSchCnt +"}" ));
+					
+				 ReturnArray += recSch[recSchCnt].name +":'" + recSch[recSchCnt].dflt +"'";
+
+				
+			}
+		
+		
+		}
+		
+	//	ReturnArray +="]"
+ 	
+	}
+	else if(parent.dataType == "COLLECTION" )
+	{
+
+
+		for(var recCnt=0 ; recCnt < (( parent.max == "unlimited" ) ? 1 : parent.max  ) ; recCnt++)
+		{
+
+		for (var recSchCnt=0;recSchCnt < recSch.length ; recSchCnt++)
+
+		{
+			if(recSchCnt != 0)
+			{
+				ReturnArray += ","
+			}
+			
+		
+			if( hasChild(recSch[recSchCnt]))
+			{
+			var ArrayRetn  = frameGenerationJson(recSch[recSchCnt].childs,recSch[recSchCnt]);
+				
+					//ReturnArray.push( eval( "{" + parent.name +":" + ArrayRetn +"}") );
+				
+				ReturnArray +=  ArrayRetn ;
+//				ReturnArray
+				
+			
+			}
+			else 
+			{	
+			
+					//console.log("col");
+				//	console.log(eval( "{" + recSch[recSchCnt].name +":" + recSch[recSchCnt].name+ recSchCnt +"}" ));
+					
+				 ReturnArray += recSch[recSchCnt].name +":'" + recSch[recSchCnt].dflt +"'";
+
+				
+			}
+		}
+		
+		}
+
+	}
+
+	
+	
+}
+catch(e)
+{
+	alert("Exception" + e);
+}
+
+
+	
+	ReturnArray +="}]";
+
+	//alert(ReturnArray);
+
+	return ReturnArray;
+}
+
+
+
+function frameGenerationResoure(
+ recSch
+,parent
+)
+{   var lv_str ="";	
+	var lv_rtStr="";
+ 	var objEvalStr ="";
+	var ReturnArray = ""
+	
+	ReturnArray += parent.name +":[ \n {"
+	try
+	{
+
+		
+
+	if( parent.dataType == "CONTAINER" )
+	{
+	
+		
+		
+		for (var recSchCnt=0;recSchCnt < recSch.length ; recSchCnt++)
+
+		{
+			
+			
+		
+			if( hasChild(recSch[recSchCnt]))
+			{
+
+
+
+			var ArrayRetn  = frameGenerationResoure(recSch[recSchCnt].childs,recSch[recSchCnt]);
+				
+					//ReturnArray.push( eval( "{" + parent.name +":" + ArrayRetn +"}") );
+			if(recSchCnt == 0)
+			{
+				ReturnArray += ""
+			}
+			else
+			{
+				ReturnArray += "},\n{\n"
+			}
+				ReturnArray +=  ArrayRetn ;
+			
+//				ReturnArray
+				
+			
+			}
+			else 
+			{	
+			if(recSchCnt != 0)
+			{
+				ReturnArray += ",\n"
+			}
+					//console.log("col");
+				//	console.log(eval( "{" + recSch[recSchCnt].name +":" + recSch[recSchCnt].name+ recSchCnt +"}" ));
+					
+				 ReturnArray += recSch[recSchCnt].name +":'" + recSch[recSchCnt].label +"'";
+
+				
+			}
+		
+		
+		}
+		
+	//	ReturnArray +="]"
+ 	
+	}
+	else if(parent.dataType == "COLLECTION" )
+	{
+
+
+		for(var recCnt=0 ; recCnt < (( parent.max == "unlimited" ) ? 1 : parent.max  ) ; recCnt++)
+		{
+
+			for (var recSchCnt=0;recSchCnt < recSch.length ; recSchCnt++)
+
+		{
+			
+			
+		
+			if( hasChild(recSch[recSchCnt]))
+			{
+
+
+
+			var ArrayRetn  = frameGenerationResoure(recSch[recSchCnt].childs,recSch[recSchCnt]);
+				
+					//ReturnArray.push( eval( "{" + parent.name +":" + ArrayRetn +"}") );
+			if(recSchCnt == 0)
+			{
+				ReturnArray += ""
+			}
+			else
+			{
+				ReturnArray += "},\n{\n"
+			}
+				ReturnArray +=  ArrayRetn ;
+			
+//				ReturnArray
+				
+			
+			}
+			else 
+			{	
+			if(recSchCnt != 0)
+			{
+				ReturnArray += "\n,"
+			}
+					//console.log("col");
+				//	console.log(eval( "{" + recSch[recSchCnt].name +":" + recSch[recSchCnt].name+ recSchCnt +"}" ));
+					
+				 ReturnArray += recSch[recSchCnt].name +":'" + recSch[recSchCnt].label +"'";
+
+				
+			}
+		
+		
+		}
+		}
+
+	}
+
+	
+	
+}
+catch(e)
+{
+	alert("Exception" + e);
+}
+
+
+	
+	ReturnArray +="\n} \n]";
+
+	//alert(ReturnArray);
+
+	return ReturnArray;
+}
+
+
+
+
+	
+function frameField(recSch,varStrVal,varLabelStrVal,func)
+{
+var lv_str="";
+if ( varStrVal === undefined)
+varStrVal=="";
+
+lv_str  += "\n USSTableRow = us.USSCreateTableRow_();	";
+lv_str  += "\n USSField    = new us.USSField_(); ";
+lv_str  += "\n USSField" + "." + "group"      + "=" + "'" + recSch.group      + "'" + ";"
+lv_str  += "\n USSField" + "." + "name"       + "=" + "'" + recSch.name       + "'" + ";"
+lv_str  += "\n USSField" + "." + "label"      + "=" + "'" + varLabelStrVal    + "'" + ";"
+lv_str  += "\n USSField" + "." + "task"       + "=" + "'" + recSch.task       + "'" + ";"
+lv_str  += "\n USSField" + "." + "desc"       + "=" + "'" + recSch.desc       + "'" + ";"
+lv_str  += "\n USSField" + "." + "htmlType"   + "=" + "'" + recSch.htmlType   + "'" + ";"
+
+
+//container
+if ( func == "Y" )
+{
+	lv_str  += "\n USSField" + "." + "entitle"    + "=" + "'" + recSch.entitle    + "'" + ";"
+}
+else
+{
+	lv_str  += "\n USSField" + "." + "entitle"    + "=" + "'READONLY'" + ";"
+}
+lv_str  += "\n USSField" + "." + "enttlname"  + "=" + "'" + recSch.enttlname  + "'" + ";"
+lv_str  += "\n USSField" + "." + "mndf"       + "=" + "'" + recSch.mndf       + "'" + ";"
+lv_str  += "\n USSField" + "." + "dataType"   + "=" + "'" + recSch.dataType   + "'" + ";"
+lv_str  += "\n USSField" + "." + "cclass"     + "=" + "'" + recSch.cclass     + "'" + ";"
+lv_str  += "\n USSField" + "." + "validate"   + "=" + "'" + recSch.validate   + "'" + ";"
+lv_str  += "\n USSField" + "." + "parent"     + "=" + "'" + recSch.parent     + "'" + ";"
+//lv_str  += "\n USSField" + "." + "dflt"       + "=" + "'" + recSch[s].dflt       + "'" + ";"
+lv_str  += "\n USSField" + "." + "dflt"       + "=" + "'" + varStrVal      + "'" + ";"
+lv_str  += "\n USSField" + "." + "min"        + "=" + "'" + recSch.min        + "'" + ";"
+lv_str  += "\n USSField" + "." + "max"        + "=" + "'" + recSch.max        + "'" + ";"
+lv_str  += "\n USSField" + "." + "tips"       + "=" + "'" + recSch.tips       + "'" + ";"
+lv_str  += "\n USSField" + "." + "onkeyup"    + "=" + "'" + recSch.onkeyup    + "'" + ";"
+lv_str  += "\n USSField" + "." + "onchange"   + "=" + "'" + recSch.onchange   + "'" + ";"
+lv_str  += "\n USSField" + "." + "onkeydown"  + "=" + "'" + recSch.onkeydown  + "'" + ";"
+lv_str  += "\n USSField" + "." + "onkeypress" + "=" + "'" + recSch.onkeypress + "'" + ";"
+lv_str  += "\n USSField" + "." + "onclick"    + "=" + "'" + recSch.onclick    + "'" + ";"
+lv_str  += "\n USSField" + "." + "listVal"    + "=" + "'" + recSch.listVal    + "'" + ";"
+lv_str  += "\n USSField" + "." + "help"       + "=" + "'" + recSch.help       + "'" + ";"
+lv_str  += "\n USSField" + "." + "helpLink"   + "=" + "'" + recSch.helpLink   + "'" + ";"
+lv_str  += "\n USSField" + "." + "xml"        + "=" + "'" + recSch.xml        + "'" + ";"
+
+lv_str  += "\n USSField" + "." + "Xpath"      + "=" + "'" + recSch.Xpath      + "'" + ";"
+lv_str  += "\n USSTableRow=us.CreateField(USSField,USSTableRow);";
+
+return lv_str;
+
+}
+
+
+function frameGeneration(
+recLabel
+,rec
+,recSch
+,parent
+,level
+,func
+,parentCnt
+)
+{   var lv_str ="";	
+	var lv_rtStr="";
+	
+
+
+
+var uss= new USS();
+//	try
+//	{
+
+lv_str += print( "USSContainer"+level+"   =   us.USSCreateContainer();");
+
+parent.htmlType="HIDDEN";
+	
+	if( parent.dataType == "CONTAINER")
+	{
+	
+	
+		
+		lv_str += print('USSTable'  +  level +'     =   new us.USSCreateTable_();');
+		lv_str += print('USSHeader' +  level +'     =   us.USSCreateHeader("'+ parent.label+'");');
+		lv_str += print('USSSession'+  level +'     =   us.USSCreateSession();' );
+		
+				parent.name = parent.name + "_"+level + "_"+ 0;
+
+				lv_rtStr=frameField(parent,'','',func,parent.name);
+				lv_str += print(lv_rtStr);
+				lv_str += print('USSSession'+  level +'.appendChild(USSTableRow);' );
+
+
+		
+		for (var recSchCnt=0;recSchCnt < recSch.length ; recSchCnt++)
+		{
+		
+		recSch[recSchCnt].parent=parent.name;
+
+
+			//alert("recSchCnt=<"  + recSchCnt + "> recSch.length  =<" + recSch.length  + ">recSch["+recSchCnt+"].dataType " + recSch[recSchCnt].dataType  );
+			//alert("recSchCnt="  + recSchCnt);
+
+			
+			
+			if( hasChild(recSch[recSchCnt]))
+			{
+
+				console.log(rec);
+				var evalStr="rec["+recSchCnt+"]." +recSch[recSchCnt].name;
+				var labelEvalStr="recLabel["+recSchCnt+"]." +recSch[recSchCnt].name;
+			debug(" evalStr =["+ evalStr+"]");
+			var  objEvalStr=eval(evalStr);
+
+			console.log(recLabel);
+			
+			debug(" labelEvalStr =["+ labelEvalStr+"]");
+			var  labelObjEvalStr=eval(labelEvalStr);
+
+			
+
+
+				lv_rtStr  = frameGeneration(labelObjEvalStr,objEvalStr,recSch[recSchCnt].childs,recSch[recSchCnt],level+1,func,recSchCnt);
+				lv_str+= print(lv_rtStr);
+
+				lv_str += print("USSSession"+level+".appendChild(USSContainer"+(level+1)+");");
+			
+			}
+			else 
+			{
+
+
+				var evalStr="rec["+0+"]." +recSch[recSchCnt].name;
+				var labelEvalStr="recLabel["+0+"]." +recSch[recSchCnt].name;
+			debug(" evalStr =["+ evalStr+"]");
+			var  objEvalStr=eval(evalStr);
+
+
+			
+			debug(" labelEvalStr =["+ labelEvalStr+"]");
+			var  labelObjEvalStr=eval(labelEvalStr);
+
+					//alert("objEvalStr=" + objEvalStr);
+					if( objEvalStr === undefined)
+					{
+						objEvalStr='';
+					}
+
+					if( labelObjEvalStr === undefined)
+					{
+						labelObjEvalStr='';
+					}
+
+					
+
+				lv_rtStr=frameField(recSch[recSchCnt],objEvalStr,labelObjEvalStr,func,level,recSchCnt);
+				lv_str += print(lv_rtStr);
+				lv_str += print('USSSession'+  level +'.appendChild(USSTableRow);' );
+			}
+		
+		
+		}
+ 		
+lv_str += print( "USSContainer"+level+".appendChild(USSHeader" +  level +" );");
+	lv_str += print( "USSContainer"+level+".appendChild(USSSession" +  level +" );");
+		
+
+		//lv_str+= print("USSAccordion"+level+"           =new us.USSAppendAccordionDflt(USSAccordion"+level+",USSAppendAccordionDflt"+(level)+" ) ;");
+
+		
+					
+	
+	}
+	if( parent.dataType == "COLLECTION")
+	{
+
+
+
+		
+//alert("parent.max" + parent.max);
+		var MaxRecCount=0;
+		if(parent.max =="unlimited")
+		{
+
+			MaxRecCount=rec.length;
+		}
+		else
+		{
+			MaxRecCount=parent.max;
+		}
+		for(var recCnt= 0; recCnt < MaxRecCount; recCnt++)
+		{		
+			lv_str += print('USSTable'  +  level +'     =   new us.USSCreateTable_();');
+			lv_str += print('USSHeader' +  level +'     =   us.USSCreateHeader("'+ parent.label+'");');
+			lv_str += print('USSSession'+  level +'     =   us.USSCreateSession();' );
+
+			lv_rtStr=frameField(parent,'','',func,level,recCnt,parent.name);
+				lv_str += print(lv_rtStr);
+				lv_str += print('USSSession'+  level +'.appendChild(USSTableRow);' );
+			
+			for (var recSchCnt=0;recSchCnt < recSch.length ; recSchCnt++)
+			{
+			
+			
+
+
+				//alert("recSchCnt=<"  + recSchCnt + "> recSch.length  =<" + recSch.length  + ">recSch["+recSchCnt+"].dataType " + recSch[recSchCnt].dataType  );
+				//alert("recSchCnt="  + recSchCnt);
+
+				var evalStr="rec["+recCnt+"]." +recSch[recSchCnt].name;
+				debug(" evalStr =["+ evalStr+"]");
+				var  objEvalStr="";
+
+
+			var labelEvalStr="rec["+recCnt+"]." +recSch[recSchCnt].name;
+			debug(" labelEvalStr =["+ labelEvalStr+"]");
+			var  labelObjEvalStr=eval(labelEvalStr);
+
+				try
+				{
+				  objEvalStr=eval(evalStr);
+				}
+				catch(e)
+				{
+					//alert("OES Exception " +e);
+					objEvalStr="";
+				}
+				
+				if( uss.hasChild(recSch[recSchCnt]))
+				{
+					lv_rtStr  = frameGeneration(labelEvalStr,objEvalStr,recSch[recSchCnt].childs,recSch[recSchCnt],level+1,func,recSchCnt);
+					lv_str+= print(lv_rtStr);
+
+					lv_str += print("USSSession"+level+".appendChild(USSContainer"+(level+1)+");");
+				
+				}
+				else 
+				{
+					//alert("objEvalStr=" + objEvalStr);
+					if( objEvalStr === undefined)
+					{
+						objEvalStr='';
+					}
+					lv_rtStr=frameField(lrecSch[recSchCnt],objEvalStr,labelObjEvalStr,func,level,recCnt,parent.name);
+					lv_str += print(lv_rtStr);
+					lv_str += print('USSSession'+  level +'.appendChild(USSTableRow);' );
+				}
+		
+		
+			}
+			lv_str += print( "USSContainer"+level+".appendChild(USSHeader" +  level +" );");
+			lv_str += print( "USSContainer"+level+".appendChild(USSSession" +  level +" );");
+		}
+		//alert("recCnt=" + recCnt);
+	
+	}
+
+	
+	
+//}
+//catch(e)
+//{
+//	alert("Exception" + e);
+//}
+
+
+	debug( level + "_" + parentCnt +" end ##### frameGeneration ###### " );
+	
+
+	return lv_str;
+}
+
+
+	function valWithSch(rec,recSch)
+	{
+		//alert( recSch.name +" : " +recSch.dataType);
+		//alert(rec);
+		/*[
+		if ( recSch.dataType != "CONTAINER" || recSch.dataType != "SCHEMA"   )
+		{
+				//alert( recSch.name + "="+ eval('rec.'+recSch.name) );
+				
+				value= eval('rec.'+recSch.name);
+				
+				//alert(value );
+				
+				if (value           === undefined) {
+					value='';
+				}
+				if (recSch.childs   === undefined) {
+					recSch.childs=new Array();
+				}
+				if (recSch.htmlType === undefined) {
+					recSch.htmlType='';
+				}
+				if (recSch.dataType === undefined) {
+					recSch.dataType='';
+				}
+				if (recSch.groupId  === undefined) {
+				recSch.groupId='';
+				}
+				
+				
+		
+		
+		  switch ( recSch.dataType )
+		  {
+		    case "DATE" : 
+		  		re = /^\d{1,2}\/\d{1,2}\/\d{4}$/;
+				if(value != '' && !value.match(re)) {
+     			 alert("Invalid date format: " + value);
+      			 return false;
+      			 }
+      			 break;
+    		case "TIME" :
+    			// regular expression to match required time format
+    			re = /^\d{1,2}:\d{2}([ap]m)?$/;
+				if(value != '' && !value.match(re)) {
+     			 alert("Invalid time format: " + value);
+     			 return false;
+    			}
+    			break;
+		
+			case "VARCHAR" :
+				// regular expression to match required time format
+    			re = /^[A-Za-z0-9_]{3,20}$/;
+				if(value != '' && !value.match(re)) {
+     			 alert("Invalid time format: " + value);
+     			 return false;
+     			 }
+    		 
+		}
+		 
+		}
+		
+			//alert(" type of " + typeof recSch.childs );
+	
+				for  ( var i=0; i <recSch.childs.length ; i++ )
+				{ 
+				
+					var recList=eval( 'rec.' + recSch.name ) ;
+					alert(recList.length);
+					for  ( var j=0; j <recList.length ; j++ )
+					{
+						valWithSch(recList[j],recSch.childs[i]);
+					}
+				}
+				*/
+				
+				
+		for ( var r=0; r<rec.length; r++)
+		//for ( var s =0; s <recSch.length; s++)
+		{
+			 //alert (recSch[s]);
+			 for ( var s =0; s <recSch.length; s++)
+			 //for ( var r=0; r<rec.length; r++)
+			 {
+			 
+			 var varStr='rec['+ r + '].' + recSch[s].name;
+			 var varStrVal= eval(varStr);
+			 
+			if ( recSch[s].dataType != "CONTAINER" || recSch[s].dataType != "SCHEMA" )
+			{
+			// alert(recSch[s].dataType);
+			 
+			 
+			 value= varStrVal;
+				
+				//alert(value );
+				
+				if (value           === undefined) {
+					value='';
+				}
+				if (recSch[s].childs   === undefined) {
+					recSch[s].childs=new Array();
+				}
+				if (recSch[s].htmlType === undefined) {
+					recSch[s].htmlType='';
+				}
+				if (recSch[s].dataType === undefined) {
+					recSch[s].dataType='';
+				}
+				if (recSch[s].groupId  === undefined) {
+				recSch[s].groupId='';
+				}
+				
+				
+		
+		
+		  switch ( recSch[s].dataType )
+		  {
+		    case "DATE" : 
+		  		re = /^\d{1,2}\/\d{1,2}\/\d{4}$/;
+				if(value != '' && !value.match(re)) {
+     			 alert(recSch[s].name + "Invalid date format: " + value);
+      			 return false;
+      			 }
+      			 break;
+    		case "TIME" :
+    			// regular expression to match required time format
+    			re = /^\d{1,2}:\d{2}([ap]m)?$/;
+				if(value != '' && !value.match(re)) {
+     			 alert(recSch[s].name +  "Invalid time format: " + value);
+     			 return false;
+    			}
+    			break;
+		    case "NUMBER" :
+    			if (recSch[s].max != "unlimited" )
+				{
+				re = RegExp("^[0-9.]{"+ recSch[s].min + "," + recSch[s].max + "}$");
+					//if(value != '' && !value.match(re))
+					if(value != '' && !re.test(value)) 
+					{
+						 alert( recSch[s].name + " Exceed  limit " + recSch[s].min + " to " + recSch[s].max );
+						 return false;
+					 }
+    			}
+    			else
+    			{
+					re =/^[A-Za-z0-9_]$/;
+					if(value != '' && !value.match(re)) 
+					{
+						 alert( recSch[s].name + " Invalid time format: " + value);
+						 return false;
+					}
+     			 
+    			}
+    			break;
+			case "VARCHAR" :
+				// regular expression to match required time format
+				if (recSch[s].max != "unlimited" )
+				{
+					//re = /^[A-Za-z0-9_]{0,20}$/
+					re = RegExp("^[A-Za-z0-9_]{"+ recSch[s].min + "," + recSch[s].max + "}$");
+					if(value != '' && !value.match(re)) 
+					{
+						 alert(recSch[s].name +"Exceed  limit " + recSch[s].min + " to " + recSch[s].max +"[ " + value + "]" );
+						 return false;
+					 }
+    			}
+    			else
+    			{
+					re =/^[A-Za-z0-9_]$/;
+					if(value != '' && !value.match(re)) 
+					{
+						 alert(recSch[s].name + "Invalid time format: " + value);
+						 return false;
+					}
+     			 
+    			} 
+    			break;
+    		case "LIST" :
+    		case "OPTION" :
+				// regular expression to match required time format
+				 recSch[s].listVal	
+				 if ( value != '' )
+				 {
+				 var inpStrArr= recSch[s].listVal.split('|');
+				 	var chk=0;
+					for(var i=0 ; i< inpStrArr.length;i+=2)
+					{
+						if( value == inpStrArr[i])
+						{
+						chk=1;
+						}
+					}
+					if  ( chk!=1 )
+					{
+						alert( recSch[s].name + " Invalid time format: " + value);
+						return false;
+					}
+				}
+				
+				 	 
+			}
+			 
+			}
+			
+			  if (recSch[s].childs   === undefined) 
+			  {
+					recSch[s].childs=new Array();
+			  }
+			  valWithSch(varStrVal,recSch[s].childs);
+			 
+			 } 
+			 
+		}
+		
+	}
+		
+		var PersonalInfo =[ 
+			{
+			psnlInfo:[ 
+				{
+					BasicDet:[
+					{
+					name:"durai"
+
+					},
+					{
+					name:"Akbar"
+
+					}
+					]
+			}
+				]
+								}
+					];
+			
+	
+			var PersonalInfoSch = [
+									{
+	group:'ussms',
+	name:'psnlInfo',
+	label:'Personal Information ',
+	task:'NONE',
+	desc:'VARCHAR',
+	htmlType:'TAP',
+	entitle:'N',
+	enttlname:'',
+	mndf:'N',
+	dataType:'CONTAINER',
+	cclass:'ctext',
+	validate:'',
+	dflt:'',
+	min:'0',
+	max:'60',
+	tips:'',
+	onkeyup:'',
+	onchange:'',
+	onkeydown:'',
+	onkeypress:'',
+	onclick:'',
+	listVal:'""',
+	help:'N',
+	helpLink:'',
+	xml:'N',
+	Xpath:'N' ,
+	childs:[ 
+			{
+				group:'ussms',
+			name:'BasicDet',
+			label:'Basic Details',
+			task:'NONE',
+			desc:'VARCHAR',
+			htmlType:'CONTAINER',
+			entitle:'N',
+			enttlname:'',
+			mndf:'N',
+			dataType:'COLLECTION',
+			cclass:'ctext',
+			validate:'',
+			dflt:'',
+			min:'0',
+			max:'2',
+			tips:'',
+			onkeyup:'',
+			onchange:'',
+			onkeydown:'',
+			onkeypress:'',
+			onclick:'',
+			listVal:'',
+			help:'N',
+			helpLink:'',
+			xml:'N',
+			Xpath:'N' ,
+			childs:[
+			{group:'ussms',
+			name:'name',
+			label:'Name ',
+			task:'NONE',
+			desc:'VARCHAR',
+			htmlType:'TEXT',
+			entitle:'N',
+			enttlname:'',
+			mndf:'N',
+			dataType:'VARCHAR',
+			cclass:'ctext',
+			validate:'',
+			dflt:'',
+			min:'0',
+			max:'2',
+			tips:'',
+			onkeyup:'',
+			onchange:'',
+			onkeydown:'',
+			onkeypress:'',
+			onclick:'',
+			listVal:'',
+			help:'N',
+			helpLink:'',
+			xml:'N',
+			Xpath:'N' ,
+			childs:'N' }
+		
+						]
+				}
+					]
+	}
+	]
+;			
+			//valWithSch(PersonalInfo,PersonalInfoSch);	
+									
+</script>
+
+
+<script type="text/javascript">
+
+function GenJson(obj)
+{
+
+	var SchemaJsonTextId=document.getElementById("SchemaJsonTextId");
+	var OutJsonTextId=document.getElementById("OutJsonTextId");
+	var MultiLang=document.getElementById("MultiLang"); 
+try
+{
+	schemaJson=eval(SchemaJsonTextId.value);
+
+
+
+OutJsonTextId.value=	frameGenerationJson(schemaJson,
+	{
+ name       : 'Dashboard'
+,label      : 'Dashboard'
+,task       : 'NONE'
+,desc       : ''
+,htmlType   : 'PARENT' 
+,entitle    : 'READONLY' 
+,enttlname  : ''
+,mndf       : 'N'
+,dataType   : 'CONTAINER'
+,cclass     : 'ctable'
+,validate   : ''
+,parent   : '/'
+,dflt       : ''
+,min        : '0'
+,max        : '20'
+,tips       : ''
+,onkeyup    : 'onKeyUp(this);'
+,onchange   : 'onChange(this);'
+,onkeydown  : 'onKeyDown(this);'
+,onkeypress : 'onKeyPress(this);'
+,onclick    : 'onClick(this);'
+,listVal    : '||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY'
+,help       : 'N'
+,helpLink   : 'helpload'
+,xml        : 'N'
+,Xpath      : '/'
+,childs     : schemaJson
+} 
+);
+
+}
+catch(e)
+{
+	alert("GenJson Exep:" +e);
+}
+
+
+}
+
+
+function GenFrame(obj)
+{
+
+	var SchemaJsonTextId=document.getElementById("SchemaJsonTextId");
+	var OutJsonTextId=document.getElementById("OutJsonTextId");
+var readOnlyFlgId=document.getElementById("readOnlyFlgId");
+var LangResoureId=document.getElementById("LangResoureId");
+	
+	
+	var func =readOnlyFlgId.value;
+try
+{
+
+	resourceJson= eval(LangResoureId.value);
+	recSch=eval(SchemaJsonTextId.value);
+
+	rec=eval(OutJsonTextId.value);
+
+
+		var commonHeader="var us = new USS(); var USSContainer0 =    us.USSCreateContainer(); var USSHeader    = ''";
+		
+
+		
+		var vcommonFrameGen =frameGeneration(resourceJson,rec,recSch,
+	{
+ name       : 'Dashboard'
+,label      : 'Dashboard'
+,task       : 'NONE'
+,desc       : ''
+,htmlType   : 'PARENT' 
+,entitle    : 'READONLY' 
+,enttlname  : ''
+,mndf       : 'N'
+,dataType   : 'CONTAINER'
+,cclass     : 'ctable'
+,validate   : ''
+,parent     : '/'
+,dflt       : ''
+,min        : '0'
+,max        : '20'
+,tips       : ''
+,onkeyup    : 'onKeyUp(this);'
+,onchange   : 'onChange(this);'
+,onkeydown  : 'onKeyDown(this);'
+,onkeypress : 'onKeyPress(this);'
+,onclick    : 'onClick(this);'
+,listVal    : '||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY'
+,help       : 'N'
+,helpLink   : 'helpload'
+,xml        : 'Y'
+,Xpath      : '/'
+,childs     : recSch
+} 
+,
+0
+,
+func
+,
+0
+);
+		
+
+		
+		
+var commonTailer=""
+commonTailer+="\n document.getElementById('FrameId').appendChild(USSContainer0); ";
+
+
+
+var script=document.createElement("script");
+//scr.appendChild(commonHeader + vcommonFrameGen + commonTailer);
+script.type='text/javascript';
+
+script.text=commonHeader + vcommonFrameGen + commonTailer;
+document.getElementById('FrameId').appendChild(script);
+
+
+}
+catch(e)
+{
+	alert("GenJson Exep:" +e);
+}
+
+
+}
+
+function GenResource()
+{
+	//alert("Gen Resource");
+
+
+	var SchemaJsonTextId=document.getElementById("SchemaJsonTextId");
+	var LangResoureId=document.getElementById("LangResoureId");
+	var MultiLang=document.getElementById("MultiLang"); 
+
+try
+{
+	schemaJson=eval(SchemaJsonTextId.value);
+
+
+
+
+
+LangResoureId.value=	frameGenerationResoure(schemaJson,
+	{
+
+ name       : 'Dashboard'
+,label      : 'Dashboard'
+,task       : 'NONE'
+,desc       : ''
+,htmlType   : 'PARENT' 
+,entitle    : 'READONLY' 
+,enttlname  : ''
+,mndf       : 'N'
+,dataType   : 'CONTAINER'
+,cclass     : 'ctable'
+,validate   : ''
+,parent     : '/'
+,dflt       : ''
+,min        : '0'
+,max        : '20'
+,tips       : ''
+,onkeyup    : 'onKeyUp(this);'
+,onchange   : 'onChange(this);'
+,onkeydown  : 'onKeyDown(this);'
+,onkeypress : 'onKeyPress(this);'
+,onclick    : 'onClick(this);'
+,listVal    : '||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY'
+,help       : 'N'
+,helpLink   : 'helpload'
+,xml        : 'Y'
+,Xpath      : '/'
+,childs     : schemaJson
+} 
+);
+
+}
+catch(e)
+{
+	alert("GenJson Exep:" +e);
+}
+}
+//alert(commFrameGen(PersonalInfo,PersonalInfoSch,"Y"));
+
+function GenXml()
+{
+
+	parentId=document.getElementById("parentId"); 
+	XMLTextId=document.getElementById("XMLTextId"); 
+	XMLTextId.value= genChilTag(parentId.value);
+
+}
+
+function GenXmlJson()
+{
+
+	parentId=document.getElementById("parentId"); 
+	XMLJsonId=document.getElementById("XMLJsonId"); 
+	XMLJsonId.value= genChilTagJson(parentId.value);
+
+}
+</script>
+
+<table>
+	<tr>
+		<td>
+			<textarea id="SchemaJsonTextId" placeholder="SchemaJsonText"></textarea>
+		</td>
+		<td>
+			<textarea id="parentId" placeholder="parent"></textarea>
+		</td>
+	<tr>
+	<tr>
+		<td>
+			<textarea id="OutJsonTextId" placeholder="OutJsonText"></textarea>
+		</td>
+		<td>
+			<textarea id="LangResoureId" placeholder="LangResoure"></textarea>
+		</td>
+	<tr>
+	<tr>
+		<td>
+			<textarea id="XMLTextId" placeholder="XMLText"></textarea>
+		</td>
+		<td>
+			<textarea id="XMLJsonId" placeholder="XMLJson"></textarea>
+		</td>
+	<tr>
+		<tr>
+		<td>
+			Readonly:
+			<select id="readOnlyFlgId" placeholder="readOnlyFlgId">
+				<option value="Y">Y</option>
+				<option value="N">N</option>
+			</select>
+		</td>
+		<td>
+		Multi Lang:
+			<select id="MultiLangId" placeholder="MultiLang">
+				<option value="Y">Y</option>
+				<option value="N">N</option>
+			</select>
+		</td>
+	<td>
+</table>
+
+
+
+<center>
+
+<!--input type="button" class="button"  parent="hometran" task="EXPAND" value="Expand" onclick="javascript:onClick(this)"-->
+<!--input type="button" class="button" parent="hometran" task="BACK" value="Dashboard" onclick="javascript:onClick(this)"-->
+<input type="button"  class"button" id="genResourceId" parent="hometran" task="GENRESOURCE" value="generate Resource" onclick="javascript:GenResource(this)">
+<input type="button"  id="validate" parent="hometran" task="Gen JSON" value="Generate Json" onclick="javascript:GenJson(this)">
+<input type="button"  id="verify"   parent="hometran" task="Gen Frame" value="Generate Frame" onclick="javascript:GenFrame(this)">
+<input type="button"  id="genxml"   parent="hometran" task="Gen Frame" value="Xml" onclick="javascript:GenXml(this)">
+<input type="button"  id="genxmlJson"   parent="hometran" task="Gen Frame" value="Xml" onclick="javascript:GenXmlJson(this)">
+</center>
+
+<br>
+
+<form name="form1" xmlname="Dashboard" class="cform" width="100">
+<div id="FrameId">
+
+</div>
+</form>
+
+<center>
+	<div class="demo-description">
+<p>
+	Copyright 2013 © Heaerie,GSL.Vellore
+</div><!-- End demo-description -->
+	</center>
+
+</div>
+</uss11>
+
+</form>
+
+</body>
+
+<body class="cbody">
+
+</body>
+
+
+
+<body>

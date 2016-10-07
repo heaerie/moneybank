@@ -1,0 +1,15 @@
+<!--- common_menu.ejs start -->
+	<nav>
+		
+		<ul class="MainNav">
+		    <% for ( var j=0 ; j<PersonalInfo.MainNav.length ; j++ ) { %>
+			<li>
+               <a href='<%=PersonalInfo.MainNav[j].PAGE_GRP_KEY %>' 
+		<% if ( PersonalInfo.MainNav[j].PAGE_GRP_KEY == PersonalInfo.curr_page_id ) { %> 
+		class="active" 	
+		<% } %> > <%= PersonalInfo.MainNav[j].PAGE_GRP_TITLE %>  </a>
+			</li>
+	    <% } %>
+		</ul>
+	</nav>
+<!--- common_menu.ejs end -->

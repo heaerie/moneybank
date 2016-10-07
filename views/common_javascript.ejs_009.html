@@ -1,0 +1,119 @@
+<!-- common javascript start -->
+
+<!--script src="js/jquery-1.10.2.js"></script-->
+<script src="../external/jquery/1.11.1/jquery.min.js"></script>
+<script src="../external/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<!--
+<script src="../external/jquery/1.10.4//js/jquery-ui-1.10.4.custom.js"></script>
+<script src="../external/jquery/1.10.4//ui/jquery.ui.core.js"></script>
+<script src="../external/jquery/1.10.4//ui/jquery.ui.widget.js"></script>
+<script src="../external/jquery/1.10.4//ui/jquery.ui.mouse.js"></script>
+<script src="../external/jquery/1.10.4//ui/jquery.ui.sortable.js"></script>
+<script src="../external/jquery/1.10.4//ui/jquery.ui.button.js"></script>
+<script src="../external/jquery/1.10.4//ui/jquery.ui.draggable.js"></script>
+<script src="../external/jquery/1.10.4//ui/jquery.ui.position.js"></script>
+<script src="../external/jquery/1.10.4//ui/jquery.ui.resizable.js"></script>
+<script src="../external/jquery/1.10.4//ui/jquery.ui.dialog.js"></script>
+<script src="../external/jquery/1.10.4//ui/jquery.effects.core.js"></script>
+-->
+	<!--script src="../external/jquery/1.10.4/js/jquery-ui-1.10.4.custom.js"></script-->
+
+<!--script src="http://code.jquery.com/jquery-1.9.1.js"></script-->
+
+<!--script language="javascript" src="../javascript/field_03.js"> </script-->
+<!--script language="javascript" src="../javascript/field_04.js"> </script-->
+<!--script language="javascript" src="../javascript/field_05.js"> </script-->
+<script language="javascript" src="../javascript/field_09.js"> </script>
+<script language="javascript" src="../javascript/dates.js"> </script>
+<script language="javascript" src="../javascript/Resource.js"> </script>
+
+<script>
+//	alert("Ft02");
+	var us=new USS();
+//	USS.USSIncludeLinks_("../javascript/dates.js");
+//	alert("Ft03");
+var glUserId = "";
+var glGroupId ="";
+
+function  onLoad()
+{
+//	alert("on Load");
+}
+
+
+
+	function onPostReq(url,json,id,type)
+	{
+	//	alert("onPostReq");
+	     var rtVal="";
+	   //  sleep(10);
+
+
+//alert("Call Post");
+
+
+
+             $.post( 
+             url,
+             json,
+             function(data) 
+		{
+
+	//	alert(data);
+		try
+		{
+		if(type == 'DIV')
+		{
+
+		$("#"+id).html(data);
+		
+		
+		}
+		else if( type == 'OBJ')
+		{
+		document.getElementById(id).value= data;
+
+		}
+}	
+catch(e)
+{
+	alert("PostReqExp:<"+ id+">" +e);
+}
+
+		}
+          );
+
+	}
+
+ 
+  /*
+   * hoverIntent | Copyright 2011 Brian Cherne
+   * http://cherne.net/brian/resources/jquery.hoverIntent.html
+   * modified by the jQuery UI team
+   */
+
+
+	
+</script>
+<script language="javascript" src="../javascript/xml.js"> </script>
+<script language="javascript" src="../javascript/validate.js"> </script>
+<script language="javascript" src="javascript/map.js"> </script>
+
+<!-- Bootstrap Core CSS -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="tex
+
+	<!--script src="../javascript/ui/jquery.ui.autocomplete.js"></script-->
+	<!--script src="../javascript/ui/jquery.ui.tabs.js"></script-->
+	<!--script src="../javascript/ui/jquery.ui.progressbar.js"></script-->
+
+<!-- common javascript end -->
+

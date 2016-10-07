@@ -1,0 +1,20 @@
+{"respCode":-1,
+"respDescr":"",
+"accessToken":"x-access-token",
+"userName":"",
+"error":"",
+"grantType":"",
+"isAccessTokenFound":true,
+"clientId":"",
+"isClientIdFound":true,
+"isValidGrantType":true,
+"isScopeFound":true,
+"redirectURI":""
+,"SCOPE":false}
+
+
+query: 
+   { grantType: 'password',
+     clientId: 'CLIENTSP',
+     scope: 'GSA',
+     redirectURI: 'http://localhost:5000/' }

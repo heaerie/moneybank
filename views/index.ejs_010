@@ -1,0 +1,12 @@
+<meta name="robots" content="noindex" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<% 
+console.log('---------');
+console.log(PersonalInfo);
+console.log('---------');
+%>
+<% include common_css.ejs %>
+<% include common_javascript.ejs %>
+<% include common_header.ejs %>
+<% include common_file_generator.ejs %>
+

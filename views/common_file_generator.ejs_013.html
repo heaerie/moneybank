@@ -1,0 +1,786 @@
+<!-- PersonalInfo.json start -->
+<!-- PersonalInfo -->
+<!-- PersonalInfo.json end -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<%
+var data={};
+
+
+	
+	function commFrameGen(rec,recSch,func)
+	{
+		var commonHeader="var USSField=new us.USSField_();";
+		
+
+		
+		var vcommonFrameGen =frameGeneration(rec,recSch,
+	[{
+ name       : 'PARENT'
+,label      : 'name'
+,task       : 'NONE'
+,desc       : ''
+,htmlType   : 'PARENT' 
+,entitle    : 'READONLY' 
+,enttlname  : ''
+,mndf       : 'N'
+,dataType   : 'PARENT'
+,cclass     : 'ctable'
+,validate   : ''
+,dflt       : ''
+,min        : '0'
+,max        : '20'
+,tips       : ''
+,onkeyup    : 'onKeyUp(this);'
+,onchange   : 'onChange(this);'
+,onkeydown  : 'onKeyDown(this);'
+,onkeypress : 'onKeyPress(this);'
+,onclick    : 'onClick(this);'
+,listVal    : '||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY'
+,help       : 'N'
+,helpLink   : 'helpload'
+,xml        : 'N'
+,Xpath      : '/'
+,childs     : recSch
+} ]
+,
+0
+,
+func
+);
+		
+
+		
+		
+var commonTailer=""
+commonTailer+="\n document.getElementById('middleid').appendChild(USSAccordion0); ";
+
+//USSAccordion2=new us.USSAppendAccordion(USSAccordion1,"Actions", USSTable);
+		
+		
+		return commonHeader + vcommonFrameGen + commonTailer;
+		
+		
+	}
+	
+	
+	function print(str)
+	{
+		console.log("\n " + str + " ");
+		return "\n " + str + " ";
+	}
+	
+	
+	function debug(str)
+	{
+//	document.write("\n <!--### " + str + "-->");
+		console.log("<!--### " + str + "--> ");
+	}
+	
+	
+function frameField(recSch,varStrVal,func,level,recCnt)
+{
+var lv_str="";
+if ( varStrVal === undefined)
+varStrVal=="";
+
+lv_str  += "\n USSTableRow = us.USSCreateTableRow_();	";
+lv_str  += "\n USSField    = new us.USSField_(); ";
+lv_str  += "\n USSField" + "." + "group"      + "=" + "'" + recSch.group      + "'" + ";"
+lv_str  += "\n USSField" + "." + "name"       + "=" + "'" + recSch.name+"_"+level+"_"+ recCnt       + "'" + ";"
+lv_str  += "\n USSField" + "." + "label"      + "=" + "'" + recSch.label      + "'" + ";"
+lv_str  += "\n USSField" + "." + "task"       + "=" + "'" + recSch.task       + "'" + ";"
+lv_str  += "\n USSField" + "." + "desc"       + "=" + "'" + recSch.desc       + "'" + ";"
+lv_str  += "\n USSField" + "." + "htmlType"   + "=" + "'" + recSch.htmlType   + "'" + ";"
+
+lv_str  += "\n \/\/ func =" + func + " >";
+if ( func == "Y" )
+{
+	lv_str  += "\n USSField" + "." + "entitle"    + "=" + "'" + recSch.entitle    + "'" + ";"
+}
+else
+{
+	lv_str  += "\n USSField" + "." + "entitle"    + "=" + "'READONLY'" + ";"
+}
+lv_str  += "\n USSField" + "." + "enttlname"  + "=" + "'" + recSch.enttlname  + "'" + ";"
+lv_str  += "\n USSField" + "." + "mndf"       + "=" + "'" + recSch.mndf       + "'" + ";"
+lv_str  += "\n USSField" + "." + "dataType"   + "=" + "'" + recSch.dataType   + "'" + ";"
+lv_str  += "\n USSField" + "." + "cclass"     + "=" + "'" + recSch.cclass     + "'" + ";"
+lv_str  += "\n USSField" + "." + "validate"   + "=" + "'" + recSch.validate   + "'" + ";"
+//lv_str  += "\n USSField" + "." + "dflt"       + "=" + "'" + recSch[s].dflt       + "'" + ";"
+lv_str  += "\n USSField" + "." + "dflt"       + "=" + "'" + varStrVal      + "'" + ";"
+lv_str  += "\n USSField" + "." + "min"        + "=" + "'" + recSch.min        + "'" + ";"
+lv_str  += "\n USSField" + "." + "max"        + "=" + "'" + recSch.max        + "'" + ";"
+lv_str  += "\n USSField" + "." + "tips"       + "=" + "'" + recSch.tips       + "'" + ";"
+lv_str  += "\n USSField" + "." + "onkeyup"    + "=" + "'" + recSch.onkeyup    + "'" + ";"
+lv_str  += "\n USSField" + "." + "onchange"   + "=" + "'" + recSch.onchange   + "'" + ";"
+lv_str  += "\n USSField" + "." + "onkeydown"  + "=" + "'" + recSch.onkeydown  + "'" + ";"
+lv_str  += "\n USSField" + "." + "onkeypress" + "=" + "'" + recSch.onkeypress + "'" + ";"
+lv_str  += "\n USSField" + "." + "onclick"    + "=" + "'" + recSch.onclick    + "'" + ";"
+lv_str  += "\n USSField" + "." + "listVal"    + "=" + "'" + recSch.listVal    + "'" + ";"
+lv_str  += "\n USSField" + "." + "help"       + "=" + "'" + recSch.help       + "'" + ";"
+lv_str  += "\n USSField" + "." + "helpLink"   + "=" + "'" + recSch.helpLink   + "'" + ";"
+lv_str  += "\n USSField" + "." + "xml"        + "=" + "'" + recSch.xml        + "'" + ";"
+lv_str  += "\n USSField" + "." + "Xpath"      + "=" + "'" + recSch.Xpath      + "'" + ";"
+lv_str  += "\n USSTableRow=us.CreateField(USSField,USSTableRow);";
+lv_str  += "\n USSTable=us.USSAppendTableRow(USSTableRow,USSTable);";
+
+return lv_str;
+
+}
+
+
+function frameGeneration(
+ rec
+,recSch
+,parent
+,level
+,func
+)
+{
+	var lv_str ="";	
+	var lv_rtStr="";
+	
+	debug( " #####in frameGeneration######");
+	debug( " rec     :" + rec);
+	debug( " recSch  :" + recSch);
+	debug( " parent  :" + parent);
+	debug( " level   :" + level);
+	debug(" recSch.length = " + recSch.length);
+	debug(" rec.length    = " + rec.length);
+    
+	debug(" check schema in 'PARENT' , 'XMLCONTAINER' , 'SCHEMA' "  );
+    
+    
+	debug("FG1.check parent.length == 0 , actual parent.length=<" +parent.length +">");
+	if ( parent.length == 0 ) 
+	{
+		debug("FG1.1  parent.length == 0 ,  ");
+		debug("parent length ==0  ");
+
+	}
+	else
+	{
+	    
+		debug("FG1.2. else parent.length == 0 , actual parent.length=<" +parent.length +">");
+		
+		for ( var parentCnt=0; parentCnt < parent.length; parentCnt++)
+		{
+			
+			debug("FG1.2.L#.M#.000 [L"+ parentCnt +".M"+parent.length+" ]: parent [" +parentCnt+ "].dataType =  <" +parent[parentCnt].dataType +">");
+			debug("FG1.2.L#.M#.001 check [L"+ parentCnt +".M"+parent.length+" ]: parent.datatype in ( 'SCHEMA','PARENT','XMLCONTAINER')");
+			if ((  parent[parentCnt].dataType == 'SCHEMA' ) 
+				|| (parent[parentCnt].dataType == 'PARENT' )
+				|| (parent[parentCnt].dataType == 'XMLCONTAINER' )
+			)
+			{
+				
+				debug("FG1.2.L#.M#.001.001 yes [L"+ parentCnt +".M"+parent.length+" ]: parent.datatype in ( 'SCHEMA','PARENT','XMLCONTAINER')");
+				debug("FG1.2.L#.M#.001.002 [L"+ parentCnt +".M"+parent.length+" ]:  check rec.length ==  0,actual rec.length <"  + rec.length +">");
+				if ( rec.length ==  0)
+				{
+					debug("FG1.2.L#.M#.001.002 [L"+ parentCnt +".M"+parent.length+" ]:  check rec.length ==  0,actual rec.length <"  + rec.length +">");
+					debug("FG1.2.L#.M#.001.003 check [L"+ parentCnt +".M"+parent.length+" ]:  check recSch.length  ==0 , recSch.length <"  + recSch.length +">" );
+					//start
+					if (recSch.length  ==0 )
+					 {
+						debug("FG1.2.L#.M#.001.003.001 yes   [L"+ parentCnt +".M"+parent.length+" ]:  NO recSch.length ==  0,actual recSch.length <"  + recSch.length +">");
+					 }
+					 else
+					 {
+						debug("FG1.2.L#.M#.001.003.002 NO   [L"+ parentCnt +".M"+parent.length+" ]:  NO recSch.length ==  0,actual recSch.length <"  + recSch.length +">");
+				
+						debug("start container");
+						lv_str+= print("USSAccordion"+level+"=new us.USSCreateAccordion("+level+")");
+						debug("FG1.2.L#.M#.001.003.003 rec["+recCnt+"] parent["+parentCnt+ "].dataType == 'XMLCONTAINER', actual  " + parent[parentCnt].dataType );
+						if(parent[parentCnt].dataType == 'XMLCONTAINER' )
+						{
+							lv_str+= print(" USSTable=new us.USSCreateTable_();");
+							lv_str+= print("USSAccordion"+level+"=us.USSAppendAccordionHeader(USSAccordion"+level+" ,'"+parent[parentCnt].name+"' )");
+						}	    	
+					      
+						for (  var recSchCnt=0; recSchCnt <  recSch.length ; 	recSchCnt++)
+						{
+									
+							debug("recSch [" +recSchCnt+ "].dataType =  <" +recSch[recSchCnt].dataType +">");
+										
+							if (
+								( recSch[recSchCnt].dataType == 'SCHEMA' )
+								||( recSch[recSchCnt].dataType == 'PARENT' )
+								||( recSch[recSchCnt].dataType == 'XMLCONTAINER' )
+							)
+							{
+												
+												
+								//lv_str+= print(" USSTable=new us.USSCreateTable_();");
+								//lv_str+= print("USSAccordion"+level+"=us.USSAppendAccordionHeader(USSAccordion"+level+" ,'"+recSch[recSchCnt].name+"' )");
+								lv_str+= print("USSAccordion"+level+"=us.USSAppendAccordionHeader(USSAccordion"+level+" ,'"+parent[parentCnt].name+"' )");
+
+								//var varStr='rec['+ recCnt + '].' + recSch[recSchCnt].name;
+								//var varStrVal= eval(varStr);
+								debug(" Call G:001: frameGeneration ..");
+
+								var varStrVal= new Array();
+								lv_rtStr  = frameGeneration(varStrVal,recSch[recSchCnt].childs,recSch,level+1,func);
+								lv_str+= print(lv_rtStr);
+								debug(" Retuen G:002: frameGeneration ..");	
+								//if (recSch[recSchCnt].dataType == 'XMLCONTAINER' )
+								// lv_str+= print("USSAccordion"+level+"=new us.USSAppendAccordionSection(USSAccordion"+level+",USSTable ) ;");
+								// else 
+								lv_str+= print("USSAccordion"+level+"=new us.USSAppendAccordionSection(USSAccordion"+level+",USSAccordion"+(level+1)+" ) ;");
+												//lv_str+=lv_rtStr;
+							}
+							else
+							{
+								//var varStr='rec['+ recCnt + '].' + recSch[recSchCnt].name;
+								//var varStrVal= eval(varStr);	
+								debug(" A:001 : Call frameField ..");							    		
+								var  varStrVal="";
+								lv_rtStr=frameField(recSch[recSchCnt],varStrVal,func,level,recCnt);
+								lv_str+= print(lv_rtStr);
+							}
+									
+						}	
+						if(parent[parentCnt].dataType == 'XMLCONTAINER' )
+						{
+							lv_str+= print("USSAccordion"+level+"=new us.USSAppendAccordionSection(USSAccordion"+level+",USSTable ) ;");
+						}		    		
+								
+						debug("end container"); 	 
+						lv_str+= print("USSAccordion"+level+"=new us.USSAppendAccordionExapnd(USSAccordion"+level+" ) ;");
+						
+					}
+					//end
+				}
+				else
+				{
+					debug("FG1.2.L#.M#.001.002 [L"+ parentCnt +".M"+parent.length+" ]:  NO rec.length ==  0,actual rec.length <"  + rec.length +">");
+					debug("FG1.2.L#.M#.001.003 check  [L"+ parentCnt +".M"+parent.length+" ]:  NO recSch.length ==  0,actual recSch.length <"  + recSch.length +">");
+					if (recSch.length  ==0 )
+					 {
+						debug("FG1.2.L#.M#.001.003.001 yes   [L"+ parentCnt +".M"+parent.length+" ]:  NO recSch.length ==  0,actual recSch.length <"  + recSch.length +">");
+					 }
+					 else
+					 {
+						debug("FG1.2.L#.M#.001.003.002 NO   [L"+ parentCnt +".M"+parent.length+" ]:  NO recSch.length ==  0,actual recSch.length <"  + recSch.length +">");
+						debug("start container");
+						lv_str+= print("USSAccordion"+level+"=new us.USSCreateAccordion("+level+")");
+							
+						for (  var recCnt=0; recCnt <  rec.length ; 	recCnt++)
+						{
+
+							debug("FG1.2.L#.M#.001.003.003 rec["+recCnt+"] parent["+parentCnt+ "].dataType == 'XMLCONTAINER', actual  " + parent[parentCnt].dataType );
+							if(parent[parentCnt].dataType == 'XMLCONTAINER' )
+							{
+								lv_str+= print(" USSTable=new us.USSCreateTable_();");
+								//lv_str+= print("USSAccordion"+level+"=us.USSAppendAccordionHeader(USSAccordion"+level+" ,'"+parent[parentCnt].name+"' );");
+								lv_str+= print( "USSAppendAccordionDflt"+level+"=new us.USSAccordionCreateDflt("+level+");");
+								lv_str+= print( "USSAppendAccordionDflt"+level+"=new us.USSAppendAccordionHeader(USSAppendAccordionDflt"+level+",'"+ parent[parentCnt].name  +"_rec_" + recCnt  +"'," +level +",'"+ level+'_'+recCnt+" ');");
+							}	    	
+							for (  var recSchCnt=0; recSchCnt <  recSch.length ; 	recSchCnt++)
+							{
+
+								debug("recSch [" +recSchCnt+ "].dataType =  <" +recSch[recSchCnt].dataType +">");
+
+								if (
+								( recSch[recSchCnt].dataType == 'SCHEMA' )
+								||( recSch[recSchCnt].dataType == 'PARENT' )
+								||( recSch[recSchCnt].dataType == 'XMLCONTAINER' )
+								)
+								{
+
+
+									//lv_str+= print(" USSTable=new us.USSCreateTable_();");
+									//lv_str+= print("USSAccordion"+level+"=us.USSAppendAccordionHeader(USSAccordion"+level+" ,'"+recSch[recSchCnt].name+"' )");
+									//lv_str+= print("USSAccordion"+level+"=us.USSAppendAccordionHeader(USSAccordion"+level+" ,'"+parent[parentCnt].name+"' )");
+									lv_str+= print( "USSAppendAccordionDflt"+level+"=new us.USSAccordionCreateDflt("+level+");");
+									lv_str+= print( "USSAppendAccordionDflt"+level+"=new us.USSAppendAccordionHeader(USSAppendAccordionDflt"+level+",'"+ parent[parentCnt].name  +"_rec_" + recCnt  +"'," +level +",'"+ level+'_'+0+"' );");
+
+									var varStr='rec['+ recCnt + '].' + recSch[recSchCnt].name;
+									var varStrVal= eval(varStr);
+									debug(" Call F:001: frameGeneration ..");
+									lv_rtStr  = frameGeneration(varStrVal,recSch[recSchCnt].childs,recSch,level+1,func);
+									lv_str+= print(lv_rtStr);
+									debug(" Retuen F:002: frameGeneration ..");	
+									//if (recSch[recSchCnt].dataType == 'XMLCONTAINER' )
+									// lv_str+= print("USSAccordion"+level+"=new us.USSAppendAccordionSection(USSAccordion"+level+",USSTable ) ;");
+									// else 
+									// lv_str+= print("USSAccordion"+level+"=new us.USSAppendAccordionSection(USSAccordion"+level+",USSAccordion"+(level+1)+" ) ;");
+									//USSAppendAccordionDflt0= us.USSAppendAccordionSection(USSAppendAccordionDflt0,USSAccordion1,0,00) ;
+									//USSAccordion0 =us.USSAppendAccordionDflt(USSAccordion0,USSAppendAccordionDflt0);
+									lv_str+= print("USSAppendAccordionDflt"+level+"=new us.USSAppendAccordionSection(USSAppendAccordionDflt"+level+",USSAccordion"+(level+1)+"," +level +",'"+ level+'_'+0+"' ) ;");
+									lv_str+= print("USSAccordion"+level+"=new us.USSAppendAccordionDflt(USSAccordion"+level+",USSAppendAccordionDflt"+(level)+" ) ;");
+
+									//lv_str+=lv_rtStr;
+								}
+								else
+								{
+									var varStr='rec['+ recCnt + '].' + recSch[recSchCnt].name;
+									var varStrVal= eval(varStr);	
+									debug(" A:001 : Call frameField ..");							    		
+								//	lv_rtStr=frameField(recSch[recSchCnt],varStrVal,func);
+								lv_rtStr=frameField(recSch[recSchCnt],varStrVal,func,level,recCnt);
+									lv_str+= print(lv_rtStr);
+								}
+
+
+
+							}	
+							if(parent[parentCnt].dataType == 'XMLCONTAINER' )
+							{
+
+								//lv_str+= print("USSAccordion"+level+"=new us.USSAppendAccordionSection(USSAccordion"+level+",USSTable ) ;");
+								lv_str+= print("USSAppendAccordionDflt"+level+"=new us.USSAppendAccordionSection(USSAppendAccordionDflt"+level+",USSTable," +level +",'"+ level+'_'+recCnt+"' ) ;");
+								lv_str+= print("USSAccordion"+level+"=new us.USSAppendAccordionDflt(USSAccordion"+level+",USSAppendAccordionDflt"+(level)+" ) ;");
+
+							}		    		
+
+							debug("end container"); 	 
+
+						}
+						// BOOTSTRAP lv_str+= print("USSAccordion"+level+"=new us.USSAppendAccordionExapnd(USSAccordion"+level+" ) ;");
+						
+					    }
+				}
+			}
+			else
+			{
+				debug("FG1.2.L#.M#.001.002 No [L"+ parentCnt +".M"+parent.length+" ]: parent.datatype in ( 'SCHEMA','PARENT','XMLCONTAINER')");
+			}
+
+		}
+	
+	}
+	
+	return lv_str;
+}
+	function valWithSch(rec,recSch)
+	{
+		//alert( recSch.name +" : " +recSch.dataType);
+		//alert(rec);
+		/*[
+		if ( recSch.dataType != "CONTAINER" || recSch.dataType != "SCHEMA"   )
+		{
+				//alert( recSch.name + "="+ eval('rec.'+recSch.name) );
+				
+				value= eval('rec.'+recSch.name);
+				
+				//alert(value );
+				
+				if (value           === undefined) {
+					value='';
+				}
+				if (recSch.childs   === undefined) {
+					recSch.childs=new Array();
+				}
+				if (recSch.htmlType === undefined) {
+					recSch.htmlType='';
+				}
+				if (recSch.dataType === undefined) {
+					recSch.dataType='';
+				}
+				if (recSch.groupId  === undefined) {
+				recSch.groupId='';
+				}
+				
+				
+		
+		
+		  switch ( recSch.dataType )
+		  {
+		    case "DATE" : 
+		  		re = /^\d{1,2}\/\d{1,2}\/\d{4}$/;
+				if(value != '' && !value.match(re)) {
+     			 alert("Invalid date format: " + value);
+      			 return false;
+      			 }
+      			 break;
+    		case "TIME" :
+    			// regular expression to match required time format
+    			re = /^\d{1,2}:\d{2}([ap]m)?$/;
+				if(value != '' && !value.match(re)) {
+     			 alert("Invalid time format: " + value);
+     			 return false;
+    			}
+    			break;
+		
+			case "VARCHAR" :
+				// regular expression to match required time format
+    			re = /^[A-Za-z0-9_]{3,20}$/;
+				if(value != '' && !value.match(re)) {
+     			 alert("Invalid time format: " + value);
+     			 return false;
+     			 }
+    		 
+		}
+		 
+		}
+		
+			//alert(" type of " + typeof recSch.childs );
+	
+				for  ( var i=0; i <recSch.childs.length ; i++ )
+				{ 
+				
+					var recList=eval( 'rec.' + recSch.name ) ;
+					alert(recList.length);
+					for  ( var j=0; j <recList.length ; j++ )
+					{
+						valWithSch(recList[j],recSch.childs[i]);
+					}
+				}
+				*/
+				
+				
+		for ( var r=0; r<rec.length; r++)
+		//for ( var s =0; s <recSch.length; s++)
+		{
+			 //alert (recSch[s]);
+			 for ( var s =0; s <recSch.length; s++)
+			 //for ( var r=0; r<rec.length; r++)
+			 {
+			 
+			 var varStr='rec['+ r + '].' + recSch[s].name;
+			 var varStrVal= eval(varStr);
+			 
+			if ( recSch[s].dataType != "CONTAINER" || recSch[s].dataType != "SCHEMA" )
+			{
+			// alert(recSch[s].dataType);
+			 
+			 
+			 value= varStrVal;
+				
+				//alert(value );
+				
+				if (value           === undefined) {
+					value='';
+				}
+				if (recSch[s].childs   === undefined) {
+					recSch[s].childs=new Array();
+				}
+				if (recSch[s].htmlType === undefined) {
+					recSch[s].htmlType='';
+				}
+				if (recSch[s].dataType === undefined) {
+					recSch[s].dataType='';
+				}
+				if (recSch[s].groupId  === undefined) {
+				recSch[s].groupId='';
+				}
+				
+				
+		
+		
+		  switch ( recSch[s].dataType )
+		  {
+		    case "DATE" : 
+		  		re = /^\d{1,2}\/\d{1,2}\/\d{4}$/;
+				if(value != '' && !value.match(re)) {
+     			 alert(recSch[s].name + "Invalid date format: " + value);
+      			 return false;
+      			 }
+      			 break;
+    		case "TIME" :
+    			// regular expression to match required time format
+    			re = /^\d{1,2}:\d{2}([ap]m)?$/;
+				if(value != '' && !value.match(re)) {
+     			 alert(recSch[s].name +  "Invalid time format: " + value);
+     			 return false;
+    			}
+    			break;
+		    case "NUMBER" :
+    			if (recSch[s].max != "unlimited" )
+				{
+				re = RegExp("^[0-9.]{"+ recSch[s].min + "," + recSch[s].max + "}$");
+					//if(value != '' && !value.match(re))
+					if(value != '' && !re.test(value)) 
+					{
+						 alert( recSch[s].name + " Exceed  limit " + recSch[s].min + " to " + recSch[s].max );
+						 return false;
+					 }
+    			}
+    			else
+    			{
+					re =/^[A-Za-z0-9_]$/;
+					if(value != '' && !value.match(re)) 
+					{
+						 alert( recSch[s].name + " Invalid time format: " + value);
+						 return false;
+					}
+     			 
+    			}
+    			break;
+			case "VARCHAR" :
+				// regular expression to match required time format
+				if (recSch[s].max != "unlimited" )
+				{
+					//re = /^[A-Za-z0-9_]{0,20}$/
+					re = RegExp("^[A-Za-z0-9_]{"+ recSch[s].min + "," + recSch[s].max + "}$");
+					if(value != '' && !value.match(re)) 
+					{
+						 alert(recSch[s].name +"Exceed  limit " + recSch[s].min + " to " + recSch[s].max +"[ " + value + "]" );
+						 return false;
+					 }
+    			}
+    			else
+    			{
+					re =/^[A-Za-z0-9_]$/;
+					if(value != '' && !value.match(re)) 
+					{
+						 alert(recSch[s].name + "Invalid time format: " + value);
+						 return false;
+					}
+     			 
+    			} 
+    			break;
+    		case "LIST" :
+    		case "OPTION" :
+				// regular expression to match required time format
+				 recSch[s].listVal	
+				 if ( value != '' )
+				 {
+				 var inpStrArr= recSch[s].listVal.split('|');
+				 	var chk=0;
+					for(var i=0 ; i< inpStrArr.length;i+=2)
+					{
+						if( value == inpStrArr[i])
+						{
+						chk=1;
+						}
+					}
+					if  ( chk!=1 )
+					{
+						alert( recSch[s].name + " Invalid time format: " + value);
+						return false;
+					}
+				}
+				
+				 	 
+			}
+			 
+			}
+			
+			  if (recSch[s].childs   === undefined) 
+			  {
+					recSch[s].childs=new Array();
+			  }
+			  valWithSch(varStrVal,recSch[s].childs);
+			 
+			 } 
+			 
+		}
+		
+	}
+		
+	
+			var PersonalInfo =[ {  Schema :[ {
+									    personalInfo :[ {
+										name: "Duraimurugan"
+										,Age  : 23
+										,Mobile  : 8134662646
+										,DOB  : "12-12-1999"
+										,FUNCTION :"A"  
+									
+										}
+										,
+										{
+										name: "Agalyadddddd"
+										,Age  : 23
+										,Mobile  : 8134811034
+										,DOB  : "01/01/2012"  
+										,FUNCTION :"A"
+										}
+										,
+										{
+										name: "siva"
+										,Age  : 23
+										,Mobile  : 8134811034
+										,DOB  : "01/01/2012"  
+										,FUNCTION :"A"
+										}
+										,
+										{
+										name: "Sheethal"
+										,Age  : 23
+										,Mobile  : 81348110534
+										,DOB  : "01/01/2012"  
+										,FUNCTION :"A"
+										}
+										]
+										
+										}]
+					} ];
+			
+			var PersonalInfoSch = [{ 	 name     : "Schema"	
+										,dataType : "SCHEMA"
+			                            ,childs   : 
+			                            [ 
+			                            {
+			                             name     : "personalInfo"
+			                            ,min      : 0
+			                            ,max      : "unlimited"
+										,dataType : "XMLCONTAINER"
+										,childs   :  [   
+										{
+										 name       : 'name'
+										,label      : 'name'
+										,group      : 'uss'
+										,task       : 'NONE'
+										,desc       : ''
+										,htmlType   : 'VARCHAR' 
+										,entitle    : 'NONREADONLY' 
+										,enttlname  : ''
+										,mndf       : 'Y'
+										,dataType   : 'VARCHAR'
+										,cclass     : 'ctable'
+										,validate   : ''
+										,dflt       : ''
+										,min        : '0'
+										,max        : '20'
+										,tips       : ''
+										,onkeyup    : 'onKeyUp(this);'
+										,onchange   : 'onChange(this);'
+										,onkeydown  : 'onKeyDown(this);'
+										,onkeypress : 'onKeyPress(this);'
+										,onclick    : 'onClick(this);'
+										,listVal    : '||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY'
+										,help       : 'N'
+										,helpLink   : 'helpload'
+										,xml        : 'N'
+										,Xpath      : '/'
+										} 
+										,  
+										{
+										 name       : 'Age'
+										,label      : 'Age'
+										,task       : 'NONE'
+										,group      : 'uss'
+										,desc       : ''
+										,htmlType   : 'VARCHAR' 
+										,entitle    : 'NONREADONLY' 
+										,enttlname  : ''
+										,mndf       : 'N'
+										,dataType   : 'NUMBER'
+										,cclass     : 'ctable'
+										,validate   : ''
+										,dflt       : ''
+										,min        : '1'
+										,max        : '3'
+										,tips       : ''
+										,onkeyup    : 'onKeyUp(this);'
+										,onchange   : 'onChange(this);'
+										,onkeydown  : 'onKeyDown(this);'
+										,onkeypress : 'onKeyPress(this);'
+										,onclick    : 'onClick(this);'
+										,listVal    : '||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY'
+										,help       : 'N'
+										,helpLink   : 'helpload'
+										,xml        : 'N'
+										,Xpath      : '/'
+										 } 
+										 ,  
+										{
+										 name       : 'Mobile'
+										,label      : 'MobileNo'
+										,task       : 'NONE'
+										,group      : 'uss'
+										,desc       : ''
+										,htmlType   : 'VARCHAR' 
+										,entitle    : 'NONREADONLY' 
+										,enttlname  : ''
+										,mndf       : 'N'
+										,dataType   : 'NUMBER'
+										,cclass     : 'ctable'
+										,validate   : ''
+										,dflt       : ''
+										,min        : '1'
+										,max        : '3'
+										,tips       : ''
+										,onkeyup    : 'onKeyUp(this);'
+										,onchange   : 'onChange(this);'
+										,onkeydown  : 'onKeyDown(this);'
+										,onkeypress : 'onKeyPress(this);'
+										,onclick    : 'onClick(this);'
+										,listVal    : '||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY'
+										,help       : 'N'
+										,helpLink   : 'helpload'
+										,xml        : 'N'
+										,Xpath      : '/'
+										 } 
+										,  
+										{ 
+										 name       : 'DOB'
+										,label      : 'Date of Birth'
+										,task       : 'NONE'
+										,group      : 'uss'
+										,desc       : ''
+										,htmlType   : 'DATE' 
+										,entitle    : 'NONREADONLY' 
+										,enttlname  : ''
+										,mndf       : 'N'
+										,dataType   : 'DATE'
+										,cclass     : 'ctable'
+										,validate   : ''
+										,dflt       : ''
+										,min        : '0'
+										,max        : '60'
+										,tips       : ''
+										,onkeyup    : 'onKeyUp(this);'
+										,onchange   : 'onChange(this);'
+										,onkeydown  : 'onKeyDown(this);'
+										,onkeypress : 'onKeyPress(this);'
+										,onclick    : 'onClick(this);'
+										,listVal    : '||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY'
+										,help       : 'N'
+										,helpLink   : 'helpload'
+										,xml        : 'N'
+										,Xpath      : '/' 
+										}
+										,  
+										{ 
+										 name       : 'FUNCTION'
+										,label      : 'FUNCTION'
+										,task       : 'NONE'
+										,group      : 'uss'
+										,desc       : ''
+										,htmlType   : 'LIST' 
+										,entitle    : 'NONREADONLY' 
+										,enttlname  : ''
+										,mndf       : 'N'
+										,dataType   : 'LIST'
+										,cclass     : 'ctable'
+										,validate   : ''
+										,dflt       : ''
+										,min        : '0'
+										,max        : '60'
+										,tips       : ''
+										,onkeyup    : 'onKeyUp(this);'
+										,onchange   : 'onChange(this);'
+										,onkeydown  : 'onKeyDown(this);'
+										,onkeypress : 'onKeyPress(this);'
+										,onclick    : 'onClick(this);'
+										,listVal    : '||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY'
+										,help       : 'N'
+										,helpLink   : 'helpload'
+										,xml        : 'N'
+										,Xpath      : '/' 
+										}
+ ]
+										}
+
+]
+}];
+							
+%>		
+<form name="form1">
+<div id="middleid"></div>
+<script>
+<% var func ="Y" %>
+<%-commFrameGen(PersonalInfo,PersonalInfoSch,func)%>
+</script>
+<center>
+ <input type="button" task="SUBMIT" value="SUBMIT" onclick="onClick(this);">
+ <input type="button" task="VALIDATE" value="VALIDATE" onclick="onClick(this);">
+</center>
+
+</form>

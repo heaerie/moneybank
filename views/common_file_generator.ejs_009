@@ -1,0 +1,806 @@
+<body class="cbody">
+<script>
+<!-- PersonalInfo.json start -->
+<!-- PersonalInfo -->
+<!-- PersonalInfo.json end -->
+<%
+var data={};
+
+var PersonalInfoSch = [{ 	 Name     : "Schema"	
+										,dataType : "SCHEMA"
+			                            ,childs   : 
+			                            [ {
+			                            
+			                             Name     : "personalInfo"
+			                            ,min      : 0
+			                            ,max      : "unlimited"
+										,dataType : "CONTAINER"
+										,childs   :  [   
+{
+ Name       : 'Name'
+,label      : 'Name'
+,task       : 'NONE'
+,desc       : ''
+,htmlType   : 'text' 
+,entitle    : 'READONLY' 
+,enttlname  : ''
+,mndf       : 'N'
+,dataType   : 'VARCHAR'
+,cclass     : 'ctable'
+,validate   : ''
+,dflt       : ''
+,min        : '0'
+,max        : '20'
+,tips       : ''
+,onkeyup    : 'onKeyUp(this);'
+,onchange   : 'onChange(this);'
+,onkeydown  : 'onKeyDown(this);'
+,onkeypress : 'onKeyPress(this);'
+,onclick    : 'onClick(this);'
+,listVal    : '||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY'
+,help       : 'N'
+,helpLink   : 'helpload'
+,xml        : 'N'
+,Xpath      : '/'
+} 
+,  
+{
+ Name       : 'Age'
+,label      : 'Age'
+,task       : 'NONE'
+,desc       : ''
+,htmlType   : 'text' 
+,entitle    : 'READONLY' 
+,enttlname  : ''
+,mndf       : 'N'
+,dataType   : 'NUMBER'
+,cclass     : 'ctable'
+,validate   : ''
+,dflt       : ''
+,min        : '1'
+,max        : '3'
+,tips       : ''
+,onkeyup    : 'onKeyUp(this);'
+,onchange   : 'onChange(this);'
+,onkeydown  : 'onKeyDown(this);'
+,onkeypress : 'onKeyPress(this);'
+,onclick    : 'onClick(this);'
+,listVal    : '||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY'
+,help       : 'N'
+,helpLink   : 'helpload'
+,xml        : 'N'
+,Xpath      : '/'
+ } 
+,  
+{ 
+ Name       : 'DOB'
+,label      : 'Date of Birth'
+,task       : 'NONE'
+,desc       : ''
+,htmlType   : 'text' 
+,entitle    : 'READONLY' 
+,enttlname  : ''
+,mndf       : 'N'
+,dataType   : 'DATE'
+,cclass     : 'ctable'
+,validate   : ''
+,dflt       : ''
+,min        : '0'
+,max        : '60'
+,tips       : ''
+,onkeyup    : 'onKeyUp(this);'
+,onchange   : 'onChange(this);'
+,onkeydown  : 'onKeyDown(this);'
+,onkeypress : 'onKeyPress(this);'
+,onclick    : 'onClick(this);'
+,listVal    : '||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY'
+,help       : 'N'
+,helpLink   : 'helpload'
+,xml        : 'N'
+,Xpath      : '/' 
+}
+,  
+{ 
+ Name       : 'FUNCTION'
+,label      : 'FUNCTION'
+,task       : 'NONE'
+,desc       : ''
+,htmlType   : 'text' 
+,entitle    : 'READONLY' 
+,enttlname  : ''
+,mndf       : 'N'
+,dataType   : 'LIST'
+,cclass     : 'ctable'
+,validate   : ''
+,dflt       : ''
+,min        : '0'
+,max        : '60'
+,tips       : ''
+,onkeyup    : 'onKeyUp(this);'
+,onchange   : 'onChange(this);'
+,onkeydown  : 'onKeyDown(this);'
+,onkeypress : 'onKeyPress(this);'
+,onclick    : 'onClick(this);'
+,listVal    : '||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY'
+,help       : 'N'
+,helpLink   : 'helpload'
+,xml        : 'N'
+,Xpath      : '/' 
+}
+ ]
+}]
+}];
+
+function alert(str)
+{
+	%>
+	alert("<%=str%>");
+	<%
+}
+
+
+function frameGen(rec,recSch)
+	{
+				
+				
+		for ( var r=0; r<rec.length; r++)
+		{
+			 for ( var s =0; s <recSch.length; s++)
+			 {
+			 
+			 var varStr='rec['+ r + '].' + recSch[s].Name;
+			 var varStrVal= eval(varStr);
+			 
+			if ( recSch[s].dataType != "CONTAINER" || recSch[s].dataType != "SCHEMA" )
+			{
+			 value= varStrVal;
+				
+				
+				if (value           === undefined) {
+					value='';
+				}
+				if (recSch[s].childs   === undefined) {
+					recSch[s].childs=new Array();
+				}
+				if (recSch[s].htmlType === undefined) {
+					recSch[s].htmlType='TEXT';
+				}
+				if (recSch[s].dataType === undefined) {
+					recSch[s].dataType='';
+				}
+				if (recSch[s].groupId  === undefined) {
+				recSch[s].groupId='';
+				}
+				
+				
+		
+		
+		  switch ( recSch[s].dataType )
+		  {
+		    case "DATE" : 
+		  		re = /^\d{1,2}\/\d{1,2}\/\d{4}$/;
+				if(value != '' && !value.match(re)) {
+     			 alert(recSch[s].Name + "Invalid date format: " + value);
+      			 return false;
+      			 }
+      			 break;
+    		case "TIME" :
+    			re = /^\d{1,2}:\d{2}([ap]m)?$/;
+				if(value != '' && !value.match(re)) {
+     			 alert(recSch[s].Name +  "Invalid time format: " + value);
+     			 return false;
+    			}
+    			break;
+		    case "NUMBER" :
+    			if (recSch[s].max != "unlimited" )
+				{
+				re = RegExp("^[0-9.]{"+ recSch[s].min + "," + recSch[s].max + "}$");
+					if(value != '' && !re.test(value)) 
+					{
+						 alert( recSch[s].Name + " Exceed  limit " + recSch[s].min + " to " + recSch[s].max );
+						 return false;
+					 }
+    			}
+    			else
+    			{
+					re =/^[A-Za-z0-9_]$/;
+					if(value != '' && !value.match(re)) 
+					{
+						 alert( recSch[s].Name + " Invalid time format: " + value);
+						 return false;
+					}
+     			 
+    			}
+    			break;
+			case "VARCHAR" :
+				if (recSch[s].max != "unlimited" )
+				{
+					re = RegExp("^[A-Za-z0-9_]{"+ recSch[s].min + "," + recSch[s].max + "}$");
+					if(value != '' && !value.match(re)) 
+					{
+						 alert(recSch[s].Name +"Exceed  limit " + recSch[s].min + " to " + recSch[s].max +"[ " + value + "]" );
+						 return false;
+					 }
+    			}
+    			else
+    			{
+					re =/^[A-Za-z0-9_]$/;
+					if(value != '' && !value.match(re)) 
+					{
+						 alert(recSch[s].Name + "Invalid time format: " + value);
+						 return false;
+					}
+     			 
+    			} 
+    			break;
+    		case "LIST" :
+    		case "OPTION" :
+				 recSch[s].listVal	
+				 if ( value != '' )
+				 {
+				 var inpStrArr= recSch[s].listVal.split('|');
+				 	var chk=0;
+					for(var i=0 ; i< inpStrArr.length;i+=2)
+					{
+						if( value == inpStrArr[i])
+						{
+						chk=1;
+						}
+					}
+					if  ( chk!=1 )
+					{
+						alert( recSch[s].Name + " Invalid time format: " + value);
+						return false;
+					}
+				}
+				
+				 	 
+			}
+			 
+			}
+			
+			  if (recSch[s].childs   === undefined) 
+			  {
+					recSch[s].childs=new Array();
+			  }
+			  frameGen(varStrVal,recSch[s].childs);
+			 
+			 } 
+			 
+		}
+		
+	}
+function valWithSch(rec,recSch)
+	{
+		//alert( recSch.Name +" : " +recSch.dataType);
+		//alert(rec);
+				
+				
+		for ( var r=0; r<rec.length; r++)
+		//for ( var s =0; s <recSch.length; s++)
+		{
+			 //alert (recSch[s]);
+			 for ( var s =0; s <recSch.length; s++)
+			 //for ( var r=0; r<rec.length; r++)
+			 {
+			 
+			 var varStr='rec['+ r + '].' + recSch[s].Name;
+			 var varStrVal= eval(varStr);
+			 
+			if ( recSch[s].dataType != "CONTAINER" || recSch[s].dataType != "SCHEMA" )
+			{
+			// alert(recSch[s].dataType);
+			 
+			 
+			 value= varStrVal;
+				
+				//alert(value );
+				
+				if (value           === undefined) {
+					value='';
+				}
+				if (recSch[s].childs   === undefined) {
+					recSch[s].childs=new Array();
+				}
+				if (recSch[s].htmlType === undefined) {
+					recSch[s].htmlType='TEXT';
+				}
+				if (recSch[s].dataType === undefined) {
+					recSch[s].dataType='';
+				}
+				if (recSch[s].groupId  === undefined) {
+				recSch[s].groupId='';
+				}
+				
+				
+		
+		
+		  switch ( recSch[s].dataType )
+		  {
+		    case "DATE" : 
+		  		re = /^\d{1,2}\/\d{1,2}\/\d{4}$/;
+				if(value != '' && !value.match(re)) {
+     			 alert(recSch[s].Name + "Invalid date format: " + value);
+      			 return false;
+      			 }
+      			 break;
+    		case "TIME" :
+    			// regular expression to match required time format
+    			re = /^\d{1,2}:\d{2}([ap]m)?$/;
+				if(value != '' && !value.match(re)) {
+     			 alert(recSch[s].Name +  "Invalid time format: " + value);
+     			 return false;
+    			}
+    			break;
+		    case "NUMBER" :
+    			if (recSch[s].max != "unlimited" )
+				{
+				re = RegExp("^[0-9.]{"+ recSch[s].min + "," + recSch[s].max + "}$");
+					//if(value != '' && !value.match(re))
+					if(value != '' && !re.test(value)) 
+					{
+						 alert( recSch[s].Name + " Exceed  limit " + recSch[s].min + " to " + recSch[s].max );
+						 return false;
+					 }
+    			}
+    			else
+    			{
+					re =/^[A-Za-z0-9_]$/;
+					if(value != '' && !value.match(re)) 
+					{
+						 alert( recSch[s].Name + " Invalid time format: " + value);
+						 return false;
+					}
+     			 
+    			}
+    			break;
+			case "VARCHAR" :
+				// regular expression to match required time format
+				if (recSch[s].max != "unlimited" )
+				{
+					//re = /^[A-Za-z0-9_]{0,20}$/
+					re = RegExp("^[A-Za-z0-9_]{"+ recSch[s].min + "," + recSch[s].max + "}$");
+					if(value != '' && !value.match(re)) 
+					{
+						 alert(recSch[s].Name +"Exceed  limit " + recSch[s].min + " to " + recSch[s].max +"[ " + value + "]" );
+						 return false;
+					 }
+    			}
+    			else
+    			{
+					re =/^[A-Za-z0-9_]$/;
+					if(value != '' && !value.match(re)) 
+					{
+						 alert(recSch[s].Name + "Invalid time format: " + value);
+						 return false;
+					}
+     			 
+    			} 
+    			break;
+    		case "LIST" :
+    		case "OPTION" :
+				// regular expression to match required time format
+				 recSch[s].listVal	
+				 if ( value != '' )
+				 {
+				 var inpStrArr= recSch[s].listVal.split('|');
+				 	var chk=0;
+					for(var i=0 ; i< inpStrArr.length;i+=2)
+					{
+						if( value == inpStrArr[i])
+						{
+						chk=1;
+						}
+					}
+					if  ( chk!=1 )
+					{
+						alert( recSch[s].Name + " Invalid time format: " + value);
+						return false;
+					}
+				}
+				
+				 	 
+			}
+			 
+			}
+			
+			  if (recSch[s].childs   === undefined) 
+			  {
+					recSch[s].childs=new Array();
+			  }
+			  valWithSch(varStrVal,recSch[s].childs);
+			 
+			 } 
+			 
+		}
+		
+	}
+
+valWithSch(data,PersonalInfoSch);		
+%>		
+
+</script>
+
+<script>
+var glGroupId    ="1"; 
+var glUserId     ="1"; 
+
+//var glGroupId    ="1"; 
+//var glUserId     ="1";
+</script>
+<link rel="stylesheet" href="../javascript/ft04_cust.css" type="text/css">
+<script language="javascript" src="../javascript/Resource.js"> </script>
+<script language="javascript" src="../javascript/ft04_cust.js"> </script>
+
+<!-- home cust start -->
+<!-- home cust end-->
+<style>
+.outerlayer
+{
+	visibility: visible;
+	left: 850px;
+	//top: ;
+	bottom:1px;
+	min-width: 10px;
+	min-height: 40px;
+	position: absolute;
+}
+</style>
+<pre></pre>
+	
+
+<script>
+
+	function onPostReq(url,json,id,type)
+	{
+	//	alert("onPostReq");
+	     var rtVal="";
+	   //  sleep(10);
+
+
+//alert("Call Post");
+
+
+
+             $.post( 
+             url,
+             json,
+             function(data) 
+		{
+
+	//	alert(data);
+		try
+		{
+		if(type == 'DIV')
+		{
+
+		$("#"+id).html(data);
+		
+		
+		}
+		else if( type == 'OBJ')
+		{
+		document.getElementById(id).value= data;
+
+		}
+}	
+catch(e)
+{
+	alert("PostReqExp:<"+ id+">" +e);
+}
+
+		}
+          );
+
+	}
+
+$(function() {
+  //  $( "#accordion" ).accordion({
+     // event: "click hoverintent",
+//heightStyle: "content",active:  1
+ //   });
+
+//$( "#container" ).accordion( "disable" );
+
+//$('#accordion').multiAccordion({active: [1, 2, 3] }
+  });
+ 
+  /*
+   * hoverIntent | Copyright 2011 Brian Cherne
+   * http://cherne.net/brian/resources/jquery.hoverIntent.html
+   * modified by the jQuery UI team
+   */
+
+tips = $( "#validateTips" );
+ 
+   /*[ function errormsg( t ) {
+      tips
+        .text( t )
+        .addClass( "ui-state-highlight" );
+      setTimeout(function() {
+        tips.removeClass( "ui-state-highlight", 1500 );
+      }, 500 );
+    }*/
+
+
+	</script>
+<style>
+.test1
+{
+visibility: visible;
+left:10%;
+//text-align:center;
+vertical-align: middle;
+top: 350px;
+margin-left:auto;
+margin-right:auto;
+min-width: 80%;
+min-height: 400px;
+position: absolute;
+}
+
+
+</style>
+<!--div id="validateTips">All * fields are required.</div>
+<div id="container"> 
+        <div class="headline">Headline 1</div>
+ 
+        <div class="section"> 
+                content 1 
+        </div> 
+        <div class="headline">Headline 2</div> 
+        <div class="section"> 
+                content 2 
+        </div> 
+        <div class="headline">Headline 3</div> 
+        <div class="section"> 
+                content 3 
+        </div> 
+        <div id="expand">Expand All</div> 
+</div--> 
+
+
+
+<form name="form1" xmlname="homespace" class="cform" width="100">
+<uss11>
+<!--div name="middleid" id="middleid" class="test1"--> 
+<div name="middleid" id="middleid" > 
+
+<script>
+
+
+var USSField=new us.USSField_();
+
+USSTable=us.USSCreateTable_()
+USSTableRow=us.USSCreateTableRow_()
+USSAccordion1=new us.USSCreateAccordion(1);
+
+
+//USSTableRow=us.CreateField(USSField,USSTableRow);
+
+
+//USSAccordion1=new us.USSCreateAccordion() ;
+
+
+
+
+
+USSTable=new us.USSCreateTable_(); 
+USSTableRow=new us.USSCreateTableRow_();
+
+USSField.group='ussms';
+USSField.name='';
+USSField.label='First Name';
+USSField.task='NONE';
+USSField.desc='N';
+USSField.htmlType='INPUT';
+USSField.entitle='N';
+USSField.enttlname='';
+USSField.mndf='N';
+USSField.dataType='VARCHAR';
+USSField.cclass='ctext';
+USSField.validate='';
+USSField.dflt='';
+USSField.min='0';
+USSField.max='60';
+USSField.tips='';
+USSField.onkeyup='';
+USSField.onchange='';
+USSField.onkeydown='';
+USSField.onkeypress='';
+USSField.onclick='';
+USSField.listVal='';
+USSField.help='N';
+USSField.helpLink='';
+USSField.xml='N';
+USSField.Xpath='N';
+
+
+USSField.group='ussms';USSField.name='basicDet';USSField.label='Basic Details';USSField.task='NONE';USSField.desc='N';USSField.htmlType='XMLCONTAINER';USSField.entitle='N';USSField.enttlname='';USSField.mndf='N';USSField.dataType='XMLCONTAINER';USSField.cclass='ctext';USSField.validate='';USSField.dflt='';USSField.min='0';USSField.max='60';USSField.tips='';USSField.onkeyup='onKeyUp(this)';USSField.onchange='onChange(this)';USSField.onkeydown='onKeyDown(this)';USSField.onkeypress='onKeyPress(this)';USSField.onclick='onClick(this)';USSField.listVal='0';USSField.help='N';USSField.helpLink='';USSField.xml='N';USSField.Xpath='N'; USSTable=us.USSAppendTableRow(USSTableRow,USSTable);USSTableRow=us.USSCreateTableRow_();USSTableRow=us.CreateField(USSField,USSTableRow);USSTable=us.USSAppendTableRow(USSTableRow,USSTable);USSTableRow=us.USSCreateTableRow_();us.USSAppendTableRow(USSTableRow,USSTable);
+
+USSAppendAccordionDflt1=new us.USSAccordionCreateDflt();
+USSAppendAccordionDflt1=new us.USSAppendAccordionHeader(USSAppendAccordionDflt1,'Basic Details' ); 
+	USSTable=new us.USSCreateTable_(); 
+		USSTableRow=new us.USSCreateTableRow_();
+USSField.group='ussms';USSField.name='name';USSField.label='Last Name ';USSField.task='NONE';USSField.desc='N';USSField.htmlType='TEXT';USSField.entitle='N';USSField.enttlname='';USSField.mndf='Y';USSField.dataType='VARCHAR';USSField.cclass='ctext';USSField.validate='';USSField.dflt='';USSField.min='0';USSField.max='60';USSField.tips='';USSField.onkeyup='onKeyUp(this)';USSField.onchange='onChange(this)';USSField.onkeydown='onKeyDown(this)';USSField.onkeypress='onKeyPress(this)';USSField.onclick='onClick(this)';USSField.listVal='0';USSField.help='N';USSField.helpLink='';USSField.xml='N';USSField.Xpath='N'; USSTable=us.USSAppendTableRow(USSTableRow,USSTable);USSTableRow=us.USSCreateTableRow_();USSTableRow=us.CreateField(USSField,USSTableRow);
+USSField.group='ussms';USSField.name='complexion';USSField.label='complexion';USSField.task='NONE';USSField.desc='N';USSField.htmlType='OPTION';USSField.entitle='N';USSField.enttlname='';USSField.mndf='N';USSField.dataType='VARCHAR';USSField.cclass='ctext';USSField.validate='';USSField.dflt='';USSField.min='0';USSField.max='60';USSField.tips='';USSField.onkeyup='onKeyUp(this)';USSField.onchange='onChange(this)';USSField.onkeydown='onKeyDown(this)';USSField.onkeypress='onKeyPress(this)';USSField.onclick='onClick(this)';USSField.listVal='||VFAIR|Very Fair|FAIR|Fair |WHEATISH|Wheatish|BWHEATISH|Wheatish |BROWN|brown|DARK|Dark';USSField.help='N';USSField.helpLink='';USSField.xml='N';USSField.Xpath='N'; USSTable=us.USSAppendTableRow(USSTableRow,USSTable);USSTableRow=us.USSCreateTableRow_();USSTableRow=us.CreateField(USSField,USSTableRow);
+USSField.group='ussms';USSField.name='dob';USSField.label='Date of Birth';USSField.task='NONE';USSField.desc='N';USSField.htmlType='DATE';USSField.entitle='N';USSField.enttlname='';USSField.mndf='N';USSField.dataType='DATE';USSField.cclass='ctext';USSField.validate='';USSField.dflt='';USSField.min='0';USSField.max='60';USSField.tips='';USSField.onkeyup='onKeyUp(this)';USSField.onchange='onChange(this)';USSField.onkeydown='onKeyDown(this)';USSField.onkeypress='onKeyPress(this)';USSField.onclick='onClick(this)';USSField.listVal='0';USSField.help='N';USSField.helpLink='';USSField.xml='N';USSField.Xpath='N'; USSTable=us.USSAppendTableRow(USSTableRow,USSTable);USSTableRow=us.USSCreateTableRow_();USSTableRow=us.CreateField(USSField,USSTableRow);
+USSField.group='ussms';USSField.name='eatingHabits';USSField.label='Eating Habits ';USSField.task='NONE';USSField.desc='N';USSField.htmlType='OPTION';USSField.entitle='N';USSField.enttlname='';USSField.mndf='N';USSField.dataType='VARCHAR';USSField.cclass='ctext';USSField.validate='';USSField.dflt='';USSField.min='0';USSField.max='60';USSField.tips='';USSField.onkeyup='onKeyUp(this)';USSField.onchange='onChange(this)';USSField.onkeydown='onKeyDown(this)';USSField.onkeypress='onKeyPress(this)';USSField.onclick='onClick(this)';USSField.listVal='||NV|Non Vegetarian|V|Vegetarian';USSField.help='N';USSField.helpLink='';USSField.xml='N';USSField.Xpath='N'; USSTable=us.USSAppendTableRow(USSTableRow,USSTable);USSTableRow=us.USSCreateTableRow_();USSTableRow=us.CreateField(USSField,USSTableRow);
+USSField.group='ussms';USSField.name='drinkingHabits';USSField.label='Drinking Habits ';USSField.task='NONE';USSField.desc='N';USSField.htmlType='OPTION';USSField.entitle='N';USSField.enttlname='';USSField.mndf='N';USSField.dataType='VARCHAR';USSField.cclass='ctext';USSField.validate='';USSField.dflt='';USSField.min='0';USSField.max='60';USSField.tips='';USSField.onkeyup='onKeyUp(this)';USSField.onchange='onChange(this)';USSField.onkeydown='onKeyDown(this)';USSField.onkeypress='onKeyPress(this)';USSField.onclick='onClick(this)';USSField.listVal='||ND|Non-drinker|D|Drinker';USSField.help='N';USSField.helpLink='';USSField.xml='N';USSField.Xpath='N'; USSTable=us.USSAppendTableRow(USSTableRow,USSTable);USSTableRow=us.USSCreateTableRow_();USSTableRow=us.CreateField(USSField,USSTableRow);
+USSField.group='ussms';USSField.name='smokingHabits';USSField.label='Smoking Habits ';USSField.task='NONE';USSField.desc='N';USSField.htmlType='OPTION';USSField.entitle='N';USSField.enttlname='';USSField.mndf='N';USSField.dataType='VARCHAR';USSField.cclass='ctext';USSField.validate='';USSField.dflt='';USSField.min='0';USSField.max='60';USSField.tips='';USSField.onkeyup='onKeyUp(this)';USSField.onchange='onChange(this)';USSField.onkeydown='onKeyDown(this)';USSField.onkeypress='onKeyPress(this)';USSField.onclick='onClick(this)';USSField.listVal='||NS|Non-smoker|S|Smoker';USSField.help='N';USSField.helpLink='';USSField.xml='N';USSField.Xpath='N'; USSTable=us.USSAppendTableRow(USSTableRow,USSTable);USSTableRow=us.USSCreateTableRow_();USSTableRow=us.CreateField(USSField,USSTableRow);
+USSField.group='ussms';USSField.name='religiousInfo';USSField.label='Educational Details';USSField.task='NONE';USSField.desc='N';USSField.htmlType='XMLCONTAINER';USSField.entitle='N';USSField.enttlname='';USSField.mndf='N';USSField.dataType='XMLCONTAINER';USSField.cclass='ctext';USSField.validate='';USSField.dflt='';USSField.min='0';USSField.max='60';USSField.tips='';USSField.onkeyup='onKeyUp(this)';USSField.onchange='onChange(this)';USSField.onkeydown='onKeyDown(this)';USSField.onkeypress='onKeyPress(this)';USSField.onclick='onClick(this)';USSField.listVal='0';USSField.help='N';USSField.helpLink='';USSField.xml='N';USSField.Xpath='N'; USSTable=us.USSAppendTableRow(USSTableRow,USSTable);USSTableRow=us.USSCreateTableRow_();USSTableRow=us.CreateField(USSField,USSTableRow);USSTable=us.USSAppendTableRow(USSTableRow,USSTable);USSTableRow=us.USSCreateTableRow_();us.USSAppendTableRow(USSTableRow,USSTable);
+
+USSAppendAccordionDflt1= us.USSAppendAccordionSection(USSAppendAccordionDflt1,USSTable) ;
+
+USSAccordion1 =us.USSAppendAccordionDflt(USSAccordion1,USSAppendAccordionDflt1);
+
+USSAccordion1=new us.USSAppendAccordionExapnd(USSAccordion1);
+/*[
+jsfunc =  "	 div='motherTongue';";
+jsfunc += "	 url='getMotherTongue.php';";
+jsfunc += "	 json={USRID:glUserId, GROUPID:glGroupId };";
+jsfunc += "	onPostReq(url,json,div,'DIV');";
+
+
+var scriptElmnt= document.createElement("script");
+
+
+
+scriptElmnt.appendChild(document.createTextNode(jsfunc));
+*/
+
+//document.getElementById('middleid').appendChild(scriptElmnt);
+document.getElementById('middleid').appendChild(USSAccordion1);
+
+//alert ();
+//=function(obj)
+//document.getElementsByTagName('middleid').appendChild(USSAccordion1);
+/*[
+jsfunc =  "	 div='motherTongue';";
+jsfunc += "	 url='getMotherTongue.php';";
+jsfunc += "	 json={USRID:glUserId, GROUPID:glGroupId };";
+jsfunc += "	onPostReq(url,json,div,'DIV');";
+*/
+
+
+var scriptElmnt= document.createElement("script");
+scriptElmnt.appendChild(document.createTextNode( us.USSScript));
+
+document.getElementById('middleid').appendChild(USSAccordion1).appendChild(scriptElmnt);
+//USSAccordion2=new us.USSAppendAccordion(USSAccordion1,"Actions", USSTable);
+
+/**/
+	
+//document.getElementsByTagName('middleid').appendChild(USSAccordion2);
+//document.getElementById('middleid').appendChild(USSAccordion2);
+//document.getElementsByTagName('form').item(1).appendChild(USSAccordion2);
+//*/
+</script>
+
+<!--div id="container"> 
+        <div class="headline">Headline 1</div> 
+        <div class="section"> 
+                content 1 
+        </div> 
+        <div class="headline">Headline 2</div> 
+        <div class="section"> 
+                content 2 
+        </div> 
+        <div class="headline">Headline 3</div> 
+        <div class="section"> 
+                content 3 
+        </div> 
+        <div id="expand">Expand All</div> 
+</div--> 
+
+
+
+
+<center>
+
+<!--input type="button" class="button"  parent="hometran" task="EXPAND" value="Expand" onclick="javascript:onClick(this)"-->
+<!--input type="button" class="button" parent="hometran" task="BACK" value="Dashboard" onclick="javascript:onClick(this)"-->
+<input type="button" class="button" parent="hometran" task="VALIDATE" value="Validate" onclick="javascript:onClick(this)">
+<input type="button" class="button" parent="hometran" task="SUBMIT" value="Verify" onclick="javascript:onClick(this)">
+</center>
+
+<center>
+	<div class="demo-description">
+<p>
+	<per>Copyright 2013 © Heaerie,GSL.Vellore </per>
+</p>
+</div><!-- End demo-description -->
+	</center>
+
+</div>
+</uss11>
+
+</form>
+<script>
+//:::::::CODE:::::: 
+// this var will be used to tell the system whether or not 
+// other sections will respond to clicking on a headline 
+var closeOthers = true; 
+
+// check which sections are open 
+function checkOpen() { 
+//	alert("checkOpen");
+        // how many sections are open 
+        var openCount = $('#container .section:visible').length; 
+        // how many sections are there 
+        var totalCount = $('#container .section').length; 
+        // set closeOthers var based on if there are 1 or 0 sections open 
+        if (openCount < 2) closeOthers = true; 
+        // change the text in the expand link based on if 
+        // there are more or less than half of the sections open 
+        if (openCount > totalCount/2) { 
+                $('#container #expand').html("Collapse All"); 
+        } 
+        else { 
+                $('#container #expand').html("Expand All"); 
+        } 
+} 
+// hide all sections 
+$('#container .section').hide(); 
+// show the first section 
+$('#container .section:first').show(); 
+// actions taken upon clicking any headline 
+$('#container .headline').click( function() { 
+        // set checkSection to the section next to the headline clicked 
+        var checkSection = $(this).next(); 
+        // if the section is open, close it, and call checkOpen 
+        if(checkSection.is(':visible')) { 
+                checkSection.slideUp('normal', checkOpen); 
+                return false; 
+        } 
+        // if the section is closed and closeOthers 
+        // is true, close all other open sections 
+        else { 
+                if (closeOthers) { 
+                        $('#container .section:visible').slideUp('normal'); 
+                } 
+                // open the section and call checkOpen 
+                checkSection.slideDown('normal', checkOpen); 
+                return false; 
+        } 
+}); 
+// actions taken upon clicking the expand link 
+$('#container #expand').click( function() { 
+        // if the expand link's text is 'expand all', set closeOthers 
+        // to false, open all sections and call checkOpen 
+//	alert("click bind");
+        if ($('#container #expand').html() == "Expand All") { 
+                closeOthers = false; 
+                $('#container .section').slideDown('normal', checkOpen); 
+        } 
+        // if the expand link's text is 'expand all', set closeOthers 
+        // to true, hide all sections, and call checkOpen 
+        else { 
+                closeOthers = true; 
+                // the 1 prevents nasty flickering in some browsers 
+                $('#container .section').hide(1, checkOpen); 
+        } 
+        return false; 
+}); 
+
+
+$('#show').click( function() { 
+        // if the expand link's text is 'expand all', set closeOthers 
+        // to false, open all sections and call checkOpen 
+//	alert("click bind");
+        if ($('#show').html() == "Expand All") { 
+                closeOthers = false; 
+                $('#show').slideDown('normal', checkOpen); 
+        } 
+        // if the expand link's text is 'expand all', set closeOthers 
+        // to true, hide all sections, and call checkOpen 
+        else { 
+                closeOthers = true; 
+                // the 1 prevents nasty flickering in some browsers 
+                $('#show.section').hide(1, checkOpen); 
+        } 
+        return false; 
+}); 
+
+</script>
+</body>

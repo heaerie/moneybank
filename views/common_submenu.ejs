@@ -1,0 +1,15 @@
+    <% for(var i=0; i<1; i++) { %>
+	<nav>
+		
+		<ul class="SubNav">
+		    <% for ( var j=0 ; j<menu[i].pages.length ; j++ ) { %>
+			<li>
+               <a href='<%= menu[i].pages[j].pageUrl %>' 
+		<% if ( menu[i].pages[j].pageActive == "true" ) { %> 
+		class="active" 	
+		<% } %> > <%= menu[i].pages[j].pageName %>  </a>
+			</li>
+	    <% } %>
+		</ul>
+	</nav>
+    <% } %>

@@ -1,0 +1,286 @@
+<script>
+<%
+
+var PersonalInfoSch = [{ 	 Name     : "Schema"	
+										,dataType : "SCHEMA"
+			                            ,childs   : 
+			                            [ {
+			                            
+			                             Name     : "personalInfo"
+			                            ,min      : 0
+			                            ,max      : "unlimited"
+										,dataType : "CONTAINER"
+										,childs   :  [   
+{
+ Name       : 'Name'
+,label      : 'Name'
+,task       : 'NONE'
+,desc       : ''
+,htmlType   : 'text' 
+,entitle    : 'READONLY' 
+,enttlname  : ''
+,mndf       : 'N'
+,dataType   : 'VARCHAR'
+,cclass     : 'ctable'
+,validate   : ''
+,dflt       : ''
+,min        : '0'
+,max        : '20'
+,tips       : ''
+,onkeyup    : 'onKeyUp(this);'
+,onchange   : 'onChange(this);'
+,onkeydown  : 'onKeyDown(this);'
+,onkeypress : 'onKeyPress(this);'
+,onclick    : 'onClick(this);'
+,listVal    : '||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY'
+,help       : 'N'
+,helpLink   : 'helpload'
+,xml        : 'N'
+,Xpath      : '/'
+} 
+,  
+{
+ Name       : 'Age'
+,label      : 'Age'
+,task       : 'NONE'
+,desc       : ''
+,htmlType   : 'text' 
+,entitle    : 'READONLY' 
+,enttlname  : ''
+,mndf       : 'N'
+,dataType   : 'NUMBER'
+,cclass     : 'ctable'
+,validate   : ''
+,dflt       : ''
+,min        : '1'
+,max        : '3'
+,tips       : ''
+,onkeyup    : 'onKeyUp(this);'
+,onchange   : 'onChange(this);'
+,onkeydown  : 'onKeyDown(this);'
+,onkeypress : 'onKeyPress(this);'
+,onclick    : 'onClick(this);'
+,listVal    : '||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY'
+,help       : 'N'
+,helpLink   : 'helpload'
+,xml        : 'N'
+,Xpath      : '/'
+ } 
+,  
+{ 
+ Name       : 'DOB'
+,label      : 'Date of Birth'
+,task       : 'NONE'
+,desc       : ''
+,htmlType   : 'text' 
+,entitle    : 'READONLY' 
+,enttlname  : ''
+,mndf       : 'N'
+,dataType   : 'DATE'
+,cclass     : 'ctable'
+,validate   : ''
+,dflt       : ''
+,min        : '0'
+,max        : '60'
+,tips       : ''
+,onkeyup    : 'onKeyUp(this);'
+,onchange   : 'onChange(this);'
+,onkeydown  : 'onKeyDown(this);'
+,onkeypress : 'onKeyPress(this);'
+,onclick    : 'onClick(this);'
+,listVal    : '||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY'
+,help       : 'N'
+,helpLink   : 'helpload'
+,xml        : 'N'
+,Xpath      : '/' 
+}
+,  
+{ 
+ Name       : 'FUNCTION'
+,label      : 'FUNCTION'
+,task       : 'NONE'
+,desc       : ''
+,htmlType   : 'text' 
+,entitle    : 'READONLY' 
+,enttlname  : ''
+,mndf       : 'N'
+,dataType   : 'LIST'
+,cclass     : 'ctable'
+,validate   : ''
+,dflt       : ''
+,min        : '0'
+,max        : '60'
+,tips       : ''
+,onkeyup    : 'onKeyUp(this);'
+,onchange   : 'onChange(this);'
+,onkeydown  : 'onKeyDown(this);'
+,onkeypress : 'onKeyPress(this);'
+,onclick    : 'onClick(this);'
+,listVal    : '||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY'
+,help       : 'N'
+,helpLink   : 'helpload'
+,xml        : 'N'
+,Xpath      : '/' 
+}
+ ]
+}]
+}];
+
+function alert(str)
+{
+	%>
+	alert("<%=str%>");
+	<%
+}
+
+
+function valWithSch(rec,recSch)
+	{
+		//alert( recSch.Name +" : " +recSch.dataType);
+		//alert(rec);
+				
+				
+		for ( var r=0; r<rec.length; r++)
+		//for ( var s =0; s <recSch.length; s++)
+		{
+			 //alert (recSch[s]);
+			 for ( var s =0; s <recSch.length; s++)
+			 //for ( var r=0; r<rec.length; r++)
+			 {
+			 
+			 var varStr='rec['+ r + '].' + recSch[s].Name;
+			 var varStrVal= eval(varStr);
+			 
+			if ( recSch[s].dataType != "CONTAINER" || recSch[s].dataType != "SCHEMA" )
+			{
+			// alert(recSch[s].dataType);
+			 
+			 
+			 value= varStrVal;
+				
+				//alert(value );
+				
+				if (value           === undefined) {
+					value='';
+				}
+				if (recSch[s].childs   === undefined) {
+					recSch[s].childs=new Array();
+				}
+				if (recSch[s].htmlType === undefined) {
+					recSch[s].htmlType='';
+				}
+				if (recSch[s].dataType === undefined) {
+					recSch[s].dataType='';
+				}
+				if (recSch[s].groupId  === undefined) {
+				recSch[s].groupId='';
+				}
+				
+				
+		
+		
+		  switch ( recSch[s].dataType )
+		  {
+		    case "DATE" : 
+		  		re = /^\d{1,2}\/\d{1,2}\/\d{4}$/;
+				if(value != '' && !value.match(re)) {
+     			 alert(recSch[s].Name + "Invalid date format: " + value);
+      			 return false;
+      			 }
+      			 break;
+    		case "TIME" :
+    			// regular expression to match required time format
+    			re = /^\d{1,2}:\d{2}([ap]m)?$/;
+				if(value != '' && !value.match(re)) {
+     			 alert(recSch[s].Name +  "Invalid time format: " + value);
+     			 return false;
+    			}
+    			break;
+		    case "NUMBER" :
+    			if (recSch[s].max != "unlimited" )
+				{
+				re = RegExp("^[0-9.]{"+ recSch[s].min + "," + recSch[s].max + "}$");
+					//if(value != '' && !value.match(re))
+					if(value != '' && !re.test(value)) 
+					{
+						 alert( recSch[s].Name + " Exceed  limit " + recSch[s].min + " to " + recSch[s].max );
+						 return false;
+					 }
+    			}
+    			else
+    			{
+					re =/^[A-Za-z0-9_]$/;
+					if(value != '' && !value.match(re)) 
+					{
+						 alert( recSch[s].Name + " Invalid time format: " + value);
+						 return false;
+					}
+     			 
+    			}
+    			break;
+			case "VARCHAR" :
+				// regular expression to match required time format
+				if (recSch[s].max != "unlimited" )
+				{
+					//re = /^[A-Za-z0-9_]{0,20}$/
+					re = RegExp("^[A-Za-z0-9_]{"+ recSch[s].min + "," + recSch[s].max + "}$");
+					if(value != '' && !value.match(re)) 
+					{
+						 alert(recSch[s].Name +"Exceed  limit " + recSch[s].min + " to " + recSch[s].max +"[ " + value + "]" );
+						 return false;
+					 }
+    			}
+    			else
+    			{
+					re =/^[A-Za-z0-9_]$/;
+					if(value != '' && !value.match(re)) 
+					{
+						 alert(recSch[s].Name + "Invalid time format: " + value);
+						 return false;
+					}
+     			 
+    			} 
+    			break;
+    		case "LIST" :
+    		case "OPTION" :
+				// regular expression to match required time format
+				 recSch[s].listVal	
+				 if ( value != '' )
+				 {
+				 var inpStrArr= recSch[s].listVal.split('|');
+				 	var chk=0;
+					for(var i=0 ; i< inpStrArr.length;i+=2)
+					{
+						if( value == inpStrArr[i])
+						{
+						chk=1;
+						}
+					}
+					if  ( chk!=1 )
+					{
+						alert( recSch[s].Name + " Invalid time format: " + value);
+						return false;
+					}
+				}
+				
+				 	 
+			}
+			 
+			}
+			
+			  if (recSch[s].childs   === undefined) 
+			  {
+					recSch[s].childs=new Array();
+			  }
+			  valWithSch(varStrVal,recSch[s].childs);
+			 
+			 } 
+			 
+		}
+		
+	}
+
+valWithSch(data,PersonalInfoSch);		
+%>		
+
+</script>

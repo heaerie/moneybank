@@ -1,0 +1,73 @@
+<meta name="robots" content="noindex" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<% include common_css.ejs %>
+<% include common_javascript.ejs %>
+<% include common_header.ejs %>
+<% include common_frame_generator.ejs %>
+
+<% 
+console.log('---------');
+console.log(session);
+console.log('---------');
+session.uss.debug('test');
+console.log('---------');
+var  XMLJson="";
+var schemaJson =session.PersonalInfo;
+
+var Json=eval("[{" +session.uss.frameGenerationJson(schemaJson[0].childs, schemaJson[0]) +"}]");
+var ResoureJson=eval("[{" +session.uss.frameGenerationResoure(schemaJson[0].childs, schemaJson[0]) +"}]");
+var ListVal=eval("[{" +session.uss.frameGenerationListVal(schemaJson[0].childs, schemaJson[0]) +"}]");
+console.log('------schemaJson----');
+console.log(JSON.stringify(schemaJson));
+console.log('------ListVal----');
+console.log(JSON.stringify(ListVal));
+console.log('------ResoureJson----');
+console.log(JSON.stringify(ResoureJson));
+console.log('------Json----');
+console.log(JSON.stringify(Json));
+var func="Y";
+var FListVal     =eval(JSON.stringify(ListVal).replace("_0_0",""));
+var FResoureJson =eval(JSON.stringify(ResoureJson).replace("_0_0",""));
+var FJson        =eval(JSON.stringify(Json).replace("_0_0",""));
+var FschemaJson  =schemaJson;
+
+var FXMLJson= "";
+if ( XMLJson === undefined )
+{
+	 FXMLJson     =Json;
+}
+else
+{
+	 FXMLJson     =eval(JSON.stringify(XMLJson).replace("_0_0",""));
+}
+
+
+%>
+<script>
+var us= new USS();
+/*
+USS.prototype.frameGeneration=  function (
+listVal
+,recLabel
+,rec
+,recSch
+,parent
+,level
+,func
+,parentCnt
+*/
+<%- session.uss.frameGeneration(  eval( "ListVal[0]."+schemaJson[0].name)
+
+                                              ,eval( "ResoureJson[0]."+schemaJson[0].name)
+                                              ,eval( "Json[0]."+schemaJson[0].name  )
+                                              ,schemaJson[0].childs
+                                              ,schemaJson[0]
+                                              ,0
+                                              ,func
+                                              ,0
+                                          );
+
+
+%>
+document.getElementById('middleid').appendChild(USSContainer0); 
+</script>

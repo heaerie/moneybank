@@ -1,0 +1,218 @@
+function frameGeneration(
+recLabel
+,rec
+,recSch
+,parent
+,level
+,func
+,parentCnt
+)
+{   var lv_str ="";	
+	var lv_rtStr="";
+	
+
+
+
+var uss= new USS();
+//	try
+//	{
+
+lv_str += print( "USSContainer"+level+"   =   us.USSCreateContainer();");
+
+parent.htmlType="HIDDEN";
+	
+	if( parent.dataType == "CONTAINER")
+	{
+	
+	
+		
+		lv_str += print('USSTable'  +  level +'     =   new us.USSCreateTable_();');
+		lv_str += print('USSHeader' +  level +'     =   us.USSCreateHeader("'+ parent.label+'");');
+		lv_str += print('USSSession'+  level +'     =   us.USSCreateSession();' );
+		
+				parent.name = parent.name + "_"+level + "_"+ 0;
+
+				lv_rtStr=frameField(parent,'','',func,parent.name);
+				lv_str += print(lv_rtStr);
+				lv_str += print('USSSession'+  level +'.appendChild(USSTableRow);' );
+
+
+		
+		for (var recSchCnt=0;recSchCnt < recSch.length ; recSchCnt++)
+		{
+		
+		recSch[recSchCnt].parent=parent.name;
+
+
+			//alert("recSchCnt=<"  + recSchCnt + "> recSch.length  =<" + recSch.length  + ">recSch["+recSchCnt+"].dataType " + recSch[recSchCnt].dataType  );
+			//alert("recSchCnt="  + recSchCnt);
+
+			
+			
+			if( hasChild(recSch[recSchCnt]))
+			{
+
+				console.log(rec);
+				var evalStr="rec["+recSchCnt+"]." +recSch[recSchCnt].name;
+				var labelEvalStr="recLabel["+recSchCnt+"]." +recSch[recSchCnt].name;
+			debug(" evalStr =["+ evalStr+"]");
+			var  objEvalStr=eval(evalStr);
+
+			console.log(recLabel);
+			
+			debug(" labelEvalStr =["+ labelEvalStr+"]");
+			var  labelObjEvalStr=eval(labelEvalStr);
+
+			
+
+
+				lv_rtStr  = frameGeneration(labelObjEvalStr,objEvalStr,recSch[recSchCnt].childs,recSch[recSchCnt],level+1,func,recSchCnt);
+				lv_str+= print(lv_rtStr);
+
+				lv_str += print("USSSession"+level+".appendChild(USSContainer"+(level+1)+");");
+			
+			}
+			else 
+			{
+
+
+				var evalStr="rec["+0+"]." +recSch[recSchCnt].name;
+				var labelEvalStr="recLabel["+0+"]." +recSch[recSchCnt].name;
+			debug(" evalStr =["+ evalStr+"]");
+			var  objEvalStr=eval(evalStr);
+
+
+			
+			debug(" labelEvalStr =["+ labelEvalStr+"]");
+			var  labelObjEvalStr=eval(labelEvalStr);
+
+					//alert("objEvalStr=" + objEvalStr);
+					if( objEvalStr === undefined)
+					{
+						objEvalStr='';
+					}
+
+					if( labelObjEvalStr === undefined)
+					{
+						labelObjEvalStr='';
+					}
+
+					
+
+				lv_rtStr=frameField(recSch[recSchCnt],objEvalStr,labelObjEvalStr,func,level,recSchCnt);
+				lv_str += print(lv_rtStr);
+				lv_str += print('USSSession'+  level +'.appendChild(USSTableRow);' );
+			}
+		
+		
+		}
+ 		
+lv_str += print( "USSContainer"+level+".appendChild(USSHeader" +  level +" );");
+	lv_str += print( "USSContainer"+level+".appendChild(USSSession" +  level +" );");
+		
+
+		//lv_str+= print("USSAccordion"+level+"           =new us.USSAppendAccordionDflt(USSAccordion"+level+",USSAppendAccordionDflt"+(level)+" ) ;");
+
+		
+					
+	
+	}
+	if( parent.dataType == "COLLECTION")
+	{
+
+
+
+		
+//alert("parent.max" + parent.max);
+		var MaxRecCount=0;
+		if(parent.max =="unlimited")
+		{
+
+			MaxRecCount=rec.length;
+		}
+		else
+		{
+			MaxRecCount=parent.max;
+		}
+		for(var recCnt= 0; recCnt < MaxRecCount; recCnt++)
+		{		
+			lv_str += print('USSTable'  +  level +'     =   new us.USSCreateTable_();');
+			lv_str += print('USSHeader' +  level +'     =   us.USSCreateHeader("'+ parent.label+'");');
+			lv_str += print('USSSession'+  level +'     =   us.USSCreateSession();' );
+
+			lv_rtStr=frameField(parent,'','',func,level,recCnt,parent.name);
+				lv_str += print(lv_rtStr);
+				lv_str += print('USSSession'+  level +'.appendChild(USSTableRow);' );
+			
+			for (var recSchCnt=0;recSchCnt < recSch.length ; recSchCnt++)
+			{
+			
+			
+
+
+				//alert("recSchCnt=<"  + recSchCnt + "> recSch.length  =<" + recSch.length  + ">recSch["+recSchCnt+"].dataType " + recSch[recSchCnt].dataType  );
+				//alert("recSchCnt="  + recSchCnt);
+
+				var evalStr="rec["+recCnt+"]." +recSch[recSchCnt].name;
+				debug(" evalStr =["+ evalStr+"]");
+				var  objEvalStr="";
+
+
+			var labelEvalStr="rec["+recCnt+"]." +recSch[recSchCnt].name;
+			debug(" labelEvalStr =["+ labelEvalStr+"]");
+			var  labelObjEvalStr=eval(labelEvalStr);
+
+				try
+				{
+				  objEvalStr=eval(evalStr);
+				}
+				catch(e)
+				{
+					//alert("OES Exception " +e);
+					objEvalStr="";
+				}
+				
+				if( uss.hasChild(recSch[recSchCnt]))
+				{
+					lv_rtStr  = frameGeneration(labelEvalStr,objEvalStr,recSch[recSchCnt].childs,recSch[recSchCnt],level+1,func,recSchCnt);
+					lv_str+= print(lv_rtStr);
+
+					lv_str += print("USSSession"+level+".appendChild(USSContainer"+(level+1)+");");
+				
+				}
+				else 
+				{
+					//alert("objEvalStr=" + objEvalStr);
+					if( objEvalStr === undefined)
+					{
+						objEvalStr='';
+					}
+					lv_rtStr=frameField(lrecSch[recSchCnt],objEvalStr,labelObjEvalStr,func,level,recCnt,parent.name);
+					lv_str += print(lv_rtStr);
+					lv_str += print('USSSession'+  level +'.appendChild(USSTableRow);' );
+				}
+		
+		
+			}
+			lv_str += print( "USSContainer"+level+".appendChild(USSHeader" +  level +" );");
+			lv_str += print( "USSContainer"+level+".appendChild(USSSession" +  level +" );");
+		}
+		//alert("recCnt=" + recCnt);
+	
+	}
+
+	
+	
+//}
+//catch(e)
+//{
+//	alert("Exception" + e);
+//}
+
+
+	debug( level + "_" + parentCnt +" end ##### frameGeneration ###### " );
+	
+
+	return lv_str;
+}
+

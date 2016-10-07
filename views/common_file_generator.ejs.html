@@ -1,0 +1,412 @@
+<!-- PersonalInfo.json start -->
+<!-- PersonalInfo -->
+<!-- PersonalInfo.json end -->
+<!--link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"-->
+<!--script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script-->
+<!--script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script-->
+<%
+console.log(USS);
+function hasChild(fieldObj)
+{
+	//console.log(fieldObj);
+
+	if( Array.isArray(fieldObj.childs))
+	{
+
+		if( fieldObj.childs.length == 0 )
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
+	else
+	{
+		return false;
+	}
+
+	
+}
+	
+function commFrameGen(recLabel,rec,recSch,func)
+	{
+		var commonHeader="var us = new USS(); var USSContainer0 =    us.USSCreateContainer(); var USSHeader    = ''";
+		
+
+		
+		var vcommonFrameGen =frameGeneration(recLabel,rec,recSch,
+	{
+ name       : 'Dashboard'
+,label      : 'name'
+,task       : 'NONE'
+,desc       : ''
+,htmlType   : 'PARENT' 
+,entitle    : 'READONLY' 
+,enttlname  : ''
+,mndf       : 'N'
+,dataType   : 'CONTAINER'
+,cclass     : 'ctable'
+,validate   : ''
+,parent   : '/'
+,dflt       : ''
+,min        : '0'
+,max        : '20'
+,tips       : ''
+,onkeyup    : 'onKeyUp(this);'
+,onchange   : 'onChange(this);'
+,onkeydown  : 'onKeyDown(this);'
+,onkeypress : 'onKeyPress(this);'
+,onclick    : 'onClick(this);'
+,listVal    : '||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY'
+,help       : 'N'
+,helpLink   : 'helpload'
+,xml        : 'N'
+,Xpath      : '/'
+,childs     : recSch
+} 
+,
+0
+,
+func
+,
+0
+);
+		
+
+		
+		
+var commonTailer=""
+commonTailer+="\n document.getElementById('middleid').appendChild(USSContainer0); ";
+
+//USSAccordion2=new us.USSAppendAccordion(USSAccordion1,"Actions", USSTable);
+		
+		
+		return commonHeader + vcommonFrameGen + commonTailer;
+		
+		
+	}	
+	
+	function print(str)
+	{
+		console.log("\n " + str + " ");
+		return "\n " + str + " ";
+	}
+	
+	
+	function debug(str)
+	{
+		console.log("<!--### " + str + "--> ");
+		return "<!--### " + str + "--> ";
+	}
+	
+	
+function frameField(recSch,varStrVal,func,level,recCnt,parentName)
+{
+var lv_str="";
+if ( varStrVal === undefined)
+varStrVal=="";
+
+lv_str  += "\n USSTableRow = us.USSCreateTableRow_();	";
+lv_str  += "\n USSField    = new us.USSField_(); ";
+lv_str  += "\n USSField" + "." + "group"      + "=" + "'" + recSch.group      + "'" + ";"
+lv_str  += "\n USSField" + "." + "name"       + "=" + "'" + parentName+"_"+recSch.name+"_"+level+"_"+ recCnt       + "'" + ";"
+lv_str  += "\n USSField" + "." + "label"      + "=" + "'" + recSch.label      + "'" + ";"
+lv_str  += "\n USSField" + "." + "task"       + "=" + "'" + recSch.task       + "'" + ";"
+lv_str  += "\n USSField" + "." + "desc"       + "=" + "'" + recSch.desc       + "'" + ";"
+lv_str  += "\n USSField" + "." + "htmlType"   + "=" + "'" + recSch.htmlType   + "'" + ";"
+
+lv_str  += "\n \/\/ func =" + func + " >";
+if ( func == "Y" )
+{
+	lv_str  += "\n USSField" + "." + "entitle"    + "=" + "'" + recSch.entitle    + "'" + ";"
+}
+else
+{
+	lv_str  += "\n USSField" + "." + "entitle"    + "=" + "'READONLY'" + ";"
+}
+lv_str  += "\n USSField" + "." + "enttlname"  + "=" + "'" + recSch.enttlname  + "'" + ";"
+lv_str  += "\n USSField" + "." + "mndf"       + "=" + "'" + recSch.mndf       + "'" + ";"
+lv_str  += "\n USSField" + "." + "dataType"   + "=" + "'" + recSch.dataType   + "'" + ";"
+lv_str  += "\n USSField" + "." + "cclass"     + "=" + "'" + recSch.cclass     + "'" + ";"
+lv_str  += "\n USSField" + "." + "validate"   + "=" + "'" + recSch.validate   + "'" + ";"
+//lv_str  += "\n USSField" + "." + "dflt"       + "=" + "'" + recSch[s].dflt       + "'" + ";"
+lv_str  += "\n USSField" + "." + "dflt"       + "=" + "'" + varStrVal      + "'" + ";"
+lv_str  += "\n USSField" + "." + "min"        + "=" + "'" + recSch.min        + "'" + ";"
+lv_str  += "\n USSField" + "." + "max"        + "=" + "'" + recSch.max        + "'" + ";"
+lv_str  += "\n USSField" + "." + "tips"       + "=" + "'" + recSch.tips       + "'" + ";"
+lv_str  += "\n USSField" + "." + "onkeyup"    + "=" + "'" + recSch.onkeyup    + "'" + ";"
+lv_str  += "\n USSField" + "." + "onchange"   + "=" + "'" + recSch.onchange   + "'" + ";"
+lv_str  += "\n USSField" + "." + "onkeydown"  + "=" + "'" + recSch.onkeydown  + "'" + ";"
+lv_str  += "\n USSField" + "." + "onkeypress" + "=" + "'" + recSch.onkeypress + "'" + ";"
+lv_str  += "\n USSField" + "." + "onclick"    + "=" + "'" + recSch.onclick    + "'" + ";"
+lv_str  += "\n USSField" + "." + "listVal"    + "=" + "'" + recSch.listVal    + "'" + ";"
+lv_str  += "\n USSField" + "." + "help"       + "=" + "'" + recSch.help       + "'" + ";"
+lv_str  += "\n USSField" + "." + "helpLink"   + "=" + "'" + recSch.helpLink   + "'" + ";"
+lv_str  += "\n USSField" + "." + "xml"        + "=" + "'" + recSch.xml        + "'" + ";"
+lv_str  += "\n USSField" + "." + "Xpath"      + "=" + "'" + recSch.Xpath      + "'" + ";"
+lv_str  += "\n USSTableRow=us.CreateField(USSField,USSTableRow);";
+
+return lv_str;
+
+}
+
+function hasChild(fieldObj)
+{
+	//console.log(fieldObj);
+
+	if( Array.isArray(fieldObj.childs))
+	{
+
+		if( fieldObj.childs.length == 0 )
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
+	else
+	{
+		return false;
+	}
+
+	
+}
+
+function frameGeneration(
+recLabel
+,rec
+,recSch
+,parent
+,level
+,func
+,parentCnt
+)
+{   var lv_str ="";	
+	var lv_rtStr="";
+	
+
+
+
+//	try
+//	{
+
+lv_str += print( "USSContainer"+level+"   =   us.USSCreateContainer();");
+
+parent.htmlType="hidden";
+	
+	if( parent.dataType == "CONTAINER")
+	{
+	
+	
+		
+		lv_str += print('USSTable'  +  level +'     =   new us.USSCreateTable_();');
+		lv_str += print('USSHeader' +  level +'     =   us.USSCreateHeader("'+ parent.label+'");');
+		lv_str += print('USSSession'+  level +'     =   us.USSCreateSession();' );
+		
+				parent.name = parent.name + "_"+level + "_"+ 0;
+
+				lv_rtStr=frameField(parent,'','',func,parent.name);
+				lv_str += print(lv_rtStr);
+				lv_str += print('USSSession'+  level +'.appendChild(USSTableRow);' );
+
+
+		
+		for (var recSchCnt=0;recSchCnt < recSch.length ; recSchCnt++)
+		{
+		
+		recSch[recSchCnt].parent=parent.name;
+
+
+			//alert("recSchCnt=<"  + recSchCnt + "> recSch.length  =<" + recSch.length  + ">recSch["+recSchCnt+"].dataType " + recSch[recSchCnt].dataType  );
+			//alert("recSchCnt="  + recSchCnt);
+
+			
+			
+			if( hasChild(recSch[recSchCnt]))
+			{
+
+				console.log(rec);
+				var evalStr="rec["+recSchCnt+"]." +recSch[recSchCnt].name;
+				var labelEvalStr="recLabel["+recSchCnt+"]." +recSch[recSchCnt].name;
+			debug(" evalStr =["+ evalStr+"]");
+			var  objEvalStr=eval(evalStr);
+
+			console.log(recLabel);
+			
+			debug(" labelEvalStr =["+ labelEvalStr+"]");
+			var  labelObjEvalStr=eval(labelEvalStr);
+
+			
+
+
+				lv_rtStr  = frameGeneration(labelObjEvalStr,objEvalStr,recSch[recSchCnt].childs,recSch[recSchCnt],level+1,func,recSchCnt);
+				lv_str+= print(lv_rtStr);
+
+				lv_str += print("USSSession"+level+".appendChild(USSContainer"+(level+1)+");");
+			
+			}
+			else 
+			{
+
+
+				var evalStr="rec["+0+"]." +recSch[recSchCnt].name;
+				var labelEvalStr="recLabel["+0+"]." +recSch[recSchCnt].name;
+			debug(" evalStr =["+ evalStr+"]");
+			var  objEvalStr=eval(evalStr);
+
+
+			
+			debug(" labelEvalStr =["+ labelEvalStr+"]");
+			var  labelObjEvalStr=eval(labelEvalStr);
+
+					//alert("objEvalStr=" + objEvalStr);
+					if( objEvalStr === undefined)
+					{
+						objEvalStr='';
+					}
+
+					if( labelObjEvalStr === undefined)
+					{
+						labelObjEvalStr='';
+					}
+
+					
+
+				lv_rtStr=frameField(recSch[recSchCnt],objEvalStr,labelObjEvalStr,func,level,recSchCnt);
+				lv_str += print(lv_rtStr);
+				lv_str += print('USSSession'+  level +'.appendChild(USSTableRow);' );
+			}
+		
+		
+		}
+ 		
+lv_str += print( "USSContainer"+level+".appendChild(USSHeader" +  level +" );");
+	lv_str += print( "USSContainer"+level+".appendChild(USSSession" +  level +" );");
+		
+
+		//lv_str+= print("USSAccordion"+level+"           =new us.USSAppendAccordionDflt(USSAccordion"+level+",USSAppendAccordionDflt"+(level)+" ) ;");
+
+		
+					
+	
+	}
+	if( parent.dataType == "COLLECTION")
+	{
+
+
+
+		
+//alert("parent.max" + parent.max);
+		var MaxRecCount=0;
+		if(parent.max =="unlimited")
+		{
+
+			MaxRecCount=rec.length;
+		}
+		else
+		{
+			MaxRecCount=parent.max;
+		}
+		for(var recCnt= 0; recCnt < MaxRecCount; recCnt++)
+		{		
+			lv_str += print('USSTable'  +  level +'     =   new us.USSCreateTable_();');
+			lv_str += print('USSHeader' +  level +'     =   us.USSCreateHeader("'+ parent.label+'");');
+			lv_str += print('USSSession'+  level +'     =   us.USSCreateSession();' );
+
+			lv_rtStr=frameField(parent,'','',func,level,recCnt,parent.name);
+				lv_str += print(lv_rtStr);
+				lv_str += print('USSSession'+  level +'.appendChild(USSTableRow);' );
+			
+			for (var recSchCnt=0;recSchCnt < recSch.length ; recSchCnt++)
+			{
+			
+			
+
+
+				//alert("recSchCnt=<"  + recSchCnt + "> recSch.length  =<" + recSch.length  + ">recSch["+recSchCnt+"].dataType " + recSch[recSchCnt].dataType  );
+				//alert("recSchCnt="  + recSchCnt);
+
+				var evalStr="rec["+recCnt+"]." +recSch[recSchCnt].name;
+				debug(" evalStr =["+ evalStr+"]");
+				var  objEvalStr="";
+
+
+			var labelEvalStr="rec["+recCnt+"]." +recSch[recSchCnt].name;
+			debug(" labelEvalStr =["+ labelEvalStr+"]");
+			var  labelObjEvalStr=eval(labelEvalStr);
+
+				try
+				{
+				  objEvalStr=eval(evalStr);
+				}
+				catch(e)
+				{
+					//alert("OES Exception " +e);
+					objEvalStr="";
+				}
+				
+				if( hasChild(recSch[recSchCnt]))
+				{
+					lv_rtStr  = frameGeneration(labelEvalStr,objEvalStr,recSch[recSchCnt].childs,recSch[recSchCnt],level+1,func,recSchCnt);
+					lv_str+= print(lv_rtStr);
+
+					lv_str += print("USSSession"+level+".appendChild(USSContainer"+(level+1)+");");
+				
+				}
+				else 
+				{
+					//alert("objEvalStr=" + objEvalStr);
+					if( objEvalStr === undefined)
+					{
+						objEvalStr='';
+					}
+					lv_rtStr=frameField(lrecSch[recSchCnt],objEvalStr,labelObjEvalStr,func,level,recCnt,parent.name);
+					lv_str += print(lv_rtStr);
+					lv_str += print('USSSession'+  level +'.appendChild(USSTableRow);' );
+				}
+		
+		
+			}
+			lv_str += print( "USSContainer"+level+".appendChild(USSHeader" +  level +" );");
+			lv_str += print( "USSContainer"+level+".appendChild(USSSession" +  level +" );");
+		}
+		//alert("recCnt=" + recCnt);
+	
+	}
+
+	
+	
+//}
+//catch(e)
+//{
+//	alert("Exception" + e);
+//}
+
+
+	debug( level + "_" + parentCnt +" end ##### frameGeneration ###### " );
+	
+
+	return lv_str;
+}
+
+		
+			var PersonalLabel= eval("{Dashboard:[ {basicDet:[ {name:'Name ', bodyType:'Body Type', complexion:'complexion', age:'Age ', dob:'Date of Birth', phyStaus:'Physical Status ', height:'Height ', weight :'Weight ', motherTongue:'Mother Tongue ', maritalStaus:'Marital Status ', eatingHabits:'Eating Habits ', drinkingHabits:'Drinking Habits ', smokingHabits:'Smoking Habits ' } ]}, { religiousInfo:[ {religionId:'Religion', caste:'Caste', subcaste:'Sub Caste ', gothram:'Gothram ', star:'Star / Raasi ', chevvaiDosham:'Chevvai Dosham ' } ]}, { location:[ {country:'Country ', city:'city', state:'State ', residentStatus:'Resident Status ', citizenship:'Citizenship ' } ]}, { profInfo:[ {education:'Education ', educationInDet:'Education in Detail ', occupation:'Occupation ', occupationInDet:'Occupation in Detail ', employedIn:'Employed in ', annualIncon:'Annual Income ' } ] } ]}" );	
+		
+			var PersonalInfo = eval(" {Dashboard:[  {basicDet:[  {name:'name1',bodyType:'NONE',complexion:'',age:'',dob:'',phyStaus:'NONE',height:'',weight :'',motherTongue:'',maritalStaus:'',eatingHabits:'',drinkingHabits:'NONE',smokingHabits:'NONE'}]},{religiousInfo:[  {religionId:'',caste:'',subcaste:'',gothram:'',star:'',chevvaiDosham:''}]},{location:[  {country:'',city:'',state:'',residentStatus:'',citizenship:''}]},{profInfo:[  {education:'',educationInDet:'',occupation:'',occupationInDet:'',employedIn:'',annualIncon:''}]}]}" );;
+			
+			var PersonalInfoSch = eval( "[ {	group:'ussms',name:'basicDet',label:'Basic Details',task:'NONE',desc:'N',htmlType:'CONTAINER',entitle:'N',enttlname:'',mndf:'N',dataType:'CONTAINER',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs: [ {	group:'ussms',name:'name',label:'Name ',task:'NONE',desc:'N',htmlType:'TEXT',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'name1',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	} ,{	group:'ussms',name:'bodyType',label:'Body Type',task:'NONE',desc:'N',htmlType:'OPTION',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'NONE',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'NONE|None|SLIM|Slim|AVERAGE|Average|ATHLETIC|Athletic|HEAVY|Heavy ',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	} ,{	group:'ussms',name:'complexion',label:'complexion',task:'NONE',desc:'N',htmlType:'OPTION',entitle:'N',enttlname:'',mndf:'N',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'NONE|None|VFAIR|Very Fair|FAIR|Fair |WHEATISH|Wheatish|BWHEATISH|Wheatish |BROWN|brown|DARK|Dark',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	} ,{	group:'ussms',name:'age',label:'Age ',task:'NONE',desc:'N',htmlType:'TEXT',entitle:'N',enttlname:'',mndf:'N',dataType:'NUMBER',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	} ,{	group:'ussms',name:'dob',label:'Date of Birth',task:'NONE',desc:'N',htmlType:'DATE',entitle:'N',enttlname:'',mndf:'Y',dataType:'DATE',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'DD/MM/YYYY or DD/MON/YYYY',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	} ,{	group:'ussms',name:'phyStaus',label:'Physical Status ',task:'NONE',desc:'N',htmlType:'OPTION',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'NONE',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'NONE|None|NORMAL|Normal|PHYSICALLYCHALLENGED|Physically challenged',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	} ,{	group:'ussms',name:'height',label:'Height ',task:'NONE',desc:'N',htmlType:'TEXT',entitle:'N',enttlname:'',mndf:'Y',dataType:'WIGHT',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	} ,{	group:'ussms',name:'weight ',label:'Weight ',task:'NONE',desc:'N',htmlType:'TEXT',entitle:'N',enttlname:'',mndf:'N',dataType:'HIGHT',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	} ,{	group:'ussms',name:'motherTongue',label:'Mother Tongue ',task:'NONE',desc:'N',htmlType:'DIV',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	} ,{	group:'ussms',name:'maritalStaus',label:'Marital Status ',task:'NONE',desc:'N',htmlType:'OPTION',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'NONE|None|U|Unmaried|NM|Never married',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	} ,{	group:'ussms',name:'eatingHabits',label:'Eating Habits ',task:'NONE',desc:'N',htmlType:'OPTION',entitle:'N',enttlname:'',mndf:'N',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'NONE|None|NV|Non Vegetarian|V|Vegetarian',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	} ,{	group:'ussms',name:'drinkingHabits',label:'Drinking Habits ',task:'NONE',desc:'N',htmlType:'OPTION',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'NONE',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'NONE|None|ND|Non-drinker|D|Drinker',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	} ,{	group:'ussms',name:'smokingHabits',label:'Smoking Habits ',task:'NONE',desc:'N',htmlType:'OPTION',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'NONE',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'NONE|None|NS|Non-smoker|S|Smoker',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	} ] } ,{ group:'ussms',name:'religiousInfo',label:'Religious Information ',task:'NONE',desc:'N',htmlType:'CONTAINER',entitle:'N',enttlname:'',mndf:'N',dataType:'CONTAINER',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs: [ {	group:'ussms',name:'religionId',label:'Religion',task:'NONE',desc:'N',htmlType:'DIV',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	} ,{	group:'ussms',name:'caste'   ,label:'Caste',   task:'NONE',desc:'N',htmlType:'DIV',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'||FC|Forward|OC|Other Caste|BC|Backword Caste|MBC|Most Backward Caste|SC|Scheduled Caste|ST|Scheduled Tribe',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	} ,{	group:'ussms',name:'subcaste',label:'Sub Caste ',task:'NONE',desc:'N',htmlType:'DIV',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	} ,{	group:'ussms',name:'gothram',label:'Gothram ',task:'NONE',desc:'N',htmlType:'INPUT',entitle:'N',enttlname:'',mndf:'N',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	} ,{	group:'ussms',name:'star',label:'Star / Raasi ',task:'NONE',desc:'N',htmlType:'DIV',entitle:'N',enttlname:'',mndf:'N',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	} ,{	group:'ussms',name:'chevvaiDosham',label:'Chevvai Dosham ',task:'NONE',desc:'N',htmlType:'OPTION',entitle:'N',enttlname:'',mndf:'N',dataType:'CHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'||Y|Yes|N|No',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	} ] } ,{	group:'ussms',name:'location'      ,label:'Location'             ,task:'NONE',desc:'N',htmlType:'CONTAINER',entitle:'N',enttlname:'',mndf:'N',dataType:'CONTAINER',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs: [ {	group:'ussms',name:'country'       ,label:'Country ',task:'NONE',desc:'N',htmlType:'DIV',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	} ,{	group:'ussms',name:'city'          ,label:'city',task:'NONE',desc:'N',htmlType:'DIV',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	} ,{	group:'ussms',name:'state'         ,label:'State ',task:'NONE',desc:'N',htmlType:'DIV',entitle:'N',enttlname:'',mndf:'N',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	} ,{	group:'ussms',name:'residentStatus',label:'Resident Status ',task:'NONE',desc:'N',htmlType:'DIV',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	} ,{	group:'ussms',name:'citizenship',label:'Citizenship ',task:'NONE',desc:'N',htmlType:'DIV',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	} ] },	{	group:'ussms',name:'profInfo'      ,label:'Professional Information ',task:'NONE',desc:'N',htmlType:'CONTAINER',entitle:'N',enttlname:'',mndf:'N',dataType:'CONTAINER',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs: [ {	group:'ussms',name:'education',label:'Education ',task:'NONE',desc:'N',htmlType:'TEXT',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'} ,{	group:'ussms',name:'educationInDet',label:'Education in Detail ',task:'NONE',desc:'N',htmlType:'TEXT',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	} ,{	group:'ussms',name:'occupation',label:'Occupation ',task:'NONE',desc:'N',htmlType:'TEXT',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	} ,{	group:'ussms',name:'occupationInDet',label:'Occupation in Detail ',task:'NONE',desc:'N',htmlType:'TEXT',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	} ,{	group:'ussms',name:'employedIn',label:'Employed in ',task:'NONE',desc:'N',htmlType:'TEXT',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	} ,{	group:'ussms',name:'annualIncon',label:'Annual Income ',task:'NONE',desc:'N',htmlType:'TEXT',entitle:'N',enttlname:'',mndf:'Y',dataType:'VARCHAR',cclass:'ctext',validate:'',dflt:'',min:'0',max:'60',tips:'',onkeyup:'onKeyUp(this)',onchange:'onChange(this)',onkeydown:'onKeyDown(this)',onkeypress:'onKeyPress(this)',onclick:'onClick(this)',listVal:'0',help:'N',helpLink:'',xml:'Y',Xpath:'N', childs:'N'	} ] } ]	" );
+	%>		<form name="form1"> <div id="middleid"></div>
+<script>
+<% var func ="Y" %>
+<%-commFrameGen(PersonalLabel,PersonalInfo,PersonalInfoSch,func)%>
+</script>
+<center>
+ <input type="button" task="SUBMIT" value="SUBMIT" onclick="onClick(this);">
+ <input type="button" task="VALIDATE" value="VALIDATE" onclick="onClick(this);">
+</center>
+
+</form>

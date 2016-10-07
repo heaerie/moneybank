@@ -1,0 +1,552 @@
+<!-- PersonalInfo.json start -->
+<!-- PersonalInfo -->
+<!-- PersonalInfo.json end -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<%
+var data={};
+
+function hasChild(fieldObj)
+{
+	//console.log(fieldObj);
+
+	if( Array.isArray(fieldObj.childs))
+	{
+
+		if( fieldObj.childs.length == 0 )
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
+	else
+	{
+		return false;
+	}
+
+	
+}
+	
+function commFrameGen(rec,recSch,func)
+	{
+		var commonHeader="var us = new USS(); var USSContainer0 =    us.USSCreateContainer(); var USSHeader    = ''";
+		
+
+		
+		var vcommonFrameGen =frameGeneration(rec,recSch,
+	{
+ name       : 'Dashboard'
+,label      : 'name'
+,task       : 'NONE'
+,desc       : ''
+,htmlType   : 'PARENT' 
+,entitle    : 'READONLY' 
+,enttlname  : ''
+,mndf       : 'N'
+,dataType   : 'CONTAINER'
+,cclass     : 'ctable'
+,validate   : ''
+,parent   : '/'
+,dflt       : ''
+,min        : '0'
+,max        : '20'
+,tips       : ''
+,onkeyup    : 'onKeyUp(this);'
+,onchange   : 'onChange(this);'
+,onkeydown  : 'onKeyDown(this);'
+,onkeypress : 'onKeyPress(this);'
+,onclick    : 'onClick(this);'
+,listVal    : '||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY'
+,help       : 'N'
+,helpLink   : 'helpload'
+,xml        : 'N'
+,Xpath      : '/'
+,childs     : recSch
+} 
+,
+0
+,
+func
+,
+0
+);
+		
+
+		
+		
+var commonTailer=""
+commonTailer+="\n document.getElementById('middleid').appendChild(USSContainer0); ";
+
+//USSAccordion2=new us.USSAppendAccordion(USSAccordion1,"Actions", USSTable);
+		
+		
+		return commonHeader + vcommonFrameGen + commonTailer;
+		
+		
+	}	
+	
+	function print(str)
+	{
+		console.log("\n " + str + " ");
+		return "\n " + str + " ";
+	}
+	
+	
+	function debug(str)
+	{
+		console.log("<!--### " + str + "--> ");
+		return "<!--### " + str + "--> ";
+	}
+	
+	
+function frameField(recSch,varStrVal,func,level,recCnt,parentName)
+{
+var lv_str="";
+if ( varStrVal === undefined)
+varStrVal=="";
+
+lv_str  += "\n USSTableRow = us.USSCreateTableRow_();	";
+lv_str  += "\n USSField    = new us.USSField_(); ";
+lv_str  += "\n USSField" + "." + "group"      + "=" + "'" + recSch.group      + "'" + ";"
+lv_str  += "\n USSField" + "." + "name"       + "=" + "'" + parentName+"_"+recSch.name+"_"+level+"_"+ recCnt       + "'" + ";"
+lv_str  += "\n USSField" + "." + "label"      + "=" + "'" + recSch.label      + "'" + ";"
+lv_str  += "\n USSField" + "." + "task"       + "=" + "'" + recSch.task       + "'" + ";"
+lv_str  += "\n USSField" + "." + "desc"       + "=" + "'" + recSch.desc       + "'" + ";"
+lv_str  += "\n USSField" + "." + "htmlType"   + "=" + "'" + recSch.htmlType   + "'" + ";"
+
+lv_str  += "\n \/\/ func =" + func + " >";
+if ( func == "Y" )
+{
+	lv_str  += "\n USSField" + "." + "entitle"    + "=" + "'" + recSch.entitle    + "'" + ";"
+}
+else
+{
+	lv_str  += "\n USSField" + "." + "entitle"    + "=" + "'READONLY'" + ";"
+}
+lv_str  += "\n USSField" + "." + "enttlname"  + "=" + "'" + recSch.enttlname  + "'" + ";"
+lv_str  += "\n USSField" + "." + "mndf"       + "=" + "'" + recSch.mndf       + "'" + ";"
+lv_str  += "\n USSField" + "." + "dataType"   + "=" + "'" + recSch.dataType   + "'" + ";"
+lv_str  += "\n USSField" + "." + "cclass"     + "=" + "'" + recSch.cclass     + "'" + ";"
+lv_str  += "\n USSField" + "." + "validate"   + "=" + "'" + recSch.validate   + "'" + ";"
+//lv_str  += "\n USSField" + "." + "dflt"       + "=" + "'" + recSch[s].dflt       + "'" + ";"
+lv_str  += "\n USSField" + "." + "dflt"       + "=" + "'" + varStrVal      + "'" + ";"
+lv_str  += "\n USSField" + "." + "min"        + "=" + "'" + recSch.min        + "'" + ";"
+lv_str  += "\n USSField" + "." + "max"        + "=" + "'" + recSch.max        + "'" + ";"
+lv_str  += "\n USSField" + "." + "tips"       + "=" + "'" + recSch.tips       + "'" + ";"
+lv_str  += "\n USSField" + "." + "onkeyup"    + "=" + "'" + recSch.onkeyup    + "'" + ";"
+lv_str  += "\n USSField" + "." + "onchange"   + "=" + "'" + recSch.onchange   + "'" + ";"
+lv_str  += "\n USSField" + "." + "onkeydown"  + "=" + "'" + recSch.onkeydown  + "'" + ";"
+lv_str  += "\n USSField" + "." + "onkeypress" + "=" + "'" + recSch.onkeypress + "'" + ";"
+lv_str  += "\n USSField" + "." + "onclick"    + "=" + "'" + recSch.onclick    + "'" + ";"
+lv_str  += "\n USSField" + "." + "listVal"    + "=" + "'" + recSch.listVal    + "'" + ";"
+lv_str  += "\n USSField" + "." + "help"       + "=" + "'" + recSch.help       + "'" + ";"
+lv_str  += "\n USSField" + "." + "helpLink"   + "=" + "'" + recSch.helpLink   + "'" + ";"
+lv_str  += "\n USSField" + "." + "xml"        + "=" + "'" + recSch.xml        + "'" + ";"
+lv_str  += "\n USSField" + "." + "Xpath"      + "=" + "'" + recSch.Xpath      + "'" + ";"
+lv_str  += "\n USSTableRow=us.CreateField(USSField,USSTableRow);";
+
+return lv_str;
+
+}
+
+
+function frameGeneration(
+ rec
+,recSch
+,parent
+,level
+,func
+,parentCnt
+)
+{   var lv_str ="";	
+	var lv_rtStr="";
+	
+	try
+	{
+
+
+	debug( level + "_" + parentCnt +" start ##### frameGeneration ###### " );
+	console.log( "<!---");
+	console.log( rec);
+	console.log( recSch);
+	console.log( parent);
+	console.log( level);
+	console.log( recSch);
+	console.log( rec);
+    console.log( "--->");
+	debug(" check schema in 'PARENT' , 'COLLECTION' , 'SCHEMA' "  );
+    
+    
+	debug("FG1.check parent.length == 0 , actual parent.name=<" +parent.name +">");
+lv_str += print( "USSContainer"+level+"   =   us.USSCreateContainer();");
+
+
+	
+	if( parent.dataType == "CONTAINER")
+	{
+	
+	
+		
+		lv_str += print('USSTable'  +  level +'     =   new us.USSCreateTable_();');
+		lv_str += print('USSHeader' +  level +'     =   us.USSCreateHeader("'+ parent.name+'");');
+		lv_str += print('USSSession'+  level +'     =   us.USSCreateSession();' );
+		
+		
+		for (var recSchCnt=0;recSchCnt < recSch.length ; recSchCnt++)
+		{
+		
+		
+
+
+
+			
+			
+			if( hasChild(recSch[recSchCnt]))
+			{
+
+				var evalStr="rec["+recSchCnt+"]." +recSch[recSchCnt].name;
+			debug(" evalStr =["+ evalStr+"]");
+			var  objEvalStr=eval(evalStr);
+
+				lv_rtStr  = frameGeneration(objEvalStr,recSch[recSchCnt].childs,recSch[recSchCnt],level+1,func,recSchCnt);
+				lv_str+= print(lv_rtStr);
+
+				lv_str += print("USSSession"+level+".appendChild(USSContainer"+(level+1)+");");
+			
+			}
+			else 
+			{
+
+
+				var evalStr="rec["+0+"]." +recSch[recSchCnt].name;
+			debug(" evalStr =["+ evalStr+"]");
+			var  objEvalStr=eval(evalStr);
+
+					if( objEvalStr === undefined)
+					{
+						objEvalStr='';
+					}
+
+				lv_rtStr=frameField(recSch[recSchCnt],objEvalStr,func,level,recSchCnt,parent.name);
+				lv_str += print(lv_rtStr);
+				lv_str += print('USSSession'+  level +'.appendChild(USSTableRow);' );
+			}
+		
+		
+		}
+ 		
+	lv_str += print( "USSContainer"+level+".appendChild(USSHeader" +  level +" );");
+	lv_str += print( "USSContainer"+level+".appendChild(USSSession" +  level +" );");
+		
+
+		//lv_str+= print("USSAccordion"+level+"           =new us.USSAppendAccordionDflt(USSAccordion"+level+",USSAppendAccordionDflt"+(level)+" ) ;");
+
+		
+					
+	
+	}
+	if( parent.dataType == "COLLECTION")
+	{
+
+
+
+		
+		var MaxRecCount=0;
+		if(parent.max =="unlimited")
+		{
+
+			MaxRecCount=rec.length;
+		}
+		else
+		{
+			MaxRecCount=parent.max;
+		}
+		for(var recCnt= 0; recCnt < MaxRecCount; recCnt++)
+		{		
+			lv_str += print('USSTable'  +  level +'     =   new us.USSCreateTable_();');
+			lv_str += print('USSHeader' +  level +'     =   us.USSCreateHeader("'+ parent.name+'");');
+			lv_str += print('USSSession'+  level +'     =   us.USSCreateSession();' );
+			
+			for (var recSchCnt=0;recSchCnt < recSch.length ; recSchCnt++)
+			{
+			
+			
+
+
+
+				var evalStr="rec["+recCnt+"]." +recSch[recSchCnt].name;
+				debug(" evalStr =["+ evalStr+"]");
+				var  objEvalStr="";
+				try
+				{
+				  objEvalStr=eval(evalStr);
+				}
+				catch(e)
+				{
+					objEvalStr="";
+				}
+				
+				if( hasChild(recSch[recSchCnt]))
+				{
+					lv_rtStr  = frameGeneration(objEvalStr,recSch[recSchCnt].childs,recSch[recSchCnt],level+1,func,recSchCnt);
+					lv_str+= print(lv_rtStr);
+
+					lv_str += print("USSSession"+level+".appendChild(USSContainer"+(level+1)+");");
+				
+				}
+				else 
+				{
+					if( objEvalStr === undefined)
+					{
+						objEvalStr='';
+					}
+					lv_rtStr=frameField(recSch[recSchCnt],objEvalStr,func,level,recCnt,parent.name);
+					lv_str += print(lv_rtStr);
+					lv_str += print('USSSession'+  level +'.appendChild(USSTableRow);' );
+				}
+		
+		
+			}
+			lv_str += print( "USSContainer"+level+".appendChild(USSHeader" +  level +" );");
+			lv_str += print( "USSContainer"+level+".appendChild(USSSession" +  level +" );");
+		}
+	
+	}
+
+	
+	
+}
+catch(e)
+{
+	console.log("Exception" + e);
+}
+
+
+	debug( level + "_" + parentCnt +" end ##### frameGeneration ###### " );
+	
+
+	return lv_str;
+}
+
+		
+	
+		
+			var PersonalInfo =[ 
+
+			{
+								PersonalInfo:
+								[ 
+								 {name: "PI01",SEX: "M"}
+								 ,{name: "PI1 REC 02",SEX: "A"}
+								  ,{name: "PI1 REC 03",SEX: "I"}
+								
+								]
+								}
+								,
+								{
+								PersonalInfo2:[
+								 {  name: "PI02",Age: "23"}
+								]
+				}]
+								;
+			
+			var PersonalInfoSch = [
+									{
+										 name       : 'PersonalInfo'
+										,label      : 'PersonalInfo'
+										,group      : 'uss'
+										,task       : 'NONE'
+										,desc       : ''
+										,htmlType   : 'VARCHAR' 
+										,parent     : ''
+										,entitle    : 'NONREADONLY' 
+										,enttlname  : ''
+										,mndf       : 'N'
+										,dataType   : 'COLLECTION'
+										,cclass     : 'ctable'
+										,validate   : ''
+										,dflt       : ''
+										,min        : '0'
+										,max        : 'unlimited'
+										,tips       : ''
+										,onkeyup    : 'onKeyUp(this);'
+										,onchange   : 'onChange(this);'
+										,onkeydown  : 'onKeyDown(this);'
+										,onkeypress : 'onKeyPress(this);'
+										,onclick    : 'onClick(this);'
+										,listVal    : '||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY'
+										,help       : 'N'
+										,helpLink   : 'helpload'
+										,xml        : 'N'
+										,Xpath      : '/'
+										,childs       : [
+			                           {
+										 name       : 'name'
+										,label      : 'name'
+										,group      : 'uss'
+										,task       : 'NONE'
+										,desc       : ''
+										,htmlType   : 'VARCHAR' 
+										,entitle    : 'NONREADONLY' 
+										,enttlname  : ''
+										,parent     : ''
+										,mndf       : 'N'
+										,dataType   : 'VARCHAR'
+										,cclass     : 'ctable'
+										,validate   : ''
+										,dflt       : ''
+										,min        : '0'
+										,max        : '20'
+										,tips       : ''
+										,onkeyup    : 'onKeyUp(this);'
+										,onchange   : 'onChange(this);'
+										,onkeydown  : 'onKeyDown(this);'
+										,onkeypress : 'onKeyPress(this);'
+										,onclick    : 'onClick(this);'
+										,listVal    : '||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY'
+										,help       : 'N'
+										,helpLink   : 'helpload'
+										,xml        : 'N'
+										,Xpath      : '/'
+										} ,
+										{
+										 name       : 'SEX'
+										,label      : 'SEX'
+										,group      : 'uss'
+										,task       : 'NONE'
+										,desc       : ''
+										,htmlType   : 'LIST' 
+										,entitle    : 'NONREADONLY' 
+										,enttlname  : ''
+										,parent     : ''
+										,mndf       : 'N'
+										,dataType   : 'VARCHAR'
+										,cclass     : 'ctable'
+										,validate   : ''
+										,dflt       : ''
+										,min        : '0'
+										,max        : '20'
+										,tips       : ''
+										,onkeyup    : 'onKeyUp(this);'
+										,onchange   : 'onChange(this);'
+										,onkeydown  : 'onKeyDown(this);'
+										,onkeypress : 'onKeyPress(this);'
+										,onclick    : 'onClick(this);'
+										,listVal    : '||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY'
+										,help       : 'N'
+										,helpLink   : 'helpload'
+										,xml        : 'N'
+										,Xpath      : '/'
+										} 
+										 ]
+										}
+									,{
+										 name       : 'PersonalInfo2'
+										,label      : 'PersonalInfo2'
+										,group      : 'uss'
+										,task       : 'NONE'
+										,desc       : ''
+										,htmlType   : 'VARCHAR' 
+										,parent     : ''
+										,entitle    : 'NONREADONLY' 
+										,enttlname  : ''
+										,mndf       : 'N'
+										,dataType   : 'CONTAINER'
+										,cclass     : 'ctable'
+										,validate   : ''
+										,dflt       : ''
+										,min        : '0'
+										,max        : '20'
+										,tips       : ''
+										,onkeyup    : 'onKeyUp(this);'
+										,onchange   : 'onChange(this);'
+										,onkeydown  : 'onKeyDown(this);'
+										,onkeypress : 'onKeyPress(this);'
+										,onclick    : 'onClick(this);'
+										,listVal    : '||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY'
+										,help       : 'N'
+										,helpLink   : 'helpload'
+										,xml        : 'N'
+										,Xpath      : '/'
+										,childs       : [
+			                           {
+										 name       : 'name'
+										,label      : 'name'
+										,group      : 'uss'
+										,task       : 'NONE'
+										,desc       : ''
+										,htmlType   : 'VARCHAR' 
+										,entitle    : 'NONREADONLY' 
+										,enttlname  : ''
+										,parent     : ''
+										,mndf       : 'N'
+										,dataType   : 'VARCHAR'
+										,cclass     : 'ctable'
+										,validate   : ''
+										,dflt       : ''
+										,min        : '0'
+										,max        : '20'
+										,tips       : ''
+										,onkeyup    : 'onKeyUp(this);'
+										,onchange   : 'onChange(this);'
+										,onkeydown  : 'onKeyDown(this);'
+										,onkeypress : 'onKeyPress(this);'
+										,onclick    : 'onClick(this);'
+										,listVal    : '||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY'
+										,help       : 'N'
+										,helpLink   : 'helpload'
+										,xml        : 'N'
+										,Xpath      : '/'
+										} 
+										,
+										{
+										 name       : 'Age'
+										,label      : 'Age'
+										,group      : 'uss'
+										,task       : 'NONE'
+										,desc       : ''
+										,htmlType   : 'VARCHAR' 
+										,entitle    : 'NONREADONLY' 
+										,enttlname  : ''
+										,parent     : ''
+										,mndf       : 'N'
+										,dataType   : 'NUMBER'
+										,cclass     : 'ctable'
+										,validate   : ''
+										,dflt       : ''
+										,min        : '0'
+										,max        : '20'
+										,tips       : ''
+										,onkeyup    : 'onKeyUp(this);'
+										,onchange   : 'onChange(this);'
+										,onkeydown  : 'onKeyDown(this);'
+										,onkeypress : 'onKeyPress(this);'
+										,onclick    : 'onClick(this);'
+										,listVal    : '||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY'
+										,help       : 'N'
+										,helpLink   : 'helpload'
+										,xml        : 'N'
+										,Xpath      : '/'
+										} 
+										 ]
+						}
+					]
+;	
+							
+%>		
+<form name="form1">
+<div id="middleid"></div>
+<script>
+<% var func ="Y" %>
+<%-commFrameGen(PersonalInfo,PersonalInfoSch,func)%>
+</script>
+<center>
+ <input type="button" task="SUBMIT" value="SUBMIT" onclick="onClick(this);">
+ <input type="button" task="VALIDATE" value="VALIDATE" onclick="onClick(this);">
+</center>
+
+</form>

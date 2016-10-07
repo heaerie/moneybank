@@ -1,0 +1,118 @@
+
+<% 
+console.log('---------');
+console.log(PersonalInfo);
+console.log('PersonalInfo.length =' + PersonalInfo.length);
+console.log('PersonalInfo[0].name =' + PersonalInfo[0].name);
+console.log('PersonalInfo[0].label =' + PersonalInfo[0].label);
+console.log('PersonalInfo.login.L_NAME =' + PersonalInfo.login.L_NAME);
+console.log('PersonalInfo.login.F_NAME =' + PersonalInfo.login.F_NAME);
+console.log('PersonalInfo.login.LAST_LOGIN =' + PersonalInfo.login.LAST_LOGIN);
+console.log('---------');
+%>
+<html>
+<head>
+
+<script language="javascript" src="../../javascript/field_06.js"> </script>
+<div id="debug" > </div>
+<script type="text/javascript" src="../ejs_production.js"></script>
+<script>
+
+	var data={	myusername: "<%= PersonalInfo.login.LAST_NAME + " " + PersonalInfo.login.FIRST_NAME %>  "
+			,prodtitle: "<%=PersonalInfo.login.PROD_NAME %>" 
+			,protal: "<%=PersonalInfo.login.PRTL_NAME %>" 
+			,menu : [ 
+						{
+							pages : 
+									[ 
+											{ 	pageName : "home" 
+												, pageUrl : "home" 
+												, pageActive : "true"
+										  	}
+											, 
+											{ pageName : "member" 
+												, pageUrl : "member" 
+												, pageActive : "false"
+											}
+											, 
+											{ pageName : "transaction" 
+												  , pageUrl : "transaction" 
+												  , pageActive : "false"
+											 }
+									 ]
+						}
+]
+,
+subMenu :	[		{
+pages : 
+[ 
+{ 	pageName : "Dashboard" 
+, pageUrl : "homespace/home" 
+, pageActive : "true"
+}
+, 
+{ pageName : "GroupMember" 
+, pageUrl : "homespace/member" 
+, pageActive : "false"
+}
+, 
+{ pageName : "subTransaction" 
+, pageUrl : "homespace/transaction" 
+, pageActive : "false"
+}
+]
+}
+
+]
+,
+data:[ {  Schema :[ {
+personalInfo :[ {
+Name: "Duraimurugan"
+,Age  : 23
+,DOB  : "12-19992.2012"
+,FUNCTION :"H"  
+}
+,
+{
+Name: "Agalyadddddd"
+,Age  : 23
+,DOB  : "01/01/2012"  
+,FUNCTION :"A"
+}
+]
+
+}]
+} ]
+
+};
+		
+		data.supplies= new Array("Array1 ", "Array 2");
+		
+	
+var html_common_javascript = new EJS({url: '/glbladmin/views/common_javascript_07.ejs'}).render(data);
+var html_common_header     = new EJS({url: '/glbladmin/views/common_header.ejs'}).render(data);
+var html_common_css        = new EJS({url: '/glbladmin/views/common_css.ejs'}).render(data);
+//var html_common_menu       = new EJS({url: '/glbladmin/views/common_menu.ejs'}).render(data);
+//var html_common_submenu    = new EJS({url: '/glbladmin/views/common_submenu.ejs'}).render(data);
+//var html_common_file_generator       = new EJS({url: '/glbladmin/views/common_file_generator.ejs'}).render(data);
+	var html =  html_common_javascript 
+				+ html_common_header 
+				+ html_common_css 
+//				+ html_common_menu 
+//				+ html_common_submenu 
+//				+ html_common_file_generator
+				+ "<body class='cbody' > <h1> ACCESS DENIED </h> </body>"
+				; 
+	
+	
+var 	el=document.createElement("textarea");
+	el.value = html;
+	document.getElementById('debug').appendChild(el);
+
+
+
+document.write(html);
+</script>
+</head>
+</html>
+
