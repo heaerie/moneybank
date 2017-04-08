@@ -48,15 +48,15 @@ function()
                     , 'dataType' :'NODE'
                     ,'child'  : []
                     }
-                   /* ,
+                    ,
                     {
-                    'link' :'msgContentPrev'
+                    'link' :'SchemaGenerator'
 
-                    ,'linkName' :'Message Content Preview'
-                    ,'uid'  :'msgContentPrev'
+                    ,'linkName' :'SchemaGenerator'
+                    ,'uid'  :'SchemaGenerator'
                     , 'dataType' :'NODE'
                     ,'child'  : []
-                    }*/
+                    }
                      ,
                     {
                     'link' :'signatureVerify'
