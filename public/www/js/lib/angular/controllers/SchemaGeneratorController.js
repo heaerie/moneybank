@@ -4,21 +4,10 @@ function()
 
 	return [ '$scope' , 'toaster','SchemaGeneratorService','$state',function($scope,toaster,SchemaGeneratorService,$state){
 
-
-var ufiuss = require('ufi.core');
-var ufiframegen = require('ufi.frameGen');
-var ufixml = require('ufi.xml');
-
-
-  var us = new ufiuss.USS();
-
-
-
-
-    //alert('in view');
-
-   // $('#editor').heaerieDocs({ fileUploadError: $scope.showErrorAlert} );
-  
+	var ufiuss = require('ufi.core');
+	var ufiframegen = require('ufi.frameGen');
+	var ufixml = require('ufi.xml');
+	var us = new ufiuss.USS();
 
 var $newdiv1 = $( "<div id='object1'/> Dynamic body</div>" )
 var  newdiv2 = document.createElement( "div" );
@@ -46,9 +35,9 @@ try
  var  ufiframegen= require('ufi.frameGen');
 var us= new ufiframegen.FG();
 
-OutJsonTextId.value=    JSON.stringify(eval( "[{" +us.frameGenerationJson(schemaJson[0].childs,
+OutJsonTextId.value=    JSON.stringify(eval("[{" +us.frameGenerationJson(schemaJson[0].childs,
   schemaJson[0]
-) +"}]"));
+) +"}]") , null, 4);
 
 }
 catch(e)
@@ -59,8 +48,7 @@ catch(e)
 
 }
 
-$scope.GenFrameB =function (obj)
-{
+$scope.GenFrameB =function (obj) {
 
 
 obj=this;
@@ -144,7 +132,7 @@ try
 
 LangResoureId.value=  JSON.stringify(eval(    "[{" +us.frameGenerationResoure(schemaJson[0].childs,
   schemaJson[0]
-)  +"}]" ));
+)  +"}]" ), null, 4);
 
 }
 catch(e)
@@ -168,7 +156,7 @@ $scope.GenXmlJsonB =function ()
     var xml=new ufixml.XML();
     parentId=document.getElementById("parentId"); 
     XMLJsonId=document.getElementById("XMLJsonId"); 
-    XMLJsonId.value=  JSON.stringify(eval( xml.genChilTagJson(parentId.value)));
+    XMLJsonId.value=  JSON.stringify(eval( xml.genChilTagJson(parentId.value)), null, 4);
 
 }
 
@@ -281,6 +269,11 @@ catch(e)
 ,      "DF11"   :   ﻿"ascii"
 ,      "DF12"   :   ﻿"ascii"
 ,      "DF13"   :   ﻿"ascii"
+,      "DF14"   : "ascii"
+,      "DF15"   : "ascii"
+,      "DF16"   : "ascii"
+,      "DF17"   : "ascii"
+,      "DF18"   : "ascii"
 ,      "E1"   :   ﻿"ascii"
   };
 
@@ -322,6 +315,11 @@ catch(e)
 ,      "DF11"   : "Xpath"
 ,      "DF12"   : "maxCol"
 ,      "DF13"   : "col"
+,      "DF14"   : "dimensions"
+,      "DF15"   : "dataCategory"
+,      "DF16"   : "camelCase"
+,      "DF17"   : "dimensionMin"
+,      "DF18"   : "dimensionMax"
 ,      "E1"   : "childs"
   };
 
@@ -362,9 +360,14 @@ catch(e)
 ,   "helpLink"  :      "DF0D"  
 ,   "xml" :      "DF0E"  
 ,   "xmlname"     :      "DF0F"  
-, "Xpath" :      "DF11"  
-, "maxCol"  :      "DF12"  
-, "col" :      "DF13"  
+,   "Xpath" :      "DF11"  
+,   "maxCol"  :      "DF12"  
+,   "col" :      "DF13"  
+,   "dimensions"     : "DF14"   
+,   "dataCategory"   : "DF15"   
+,   "camelCase"      : "DF16"   
+,   "dimensionMin"   : "DF17"   
+,   "dimensionMax"   : "DF18"   
 , "childs"  :      "E1"                          
   }
 
@@ -955,7 +958,7 @@ GenSJson=function (obj)
 
     var  outPut =us.GenSJson(parentObj.id);
     console.log(outPut);
-    var jsonOutPut=JSON.stringify(  outPut );
+    var jsonOutPut=JSON.stringify(  outPut, null, 4 );
 
     //alert(jsonOutPut);
        SchemaJsonOuputId.value =jsonOutPut;
@@ -966,7 +969,7 @@ GenSJson=function (obj)
        $scope.GenFrameB();
 
 
-     TvlId.value = JSON.stringify( $scope.encodeSchemaToTvl(outPut) );
+     TvlId.value = JSON.stringify( $scope.encodeSchemaToTvl(outPut), null, 4);
 }
 
 

@@ -151,15 +151,12 @@ GenTreeView(eval($window.sessionStorage.getItem("treeViewJson")), 'dashboard');
 });
 
 
-GenTreeView=function(jsonInput, activeState)
-{
+GenTreeView=function(jsonInput, activeState) {
+	var rtString="";
+	var child=createTreeView(jsonInput,'root');
 
-  var rtString="";
-  var child=createTreeView(jsonInput,'root');
-  document.getElementById('treeBase1').appendChild(child);
-
-   
-  return  rtString;
+	document.getElementById('treeBase1').appendChild(child);
+	return  rtString;
 } 
 
 createTreeView =function(jsonInput, parent)

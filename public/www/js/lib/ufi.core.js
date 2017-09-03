@@ -154,12 +154,12 @@ this.task       = 'NONE',
 this.desc       = '',
 this.htmlType   = 'text', /* newly introduced in USS05*/
 this.entitle    = 'READONLY'; // Editable /Readonly
-this.enttlname  = ''; //Entitle name to db
+this.enttlname  =  0xFF, //Entitle name to db
 this.mndf       = 'N',
 this.dataType   = 'VARCHAR',  // NUMBER/VARCHAR/DATE/EMAIL/AMOUNT/LIST/DIV/
 this.cclass     = 'ctable',   //
 this.parent     = '',
-this.parentHtmlType     = '',
+this.parentHtmlType = '',
 this.validate   = '',
 this.dflt       = '',
 this.min        = '0',
@@ -178,7 +178,12 @@ this.xml        = 'Y',
 this.xmlname    = '',
 this.Xpath      = '/' ,
 this.maxCol     = '1',
-this.col        = '0'
+this.col        = '0',
+this.dimensions =  "", /*[]*/
+this.dimensionMax = "", /*[]*/
+this.dimensionMin = "", /*[]*/
+this.dataCategory = '',
+this.camelCase = 0
 	
 }
 USS.prototype.USSCreareTab_=function()
@@ -1284,7 +1289,7 @@ GROUPID    :glGroupId
 ,Xpath     :fieldObj.Xpath 
 };
 
-jsfunc += "json =" +JSON.stringify(jsonObj) +";";
+jsfunc += "json =" +JSON.stringify(jsonObj, null, 4) +";";
 jsfunc += "	onPostReq(url,json,div,'DIV');";
 
 
@@ -1393,7 +1398,8 @@ var elementCount=0;
           var  TipsId       = document.getElementById(baseid  + "Tips"       + "Id");
           var  XmlId        = document.getElementById(baseid  + "Xml"       + "Id");
           var  MaxColId        = document.getElementById(baseid  + "MaxCol"       + "Id");
-            
+           var DimensionsId = document.getElementById(baseid + "Dimensions" + "Id");
+           var DataCategoryId = document.getElementById(baseid + "DataCategory" + "Id");
 
             
 
@@ -1411,7 +1417,8 @@ var elementCount=0;
             fieldObj.entitle    = EntitleId.value;
             fieldObj.xml        = XmlId.value;
             fieldObj.maxCol       = MaxColId.value;
-            
+            fieldObj.dimensions = DimensionsId.value;
+			fieldObj.dataCategory = DataCategoryId.value;
             
 
             
@@ -1435,13 +1442,13 @@ var elementCount=0;
             }
             if ( elementCount==0)
             {
-                 returnJson += "" + JSON.stringify(fieldObj);
+                 returnJson += "" + JSON.stringify(fieldObj, null, 4);
             }
             else
             {
 
               
-                 returnJson += "," + JSON.stringify(fieldObj);
+                 returnJson += "," + JSON.stringify(fieldObj, null, 4);
             }
             elementCount=+1;
             
@@ -1488,6 +1495,8 @@ USS.prototype.Preview=function(obj)
     var MaxColId       = document.getElementById(baseid + "MaxCol"       + "Id");
     var TaskId       = document.getElementById(baseid + "Task"       + "Id");
     var EntitleId       = document.getElementById(baseid + "Entitle"       + "Id");
+    var DimensionsId = document.getElementById(baseid + "Dimensions" + "Id");
+    var DataCategoryId = document.getElementById(baseid + "DataCategory" + "Id");
 
     //EntitleId       = document.getElementById(baseid + "Entitle"       + "Id");
 
@@ -1508,6 +1517,8 @@ USS.prototype.Preview=function(obj)
     fieldObj.maxCol    = MaxColId.value;
     fieldObj.task      = TaskId.value;
     fieldObj.entitle   = EntitleId.value;
+    fieldObj.dimensions = DimensionsId.value;
+    fieldObj.dataCategory = DataCategoryId.value;
 //task fix
     
     //fieldObj.task     = "ES"; bnmnnnnnnnnnnhvfhjm,;kiu/jk ,./\ m
@@ -1533,24 +1544,26 @@ USS.prototype.NewSibling=function(obj)
 var baseid =obj.getAttribute("baseid") ;
 
 //alert(baseid);              
-           var IdName      = document.getElementById(baseid + "IdName" +"Id");
-           var HtmlTypeId  = document.getElementById(baseid + "HtmlType" +"Id");
-           var DataTypeId  = document.getElementById(baseid + "DataType" +"Id");
-           var NameId      = document.getElementById(baseid  + "Name" +"Id");
-           var LabelId     = document.getElementById(baseid  + "Label" +"Id");
-           var ListValId   = document.getElementById(baseid  + "ListVal" +"Id");
-           var TaskId      = document.getElementById(baseid  + "Task" +"Id");
-           var MndfId      = document.getElementById(baseid  + "Mndf" +"Id");
-           var EntitleId    = document.getElementById(baseid + "Entitle"      + "Id");
+           var IdName      	= document.getElementById(baseid + "IdName" 	+ "Id");
+           var HtmlTypeId  	= document.getElementById(baseid + "HtmlType" 	+ "Id");
+           var DataTypeId  	= document.getElementById(baseid + "DataType" 	+ "Id");
+           var NameId      	= document.getElementById(baseid + "Name" 		+ "Id");
+           var LabelId     	= document.getElementById(baseid + "Label" 		+ "Id");
+           var ListValId   	= document.getElementById(baseid + "ListVal" 	+ "Id");
+           var TaskId      	= document.getElementById(baseid + "Task" 		+ "Id");
+           var MndfId      	= document.getElementById(baseid + "Mndf" 		+ "Id");
+           var EntitleId    = document.getElementById(baseid + "Entitle"    + "Id");
            var DfltId       = document.getElementById(baseid + "Dflt"       + "Id");
            var MaxId        = document.getElementById(baseid + "Max"        + "Id");
            var MinId        = document.getElementById(baseid + "Min"        + "Id");
            var TipsId       = document.getElementById(baseid + "Tips"       + "Id");
-           var XmlId       = document.getElementById(baseid + "Xml"       + "Id");
-            var MaxColId       = document.getElementById(baseid + "MaxCol"       + "Id");
+           var XmlId       	= document.getElementById(baseid + "Xml"       	+ "Id");
+           var MaxColId     = document.getElementById(baseid + "MaxCol"     + "Id");
+           var DimensionsId = document.getElementById(baseid + "Dimensions" + "Id");
+           var DataCategoryId = document.getElementById(baseid + "DataCategory" + "Id");
 
 
-            fieldObj.fieldObj       = "Y";
+            fieldObj.fieldObj   = "Y";
             fieldObj.name       = NameId.value;
             fieldObj.label      = LabelId.value;
             fieldObj.htmlType   = HtmlTypeId.value;
@@ -1565,6 +1578,8 @@ var baseid =obj.getAttribute("baseid") ;
             fieldObj.entitle    = EntitleId.value;
             fieldObj.xml        = XmlId.value;
             fieldObj.maxCol     = MaxColId.value;
+            fieldObj.dimensions = DimensionsId.value;
+            fieldObj.dataCategory = DataCategoryId.value;
 
   var child=this.AddSubling(fieldObj,obj.getAttribute("parentid"));
 
@@ -1584,28 +1599,28 @@ USS.prototype.NewChild=function(obj)
 
   var HtmlTypeId  = document.getElementById(obj.getAttribute("baseid") + "HtmlType" +"Id");
 
-  if (HtmlTypeId.value == "PAGE" )
-  {
+  if (HtmlTypeId.value == "PAGE" ) {
     fieldObj.htmlType="CONTAINER";
     fieldObj.dataType="CONTAINER";
   }
+
+
   var child=this.AddSubling(fieldObj,obj.getAttribute("baseid"));
 
   parentObj.appendChild(child);
 
 
 }
-USS.prototype.createLabelElement=function(parentId,childId,LabelId,value)
-{
+USS.prototype.createLabelElement=function(parentId,childId,LabelId,value) {
 var divCurrDivName=document.createElement("div");
   divCurrDivName.setAttribute("parentid"         ,parentId);
   divCurrDivName.setAttribute("attribute"        ,"name");
-  divCurrDivName.setAttribute("id"               ,childId+ LabelId+"Label" + "Id"  );
+  divCurrDivName.setAttribute("id"               ,childId + LabelId +"Label" + "Id");
   divCurrDivName.setAttribute("baseid"           ,childId );
   divCurrDivName.setAttribute("mndf"             ,"Y");
   divCurrDivName.setAttribute("childCount"       ,"0");
-  divCurrDivName.setAttribute("class","properityLabelBox");
-  //divCurrDivName.setAttribute("type"             ,"hidden");
+  divCurrDivName.setAttribute("class"            ,"properityLabelBox");
+  //divCurrDivName.setAttribute("type"           ,"hidden");
   divCurrDivName.setAttribute("placeholder"      ,"name");
   divCurrDivName.setAttribute("title"            ,"Id");
 
@@ -1635,30 +1650,17 @@ USS.prototype.createRowElement=function( labelObj, fieldObj)
 
   return this.retObj;
 }
-USS.prototype.AddSubling = function(fieldObj,parentid)
-{
-
-
-  var childDiv= document.createElement('div');
-
-    childDiv.id = "Container" + this.ContinerCount++||1;
-
-
-
-  var childHideDiv= document.createElement('div');
-
-    childHideDiv.id = "ContainerHide" + childDiv.id ;
-     childHideDiv.className ="ContainerHide";
-
-  var childShowDiv= document.createElement('div');
-
-    childShowDiv.id = "ContainerShow" + childDiv.id ;
+USS.prototype.AddSubling = function(fieldObj,parentid) {
+	var childDiv= document.createElement('div');
+	childDiv.id = "Container" + this.ContinerCount++||1;
+	var childHideDiv= document.createElement('div');
+	childHideDiv.id = "ContainerHide" + childDiv.id ;
+    childHideDiv.className ="ContainerHide";
+	var childShowDiv= document.createElement('div');
+	childShowDiv.id = "ContainerShow" + childDiv.id ;
     childShowDiv.className ="ContainerShow";
 
-
-    //childDiv.class="bfield";
-    
-parentid=parentid;
+	parentid=parentid;
 
 var divCurrDivName=document.createElement("input");
   divCurrDivName.setAttribute("parentid"         ,parentid);
@@ -1777,11 +1779,11 @@ var divCurrDivMndf=document.createElement("select");
   divCurrDivMndf.setAttribute("mndf"             ,"Y");
   divCurrDivMndf.setAttribute("childCount"       , "0");
   divCurrDivMndf.setAttribute("type"             ,"container");
-  divCurrDivMndf.setAttribute("placeholder"             ,"label");
+  divCurrDivMndf.setAttribute("placeholder"             ,"Mndf");
   divCurrDivMndf.setAttribute("value"             ,fieldObj.mndf);
   divCurrDivMndf.setAttribute("class", "bmandatory");
 
-    divCurrDivMndf.setAttribute("title","mndf");
+  divCurrDivMndf.setAttribute("title","mndf");
 
 
 var inpStrArr= "Y|YES|N|NO".split('|');
@@ -1823,13 +1825,11 @@ var divCurrDivHtmlType=document.createElement("select");
   divCurrDivHtmlType.setAttribute("type"             ,"container");
   divCurrDivHtmlType.setAttribute("placeholder"             ,"HtmlType");
   divCurrDivHtmlType.setAttribute("value"             ,fieldObj.htmlType);
-    divCurrDivHtmlType.setAttribute("title","HtmlType");
-    divCurrDivHtmlType.setAttribute("class", "bmandatory");
+  divCurrDivHtmlType.setAttribute("title","HtmlType");
+  divCurrDivHtmlType.setAttribute("class", "bmandatory");
 
-
- var inpStrArr= "||PAGE|PAGE|TAP|TAP|CONTAINER|CONTAINER|FILE|FILE|TEXT|TEXT|LIST|LIST|OPTION|OPTION|DIV|DIV|INPUT|INPUT|DATE|DATE".split('|');
-var divCurrDivHtmlTypeOption="";
-
+  var inpStrArr= "||PAGE|PAGE|TAP|TAP|COLLECTION|COLLECTION|CONTAINER|CONTAINER|FILE|FILE|TEXT|TEXT|LIST|LIST|OPTION|OPTION|DIV|DIV|INPUT|INPUT|DATE|DATE".split('|');
+  var divCurrDivHtmlTypeOption="";
   //alert(fieldObj.htmlType );
           for(var i=0 ; i< inpStrArr.length;i+=2)
           {
@@ -1850,6 +1850,41 @@ var divCurrDivHtmlTypeOption="";
 
           }
 
+  
+ //divCurrDivDimensions
+ 
+ var divCurrDivDimensions=document.createElement("input");
+  divCurrDivDimensions.setAttribute("parentid"         ,parentid);
+  divCurrDivDimensions.setAttribute("baseid"           ,childDiv.id );
+  divCurrDivDimensions.setAttribute("attribute"        ,"Dimensions");
+  divCurrDivDimensions.setAttribute("id"               ,childDiv.id +"Dimensions"+"Id");
+  divCurrDivDimensions.setAttribute("mndf"             ,"Y");
+  divCurrDivDimensions.setAttribute("childCount"       ,"0");
+  divCurrDivDimensions.setAttribute("type"             ,"container");
+  divCurrDivDimensions.setAttribute("placeholder"             ,"Dimensions");
+  divCurrDivDimensions.setAttribute("value"             ,fieldObj.dimensions);
+  divCurrDivDimensions.setAttribute("title","Dimensions");
+  divCurrDivDimensions.setAttribute("class", "bmandatory");
+
+ //DataCategory
+ 
+var divCurrDivDataCategory=document.createElement("input");
+  divCurrDivDataCategory.setAttribute("parentid"         ,parentid);
+  divCurrDivDataCategory.setAttribute("baseid"           ,childDiv.id );
+  divCurrDivDataCategory.setAttribute("attribute"        ,"DataCategory");
+  divCurrDivDataCategory.setAttribute("id"               ,childDiv.id +"DataCategory"+"Id");
+  divCurrDivDataCategory.setAttribute("mndf"             ,"Y");
+  divCurrDivDataCategory.setAttribute("childCount"       ,"0");
+  divCurrDivDataCategory.setAttribute("type"             ,"container");
+  divCurrDivDataCategory.setAttribute("placeholder"             ,"DataCategory");
+  divCurrDivDataCategory.setAttribute("value"             ,fieldObj.dataCategory);
+  divCurrDivDataCategory.setAttribute("title","DataCategory");
+  divCurrDivDataCategory.setAttribute("class", "bmandatory");
+  
+  
+
+
+  
 
 
 
@@ -1941,7 +1976,7 @@ var divCurrDivXml=document.createElement("select");
   divCurrDivXml.setAttribute("type"             ,"container");
   divCurrDivXml.setAttribute("placeholder"             ,"Xml");
   divCurrDivXml.setAttribute("value"             ,fieldObj.xml);
-    divCurrDivXml.setAttribute("title","Xml");
+  divCurrDivXml.setAttribute("title","Xml");
 
 
 
@@ -2007,7 +2042,7 @@ var divCurrDivDataType=document.createElement("select");
 
 
 
- inpStrArr= "||PAGE|PAGE|TAP|TAP|CONTAINER|CONTAINER|TEXT|TEXT|LIST|LIST|OPTION|OPTION|DIV|DIV|INPUT|INPUT|DATE|DATE|VARCHAR|VARCHAR|AMOUNT|AMOUNT|NUMBER|NUMBER".split('|');
+ inpStrArr= "||PAGE|PAGE|TAP|TAP|CONTAINER|CONTAINER|COLLECTION|COLLECTION|TEXT|TEXT|LIST|LIST|OPTION|OPTION|DIV|DIV|INPUT|INPUT|DATE|DATE|VARCHAR|VARCHAR|AMOUNT|AMOUNT|NUMBER|NUMBER|JSON|JSON".split('|');
 var divCurrDivDataTypeOption="";
 
   //alert(fieldObj.htmlType );
@@ -2202,6 +2237,8 @@ else
               properityWindowLabel.appendChild(this.genRowElement(divCurrDivDflt));
               properityWindowLabel.appendChild(this.genRowElement(divCurrDivDataType));
               properityWindowLabel.appendChild(this.genRowElement(divCurrDivHtmlType));
+              properityWindowLabel.appendChild(this.genRowElement(divCurrDivDimensions));
+              properityWindowLabel.appendChild(this.genRowElement(divCurrDivDataCategory));
              
               
               properityWindowLabel.appendChild(this.genRowElement(divCurrDivListVal));
@@ -2218,13 +2255,9 @@ else
               childHideDiv.appendChild(divButtonHide);
 
 
-              if(fieldObj.htmlType=="CONTAINER" || fieldObj.htmlType =="PAGE"  )
-              {
+             // if (fieldObj.htmlType=="CONTAINER"||fieldObj.htmlType == "PAGE") {
                 childHideDiv.appendChild(divButtonAddChild);
-              
-              
-
-              }
+              //}
 
 
               childHideDiv.appendChild(divButtonPreview);

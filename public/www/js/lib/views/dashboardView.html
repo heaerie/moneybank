@@ -17,16 +17,306 @@
 <div class="pageLayout">
 
 
+<style>
 
+.binboxheader1 {
+  background: #242320;
+  background-image: -webkit-linear-gradient(top, #cfdfff, #242320);
+  background-image: -moz-linear-gradient(top, #cfdfff, #242320);
+  background-image: -ms-linear-gradient(top, #cfdfff, #242320);
+  background-image: -o-linear-gradient(top, #cfdfff, #242320);
+  background-image: linear-gradient(to bottom, #cfdfff, #242320);
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Georgia;
+  color: #ffffff;
+  
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.binboxheader1:hover {
+  background: #242320;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #242320);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #242320);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #242320);
+  background-image: -o-linear-gradient(top, #3cb0fd, #242320);
+  background-image: linear-gradient(to bottom, #3cb0fd, #242320);
+  text-decoration: none;
+   font-size: 12px;
+}
+
+
+
+.binboxheader {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #3498db);
+  background-image: -moz-linear-gradient(top, #3498db, #3498db);
+  background-image: -ms-linear-gradient(top, #3498db, #3498db);
+  background-image: -o-linear-gradient(top, #3498db, #3498db);
+  background-image: linear-gradient(to bottom, #3498db, #3498db);
+  -webkit-border-radius: 1;
+  -moz-border-radius: 1;
+  border-radius: 1px;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 5px 0px 5px 5px;
+  text-decoration: none;
+}
+
+.binboxheader:hover {
+  background: #b4d8f0;
+  background-image: -webkit-linear-gradient(top, #b4d8f0, #b4d8f0);
+  background-image: -moz-linear-gradient(top, #b4d8f0, #b4d8f0);
+  background-image: -ms-linear-gradient(top, #b4d8f0, #b4d8f0);
+  background-image: -o-linear-gradient(top, #b4d8f0, #b4d8f0);
+  background-image: linear-gradient(to bottom, #b4d8f0, #b4d8f0);
+  text-decoration: none;
+    padding: 5px 0px 5px 5px;
+  font-size: 14px;
+}
+</style>
 
 	
 
 
 	<form>
 			<center> Welcome To Money Bank  </center>	
+		
+					<!--tr>
+						<td>	
+								<div>
+									<div id="root" class="TreeContainer" onclick="treeNodeOnclick('inbox')">
+										<a class="inactive">inbox</a>
+									</div>
+									<div class="TreeNodeDiv">
+										<div id="inbox" class="TreeNode dashboard" style="display: block;">
+											<a class="inactive" href="#/dashboard/">
+												<i class="fa fa-level-up fa-rotate-90" aria-hidden="true"></i>
+												<span class="TreeNodeText">Received Item </span>
+												<span class="TreeNodeTextCount">(10)</span>
+											</a>
+										</div>
+										<div id="inbox" class="TreeNode dashboard" style="display: block;">
+											<a class="inactive" href="#/sendMessage/">
+												<i class="fa fa-level-up fa-rotate-90" aria-hidden="true"></i>
+												<span class="TreeNodeText">Send Message</span>
+												<span class="TreeNodeTextCount">(2)</span>
+												
+											</a>
+										</div>
+										<div id="inbox" class="TreeNode dashboard" style="display: block;">
+											<a class="inactive" href="#/SchemaGenerator/">
+												<i class="fa fa-level-up fa-rotate-90" aria-hidden="true"></i>
+													<span class="TreeNodeText">Draft</span>
+													<span class="TreeNodeTextCount">(1)</span>
+											</a>
+										</div>
+										<div id="inbox" class="TreeNode dashboard" style="display: block;">
+											<a class="inactive" href="#/inbox/">
+												<i class="fa fa-level-up fa-rotate-90" aria-hidden="true"></i>
+												<span class="TreeNodeText">Deleted Item</span>
+												<span class="TreeNodeTextCount">(4)</span>
+											</a>
+										</div>
+									</div>
+									<div id="root" class="TreeContainer" onclick="treeNodeOnclick('folder')">
+										<a class="inactive">Folder</a>
+									</div>
+									<div class="TreeNodeDiv">
+										<div id="inbox" class="TreeNode dashboard" style="display: block;">
+											<a class="inactive" href="#/dashboard/">
+												<i class="fa fa-level-up fa-rotate-90" aria-hidden="true"></i>
+												<span class="TreeNodeText">Flaged Item</span>
+												<span class="TreeNodeTextCount">(4)</span>
+											</a>
+										</div>
+									</div>
+								</div>
+						</td>
+					</tr-->
+					<div class="row tableRow " >
+						<div id="td" class="col-md-3 col-sm-2 col-xs-2">
+							<div>
+									<div id="root" class="TreeContainer" onclick="treeNodeOnclick('inbox')">
+										<a class="inactive">inbox</a>
+									</div>
+									<div class="TreeNodeDiv">
+										<div id="inbox" class="TreeNode dashboard" style="display: block;">
+											<a class="inactive" href="#/dashboard/">
+												<i class="fa fa-level-up fa-rotate-90" aria-hidden="true"></i>
+												<span class="TreeNodeText">Received Item </span>
+												<span class="TreeNodeTextCount">(10)</span>
+											</a>
+										</div>
+										<div id="inbox" class="TreeNode dashboard" style="display: block;">
+											<a class="inactive" href="#/sendMessage/">
+												<i class="fa fa-level-up fa-rotate-90" aria-hidden="true"></i>
+												<span class="TreeNodeText">Send Item</span>
+												<span class="TreeNodeTextCount">(2)</span>
+												
+											</a>
+										</div>
+										<div id="inbox" class="TreeNode dashboard" style="display: block;">
+											<a class="inactive" href="#/SchemaGenerator/">
+												<i class="fa fa-level-up fa-rotate-90" aria-hidden="true"></i>
+													<span class="TreeNodeText">Draft</span>
+													<span class="TreeNodeTextCount">(1)</span>
+											</a>
+										</div>
+										<div id="inbox" class="TreeNode dashboard" style="display: block;">
+											<a class="inactive" href="#/inbox/">
+												<i class="fa fa-level-up fa-rotate-90" aria-hidden="true"></i>
+												<span class="TreeNodeText">Deleted Item</span>
+												<span class="TreeNodeTextCount">(4)</span>
+											</a>
+										</div>
+										<div id="inbox" class="TreeNode dashboard" style="display: block;">
+											<a class="inactive" href="#/inbox/">
+												<i class="fa fa-level-up fa-rotate-90" aria-hidden="true"></i>
+												<span class="TreeNodeText">Spam </span>
+												<span class="TreeNodeTextCount">(3)</span>
+											</a>
+										</div>
+									</div>
+									<div id="root" class="TreeContainer" onclick="treeNodeOnclick('folder')">
+										<a class="inactive">Folder</a>
+									</div>
+									<div class="TreeNodeDiv">
+										<div id="inbox" class="TreeNode dashboard" style="display: block;">
+											<a class="inactive" href="#/dashboard/">
+												<i class="fa fa-level-up fa-rotate-90" aria-hidden="true"></i>
+												<span class="TreeNodeText">Flaged Item</span>
+												<span class="TreeNodeTextCount">(4)</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="td" class="col-md-9 col-sm-2 col-xs-2">
+								<!--div class="pageLayout ng-scope"--> 
+									<div class="bcontainer">
+										<div id="" class="bheader" tabindex="-1">
+											<div class="row tableRow " style="margin-left: 0px;margin-right: 0px;" tabindex="-1">
+														    <div class="clearfix visible-xs"></div>
+															<div class="clearfix visible-sm"></div>
+															<div class="clearfix visible-md"></div>
+											
+														<div id="td" class="col-md-2 col-sm-2 col-xs-2">
+														<div class="binboxheader">
+															<div id="sendMessageErrorBox"></div>
+																<i class="fa fa-plus" aria-hidden="true"></i> 
+																<span class="TreeNodeText">New </span>
+															</div>
+														</div>
+														<div id="td" class="col-md-2 col-sm-2 col-xs-2">
+														<div class="binboxheader">
+															<div id="sendMessageErrorBox"></div>
+																<i class="fa fa-reply" aria-hidden="true"></i> 
+																<span class="TreeNodeText">Reply </span>
+															</div>
+														</div>
+														<div id="td" class="col-md-2 col-sm-2 col-xs-2">
+														<div class="binboxheader">
+														<div id="sendMessageErrorBox"></div>
+															<i class="fa fa-trash-o" aria-hidden="true"></i>
+															<span class="TreeNodeText">Delete </span>
+														</div>
+														</div>
+														<div id="td" class="col-md-2 col-sm-2 col-xs-2">
+															<div class="binboxheader">
+															<div id="sendMessageErrorBox"></div>
+															<i class="fa fa-archive" aria-hidden="true"></i>
+															<span class="TreeNodeText">Archive </span>
+														</div>
+														</div>
+											</div>
+										</div>
+										
+										<div id="row tableRow" class="bsession" tabindex="-1">	
+										<div class="clearfix visible-xs"></div>
+													<div class="clearfix visible-sm"></div>
+													<div class="clearfix visible-md"></div>
+													
+												<div class="row tableRow">
+												</div>
+												
+												<div class="row tableRow">
+													<div class="clearfix visible-xs"></div>
+													<div class="clearfix visible-sm"></div>
+													<div class="clearfix visible-md"></div>
+													
+													<div class="col-md-2 col-sm-2 col-xs-2">
+														<div  class="row tableRow">
+															<div  class="col-md-3 col-sm-2 col-xs-2">
+																<input type="checkbox">
+															</div>
+															<div  class="col-md-3 col-sm-2 col-xs-2">
+																<i class="fa fa-star-o" aria-hidden="true"></i>
+															</div>	
+															<div  class="col-md-3 col-sm-2 col-xs-2">
+															<i class="fa fa-exclamation" aria-hidden="true"></i>
+															</div>
+															
+															<div  class="col-md-3 col-sm-2 col-xs-2">
+																<i class="fa fa-paperclip" aria-hidden="true"></i>
+															</div>
+														</div>
+													</div>
+													<div class="col-md-2 col-sm-2 col-xs-2">
+														<label class="clabel"> Duraimurugan Govindaraj </label>
+													</div>
+													<div class="col-md-6 col-sm-2 col-xs-2">
+														
+														<b> Test Mail</b> : <i> This is test</i>
 
-			<!--a href="#" onclick="showTran(767);"> 767 </a-->
-	</form>
+													</div>
+													<div class="col-md-2 col-sm-2 col-xs-2">
+														2 min
+													</div>
+												</div>
+												<div class="row tableRow">
+													<div class="clearfix visible-xs"></div>
+													<div class="clearfix visible-sm"></div>
+													
+													<div class="col-md-2 col-sm-2 col-xs-2">
+														<div  class="row tableRow">
+															<div  class="col-md-3 col-sm-2 col-xs-2">
+																<input type="checkbox">
+															</div>
+															<div  class="col-md-3 col-sm-2 col-xs-2">
+																<i class="fa fa-star" aria-hidden="true"></i>
+															</div>	
+															<div  class="col-md-3 col-sm-2 col-xs-2">
+															<i class="fa fa-exclamation" aria-hidden="true"></i>
+															</div>
+															
+															<div  class="col-md-3 col-sm-2 col-xs-2">
+																<i class="fa fa-paperclip" aria-hidden="true"></i>
+															</div>
+														</div>
+													</div>
+													<div class="col-md-2 col-sm-2 col-xs-2">
+														<label class="clabel"> Duraimurugan Govindaraj </label>
+													</div>
+													<div class="col-md-6 col-sm-2 col-xs-2">
+														
+														<b> Test Mail</b> : <i> This is test</i>
+
+													</div>
+													<div class="col-md-2 col-sm-2 col-xs-2">
+														2 min
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								<!--/div-->
+							</div>
+
+</form>
 	<!--div>
 				<div id="users-contain" class="ui-widget">
 					<h1> Added Users:</h1>

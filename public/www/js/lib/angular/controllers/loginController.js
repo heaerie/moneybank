@@ -65,6 +65,14 @@ function()
                     , 'dataType' :'NODE'
                     ,'child'  : []
                     }
+					,
+                    {
+                    'link' :'inbox'
+                    ,'linkName' :'inbox'
+                    ,'uid'  :'inbox'
+                    , 'dataType' :'NODE'
+                    ,'child'  : []
+                    }
 
                   ]
                 }
@@ -77,7 +85,7 @@ function()
             $state.go('dashboard');
         
 
-        alert("I am in uss_submit");
+       //A alert("I am in uss_submit");
       };
       $scope.uss_auth=function()
       {
